@@ -54,6 +54,7 @@ Content\initials\SpaceMarine.xnb
 Content\fx\BloomCombine.xnb
 Content\fx\BloomExtract.xnb
 Content\fx\GaussianBlur.xnb
+Content\initials\initialsLogoGameboy.xnb
 Content\Lemonade\bgtiles_factory.xnb
 Content\Lemonade\bgtiles_management.xnb
 Content\Lemonade\bgtiles_military.xnb
@@ -245,6 +246,7 @@ Content\fx\BloomExtract.xnb
 Content\fx\GaussianBlur.xnb
 Content\surt\race_or_die.xnb
 Content\initials\crate_80x60.xnb
+Content\initials\initialsLogoGameboy.xnb
 GAMESETTINGS.txt
 Lemonade\characters\control\army.txt
 Lemonade\characters\control\chef.txt
