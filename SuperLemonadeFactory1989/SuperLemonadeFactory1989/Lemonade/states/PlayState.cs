@@ -459,6 +459,10 @@ namespace Lemonade
 
             base.create();
 
+            Console.WriteLine("Starting Level {0} : {1}", FlxG.level, Lemonade_Globals.location);
+            FlxG.transition.resetAndStop();
+
+
             FlxG._game.hud.p1HudText.x = -1000;
             FlxG._game.hud.p2HudText.x = -1000;
             FlxG._game.hud.p3HudText.x = -1000;

@@ -155,9 +155,9 @@ namespace Lemonade
             {
                 if (obj.dead == false && control == Controls.player)
                 {
-                    if (dead == false) FlxG.play("Lemonade/sfx/deathSFX", 0.8f, false);
-                    flicker(2);
-                    kill();
+                    //if (dead == false) FlxG.play("Lemonade/sfx/deathSFX", 0.8f, false);
+                    //flicker(2);
+                    //kill();
                 }
             }
             else if (overlappedWith == "Lemonade.Trampoline")

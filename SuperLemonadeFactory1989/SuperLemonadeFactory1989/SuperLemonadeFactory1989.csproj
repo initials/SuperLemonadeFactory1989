@@ -427,7 +427,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Lemonade\levels\slf2\sydney\sydney_level1.tmx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Lemonade\levels\slf2\sydney\sydney_level10.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
