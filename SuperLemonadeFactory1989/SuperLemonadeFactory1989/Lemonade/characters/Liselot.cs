@@ -65,7 +65,7 @@ namespace Lemonade
 
         override public void update()
         {
-            if (control == Controls.none) color = new Color(77, 81, 60);
+            if (control == Controls.none) color = Lemonade_Globals.GAMEBOY_COLOR_4;
             else color = Color.White;
 
             if (piggyBacking)

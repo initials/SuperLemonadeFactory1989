@@ -8,12 +8,16 @@ using org.flixel;
 using System.Linq;
 using System.Xml.Linq;
 
+using XNATweener;
+
 namespace Lemonade
 {
     public class IntroState : FlxState
     {
         FlxSprite follower;
         FlxText credits;
+        FlxText instruction;
+        Tweener tween;
 
         override public void create()
         {
@@ -81,28 +85,47 @@ namespace Lemonade
             //
 
             FlxText text1 = new FlxText(0, FlxG.height / 2 - 50, FlxG.width, "Initials\nVideo\nGames\nPresents");
-            text1.setFormat(FlxG.Content.Load<SpriteFont>("Lemonade/SMALL_PIXEL"), 1, Color.Black, FlxJustification.Center, Color.Black);
+            text1.setFormat(FlxG.Content.Load<SpriteFont>("Lemonade/SMALL_PIXEL"), 2, Lemonade_Globals.GAMEBOY_COLOR_4, FlxJustification.Center, Lemonade_Globals.GAMEBOY_COLOR_1);
             text1.setScrollFactors(1.5f, 1.5f);
            
             add(text1);
 
-            credits = new FlxText(0, FlxG.height / 2, FlxG.width, "A Game By Shane Brouwer");
-            credits.setFormat(FlxG.Content.Load<SpriteFont>("Lemonade/SMALL_PIXEL"), 1, Color.Black, FlxJustification.Center, Color.Black);
+            credits = new FlxText(0, FlxG.height / 2 - 100, FlxG.width, "A Game by\nShane Brouwer");
+            credits.setFormat(FlxG.Content.Load<SpriteFont>("Lemonade/SMALL_PIXEL"), 2, Lemonade_Globals.GAMEBOY_COLOR_4, FlxJustification.Center, Lemonade_Globals.GAMEBOY_COLOR_1);
             credits.setScrollFactors(0,0);
             credits.visible = false;
             add(credits);
 
+            instruction = new FlxText(0, FlxG.height / 1.3f, FlxG.width, "Press SPACE to Play");
+            instruction.setFormat(FlxG.Content.Load<SpriteFont>("Lemonade/SMALL_PIXEL"), 2, Lemonade_Globals.GAMEBOY_COLOR_4, FlxJustification.Center, Lemonade_Globals.GAMEBOY_COLOR_1);
+            instruction.setScrollFactors(0, 0);
+            instruction.visible = false;
+            add(instruction);
+
+
             //rgb(237, 0, 142)
+
+            tween = new Tweener(FlxG.height / 1.3f, FlxG.height / 1.2f, TimeSpan.FromSeconds(1.0f), XNATweener.Cubic.EaseInOut);
+            tween.PingPong = true;
+            tween.Start();
+
+
 
 
         }
 
         override public void update()
         {
+            if (FlxG.keys.Q)
+            {
+                follower.velocity.Y = 1450;
+            }
 
             base.update();
 
-            
+            tween.Update(FlxG.elapsedAsGameTime);
+            instruction.y = tween.Position;
+
 
             if (follower.y > 2100 )
             {
@@ -110,30 +133,30 @@ namespace Lemonade
             }
             if (follower.y > 2300)
             {
-                credits.text = "Pixel Art By Miguelito";
+                credits.text = "Pixel Art by\nMiguelito";
             }
             if (follower.y > 2500)
             {
-                credits.text = "Music by Go Exploring";
+                credits.text = "Music by\nGo Exploring";
             }
             if (follower.y > 2700)
             {
-                credits.text = "Illustration by Jessica Mao";
+                credits.text = "Illustration by\nJessica Mao";
             }
             if (follower.y > 2900)
             {
-                credits.text = "Icons/Avatars by Olsonmabob";
+                credits.text = "Icons/Avatars by\nOlsonmabob";
             }
             if (follower.y > 3100)
             {
-                credits.text = "Super Lemonade Factory 1989";
+                credits.text = "Super Lemonade\nFactory 1989";
             }
             if (follower.y > 3300)
             {
-                credits.text = "Press SPACE to Play";
+                instruction.visible = true;
             }
 
-            if (((follower.y > 13500 && follower.x == 0) || 
+            if (((follower.y > int.MaxValue && follower.x == 0) || 
                 (FlxG.keys.justPressed(Keys.Space) && follower.y > 100) || 
                 (FlxG.gamepads.isNewButtonPress(Buttons.A) && follower.y > 100) ||  (FlxControl.ACTIONJUSTPRESSED && follower.y > 100)) 
                 && (FlxG.transition.members[0] as FlxSprite).scale < 0.001f )
@@ -147,6 +170,10 @@ namespace Lemonade
 				FlxG.state = new OuyaEasyMenuState();
 				#endif
 				#if !__ANDROID__
+
+                Lemonade_Globals.location = "sydney";
+                FlxG.level = 1;
+
 				FlxG.state = new PlayState();
 				#endif
                 return;

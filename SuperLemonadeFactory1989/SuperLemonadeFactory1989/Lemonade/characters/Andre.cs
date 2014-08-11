@@ -79,7 +79,7 @@ namespace Lemonade
         {
             //Console.WriteLine(velocity.Y);
 
-            if (control == Controls.none) color = new Color(77, 81, 60);
+            if (control == Controls.none) color = Lemonade_Globals.GAMEBOY_COLOR_4;
             else color = Color.White;
 
             if (FlxG.keys.justPressed(Keys.B) || FlxG.gamepads.isNewButtonPress(Buttons.Y))

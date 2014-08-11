@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using org.flixel;
 
+using Microsoft.Xna.Framework;
+
 namespace Lemonade
 {
     public class Lemonade_Globals
@@ -30,6 +32,12 @@ namespace Lemonade
         public static int LAST_SELECTED_ON_MENU;
 
         public static bool restartMusic = true;
+
+        public static Color GAMEBOY_COLOR_1 = new Color(77, 81, 60);
+        public static Color GAMEBOY_COLOR_2 = new Color(107, 116, 84);
+        public static Color GAMEBOY_COLOR_3 = new Color(176, 186, 142);
+        public static Color GAMEBOY_COLOR_4 = new Color(199, 207, 162);
+
 
         public Lemonade_Globals()
         {
