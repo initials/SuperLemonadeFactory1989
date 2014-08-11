@@ -58,7 +58,7 @@ namespace Lemonade
             parent = null;
             piggybackingAtTimeOfDeath = false;
 
-            flickerStyle = FLICKER_TYPE_SCALE;
+            
 
 
         }

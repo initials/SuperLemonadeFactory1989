@@ -56,6 +56,8 @@ namespace Lemonade
 
             _runningMax = maxVelocity.X;
             
+            //flickerStyle = FLICKER_TYPE_SCALE;
+            //flicker(3);
 
         }
 

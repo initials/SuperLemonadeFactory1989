@@ -102,6 +102,8 @@ namespace Lemonade
 
             base.update();
 
+            
+
             if (follower.y > 2100 )
             {
                 credits.visible = true;
