@@ -30,6 +30,7 @@ namespace Lemonade
         private FlxGroup ramps;
         private FlxGroup smallCrates;
         private FlxGroup movingPlatforms;
+        private Timer timer;
 
         /// <summary>
         /// Use for SLF1 style Ogmo1 levels; Collide only on version 1 style.
@@ -599,6 +600,10 @@ namespace Lemonade
             badge4.visible = false;
 
 
+            timer = new Timer(FlxG.width / 2 - 50, 10, 200);
+            timer.time = 60.0f;
+            add(timer);
+
 
 
         }
@@ -685,13 +690,15 @@ namespace Lemonade
 						FlxG.state = new OuyaEasyMenuState();
 						#endif
 						#if !__ANDROID__
-						FlxG.state = new EasyMenuState();
+						FlxG.state = new IntroState();
 						#endif
                         return;
                     }
                     else
                     {
-                        FlxG.level++;
+                        FlxG.level = (int)FlxU.random(1, 12) ;
+                        timer.time += 5;
+
                         FlxG.write(FlxG.level.ToString() + " LEVEL STARTING");
                         FlxG.state = new PlayState();
 
@@ -738,6 +745,12 @@ namespace Lemonade
             #endregion
 
             //FlxU.collideRamp(actors, ramps);
+
+            if (timer.time < 0.0f)
+            {
+                FlxG.state = new IntroState();
+            }
+
 
             if (Lemonade_Globals.game_version == 2)
             {

@@ -177,7 +177,7 @@ namespace Lemonade
             {
                 if (obj.GetType().ToString() == "Lemonade.Worker" && obj.dead == false)
                 {
-                    Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledWorker = true;
+                    //Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledWorker = true;
                     obj.kill();
                     play("explode");
                     velocity.X = 0;
@@ -187,7 +187,7 @@ namespace Lemonade
                 }
                 else if (obj.GetType().ToString() == "Lemonade.Army" && obj.dead == false)
                 {
-                    Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledArmy = true;
+                    //Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledArmy = true;
                     obj.kill();
                     play("explode");
                     velocity.X = 0;
@@ -197,7 +197,7 @@ namespace Lemonade
                 }
                 else if (obj.GetType().ToString() == "Lemonade.Chef" && obj.dead == false)
                 {
-                    Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledChef = true;
+                    //Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledChef = true;
                     obj.kill();
                     play("explode");
                     velocity.X = 0;
@@ -207,7 +207,7 @@ namespace Lemonade
                 }
                 else if (obj.GetType().ToString() == "Lemonade.Inspector" && obj.dead == false)
                 {
-                    Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledInspector = true;
+                    //Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledInspector = true;
                     obj.kill();
                     play("explode");
                     velocity.X = 0;
