@@ -919,7 +919,7 @@ namespace Lemonade
 				FlxG.state = new OuyaEasyMenuState();
 				#endif
 				#if !__ANDROID__
-				FlxG.state = new EasyMenuState();
+				FlxG.state = new IntroState();
 				#endif
             }
             if (levelComplete == true)
