@@ -77,7 +77,7 @@ namespace Lemonade
         {
             //Console.WriteLine(velocity.Y);
 
-            if (control == Controls.none) color = new Color(0.321f, 0.321f, 0.321f);
+            if (control == Controls.none) color = new Color(77, 81, 60);
             else color = Color.White;
 
             if (FlxG.keys.justPressed(Keys.B) || FlxG.gamepads.isNewButtonPress(Buttons.Y))

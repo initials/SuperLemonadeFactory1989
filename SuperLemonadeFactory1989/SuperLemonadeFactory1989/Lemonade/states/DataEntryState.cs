@@ -131,7 +131,7 @@ namespace Lemonade
 
             SaveToDevice();
 
-            FlxOnlineStatCounter.sendStats("slfparttwo", "zero", Lemonade_Globals.PAID_VERSION+1);
+            //FlxOnlineStatCounter.sendStats("slfparttwo", "zero", Lemonade_Globals.PAID_VERSION+1);
 
 
             FlxG.level = 1;

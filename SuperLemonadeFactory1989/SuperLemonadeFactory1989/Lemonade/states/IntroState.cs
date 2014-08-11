@@ -86,7 +86,7 @@ namespace Lemonade
            
             add(text1);
 
-            credits = new FlxText(0, FlxG.height / 2, FlxG.width, "A Game By\nShane Brouwer");
+            credits = new FlxText(0, FlxG.height / 2, FlxG.width, "A Game By Shane Brouwer");
             credits.setFormat(FlxG.Content.Load<SpriteFont>("Lemonade/SMALL_PIXEL"), 1, Color.Black, FlxJustification.Center, Color.Black);
             credits.setScrollFactors(0,0);
             credits.visible = false;
@@ -126,8 +126,12 @@ namespace Lemonade
             {
                 credits.text = "Super Lemonade Factory 1989";
             }
+            if (follower.y > 3300)
+            {
+                credits.text = "Press SPACE to Play";
+            }
 
-            if (((follower.y > 3500 && follower.x == 0) || 
+            if (((follower.y > 13500 && follower.x == 0) || 
                 (FlxG.keys.justPressed(Keys.Space) && follower.y > 100) || 
                 (FlxG.gamepads.isNewButtonPress(Buttons.A) && follower.y > 100) ||  (FlxControl.ACTIONJUSTPRESSED && follower.y > 100)) 
                 && (FlxG.transition.members[0] as FlxSprite).scale < 0.001f )
@@ -141,7 +145,7 @@ namespace Lemonade
 				FlxG.state = new OuyaEasyMenuState();
 				#endif
 				#if !__ANDROID__
-				FlxG.state = new EasyMenuState();
+				FlxG.state = new PlayState();
 				#endif
                 return;
             }

@@ -175,7 +175,7 @@ namespace Lemonade
 
 
             location = new FlxText(0, 50, FlxG.width);
-            location.setFormat(FlxG.Content.Load<SpriteFont>("Lemonade/SMALL_PIXEL"), 3, Color.White, FlxJustification.Center, Color.Black);
+            location.setFormat(FlxG.Content.Load<SpriteFont>("Lemonade/SMALL_PIXEL"), 1, Color.White, FlxJustification.Center, Color.Black);
             location.text = "< - LOCATION - >";
             location.color = selected;
             add(location);
@@ -183,13 +183,13 @@ namespace Lemonade
             
 
             levelText = new FlxText(0, 150, FlxG.width);
-            levelText.setFormat(FlxG.Content.Load<SpriteFont>("Lemonade/SMALL_PIXEL"), 3, Color.White, FlxJustification.Center, Color.Black);
+            levelText.setFormat(FlxG.Content.Load<SpriteFont>("Lemonade/SMALL_PIXEL"), 1, Color.White, FlxJustification.Center, Color.Black);
             levelText.text = "< -LEVEL #- >";
             location.color = notSelected;
             add(levelText);
 
             multiplayerText = new FlxText(0, 250, FlxG.width);
-            multiplayerText.setFormat(FlxG.Content.Load<SpriteFont>("Lemonade/SMALL_PIXEL"), 3, Color.White, FlxJustification.Center, Color.Black);
+            multiplayerText.setFormat(FlxG.Content.Load<SpriteFont>("Lemonade/SMALL_PIXEL"), 1, Color.White, FlxJustification.Center, Color.Black);
             multiplayerText.text = "-multiplayer-";
             multiplayerText.color = notSelected;
             add(multiplayerText);

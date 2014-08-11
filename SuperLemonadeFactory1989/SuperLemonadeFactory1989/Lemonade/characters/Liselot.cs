@@ -58,11 +58,14 @@ namespace Lemonade
             parent = null;
             piggybackingAtTimeOfDeath = false;
 
+            flickerStyle = FLICKER_TYPE_SCALE;
+
+
         }
 
         override public void update()
         {
-            if (control == Controls.none) color = new Color(0.321f, 0.321f, 0.321f);
+            if (control == Controls.none) color = new Color(77, 81, 60);
             else color = Color.White;
 
             if (piggyBacking)

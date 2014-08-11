@@ -35,8 +35,8 @@ namespace Lemonade
 
         override public void update()
         {
-            if (control == Controls.none) alpha = 0.95f;
-            else alpha = 1.0f;
+            //if (control == Controls.none) alpha = 0.95f;
+            //else alpha = 1.0f;
 
 
             if (piggyBacking == true)

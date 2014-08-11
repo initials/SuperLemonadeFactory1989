@@ -651,10 +651,10 @@ namespace Lemonade
                 }
                 if (FlxG.keys.justPressed(Keys.F10) && FlxG.debug==true)
                 {
-                    Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledArmy = true;
-                    Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledChef = true;
-                    Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledInspector = true;
-                    Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledWorker = true;
+                    //Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledArmy = true;
+                    //Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledChef = true;
+                    //Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledInspector = true;
+                    //Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledWorker = true;
                     andre.x = exit.x;
                     andre.y = exit.y;
                     liselot.x = exit.x;
@@ -664,11 +664,11 @@ namespace Lemonade
 				if (FlxG.keys.justPressed(Keys.F9) || (FlxG.gamepads.isButtonDown(Buttons.RightStick) && FlxG.debug==true ))
                 {
                     Lemonade_Globals.restartMusic = false;
-                    Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].LevelComplete = true;
-                    Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledArmy = true;
-                    Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledChef = true;
-                    Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledInspector = true;
-                    Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledWorker = true;
+                    //Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].LevelComplete = true;
+                    //Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledArmy = true;
+                    //Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledChef = true;
+                    //Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledInspector = true;
+                    //Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledWorker = true;
 
 
 
@@ -921,66 +921,66 @@ namespace Lemonade
                     FlxG.play("initials/initials_empire_tagtone4", 0.8f, false);
                 }
 
-                int incompleteScale = 2;
+                //int incompleteScale = 2;
 
-                if (Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledArmy == false)
-                {
+                //if (//Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledArmy == false)
+                //{
                     
-                    badge1.scale = incompleteScale;
-                    badge1.color = notDone;
-                }
-                else
-                {
+                //    badge1.scale = incompleteScale;
+                //    badge1.color = notDone;
+                //}
+                //else
+                //{
                     
-                    //badge1.scale = 1;
-                    badge1.color = done;
-                    badge1.scale += 0.25f;
+                //    //badge1.scale = 1;
+                //    badge1.color = done;
+                //    badge1.scale += 0.25f;
 
-                }
+                //}
 
-                if (Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledChef == false)
-                {
+                //if (//Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledChef == false)
+                //{
                     
-                    badge2.scale = incompleteScale;
-                    badge2.color = notDone;
+                //    badge2.scale = incompleteScale;
+                //    badge2.color = notDone;
                     
-                }
-                else
-                {
+                //}
+                //else
+                //{
                     
-                    //badge2.scale = 1;
-                    badge2.color = done;
-                    badge2.scale += 0.25f;
-                }
+                //    //badge2.scale = 1;
+                //    badge2.color = done;
+                //    badge2.scale += 0.25f;
+                //}
 
-                if (Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledInspector == false)
-                {
-                    badge3.scale = incompleteScale;
-                    badge3.color = notDone;
-                }
-                else
-                {
-                    //badge3.scale = 1;
-                    badge3.color = done;
-                    badge3.scale += 0.25f;
-                }
+                //if (//Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledInspector == false)
+                //{
+                //    badge3.scale = incompleteScale;
+                //    badge3.color = notDone;
+                //}
+                //else
+                //{
+                //    //badge3.scale = 1;
+                //    badge3.color = done;
+                //    badge3.scale += 0.25f;
+                //}
 
-                if (Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledWorker == false)
-                {
-                    badge4.scale = incompleteScale;
-                    badge4.color = notDone;
-                }
-                else
-                {
-                    //badge4.scale = 1;
-                    badge4.color = done;
-                    badge4.scale += 0.25f;
-                }
+                //if (//Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledWorker == false)
+                //{
+                //    badge4.scale = incompleteScale;
+                //    badge4.color = notDone;
+                //}
+                //else
+                //{
+                //    //badge4.scale = 1;
+                //    badge4.color = done;
+                //    badge4.scale += 0.25f;
+                //}
 
-                badge1.visible = true;
-                badge2.visible = true;
-                badge3.visible = true;
-                badge4.visible = true;
+                //badge1.visible = true;
+                //badge2.visible = true;
+                //badge3.visible = true;
+                //badge4.visible = true;
 
 
                 FlxG.pauseMp3();
@@ -1002,9 +1002,9 @@ namespace Lemonade
             if (FlxG.transition.complete)
             {
 
-                Lemonade_Globals.gameProgress[Lemonade_Globals.location+"_"+FlxG.level.ToString()].LevelComplete = true;
+                ////Lemonade_Globals.gameProgress[Lemonade_Globals.location+"_"+FlxG.level.ToString()].LevelComplete = true;
 
-                Lemonade_Globals.writeGameProgressToFile();
+                //Lemonade_Globals.writeGameProgressToFile();
 
                 if (FlxG.level != 12)
                 {
