@@ -42,7 +42,7 @@ namespace Lemonade
             setOffset(20, 39);
             setDrags(1251, 0);
 
-            maxVelocity.X = 530;
+            maxVelocity.X = 330;
             maxVelocity.Y = 2830;
 
 			#if __ANDROID__
@@ -79,8 +79,8 @@ namespace Lemonade
         {
             //Console.WriteLine(velocity.Y);
 
-            if (control == Controls.none) color = Lemonade_Globals.GAMEBOY_COLOR_4;
-            else color = Color.White;
+            //if (control == Controls.none) color = Lemonade_Globals.GAMEBOY_COLOR_4;
+            //else color = Color.White;
 
             if (FlxG.keys.justPressed(Keys.B) || FlxG.gamepads.isNewButtonPress(Buttons.Y))
             {

@@ -172,7 +172,7 @@ namespace Lemonade
 				#if !__ANDROID__
 
                 Lemonade_Globals.location = "sydney";
-                FlxG.level = (int)FlxU.random(1, 12) ;
+                FlxG.level = 1 ;
 
 				FlxG.state = new PlayState();
 				#endif

@@ -42,7 +42,7 @@ namespace Lemonade
             setOffset(20, 39);
             setDrags(1251, 0);
 
-            maxVelocity.X = 530;
+            maxVelocity.X = 310;
             maxVelocity.Y = 2830;
 
 			#if __ANDROID__
@@ -65,8 +65,8 @@ namespace Lemonade
 
         override public void update()
         {
-            if (control == Controls.none) color = Lemonade_Globals.GAMEBOY_COLOR_4;
-            else color = Color.White;
+            //if (control == Controls.none) color = Lemonade_Globals.GAMEBOY_COLOR_4;
+            //else color = Color.White;
 
             if (piggyBacking)
             {
