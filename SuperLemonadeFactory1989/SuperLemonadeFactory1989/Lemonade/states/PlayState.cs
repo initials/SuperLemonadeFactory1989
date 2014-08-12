@@ -625,19 +625,19 @@ namespace Lemonade
             {
                 if (Lemonade_Globals.location == "sydney")
                 {
-                    FlxG.playMp3("Lemonade/music/cave", 0.75f);
+                    FlxG.playMp3("Lemonade/music/level1", 0.75f);
                 }
                 else if (Lemonade_Globals.location == "newyork")
                 {
-                    FlxG.playMp3("Lemonade/music/here", 0.75f);
+                    FlxG.playMp3("Lemonade/music/level1", 0.75f);
                 }
                 else if (Lemonade_Globals.location == "military")
                 {
-                    FlxG.playMp3("Lemonade/music/join", 0.75f);
+                    FlxG.playMp3("Lemonade/music/level1", 0.75f);
                 }
                 else
                 {
-                    FlxG.playMp3("Lemonade/music/join", 0.75f);
+                    FlxG.playMp3("Lemonade/music/level1", 0.75f);
                 }
             }
 

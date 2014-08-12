@@ -109,7 +109,8 @@ namespace Lemonade
             tween.PingPong = true;
             tween.Start();
 
-
+            // play some music
+            FlxG.playMp3("Lemonade/music/Lemonade1989Theme", 0.75f);
 
 
         }
@@ -118,7 +119,7 @@ namespace Lemonade
         {
             if (FlxG.keys.Q)
             {
-                follower.velocity.Y = 1450;
+                follower.velocity.Y += 1450;
             }
 
             base.update();

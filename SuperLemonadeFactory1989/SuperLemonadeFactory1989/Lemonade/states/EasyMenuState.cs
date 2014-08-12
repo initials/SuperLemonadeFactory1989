@@ -90,7 +90,7 @@ namespace Lemonade
             totalLocations.Add("management");
 
             // play some music
-            FlxG.playMp3("Lemonade/music/music_menu_1", 0.75f);
+            FlxG.playMp3("Lemonade/music/Lemonade1989Theme", 0.75f);
 
             // load some tile maps
 
