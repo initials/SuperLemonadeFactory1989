@@ -25,6 +25,7 @@ namespace Lemonade
         public const int FULL_MODE = 1;
         public const int PIRATE_MODE = 2;
 
+        public static float timeLeft = 30.0f;
 
         public static int PAID_VERSION;
 

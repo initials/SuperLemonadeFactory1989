@@ -173,7 +173,7 @@ namespace Lemonade
 
                 Lemonade_Globals.location = "sydney";
                 FlxG.level = 1 ;
-
+                Lemonade_Globals.timeLeft = 30.0f;
 				FlxG.state = new PlayState();
 				#endif
                 return;

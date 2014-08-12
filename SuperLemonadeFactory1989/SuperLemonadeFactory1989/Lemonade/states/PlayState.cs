@@ -605,7 +605,7 @@ namespace Lemonade
 
 
             timer = new Timer(FlxG.width / 2 - 50, 10, 200);
-            timer.time = 60.0f;
+            timer.time = Lemonade_Globals.timeLeft;
             add(timer);
 
 
@@ -701,7 +701,7 @@ namespace Lemonade
                     else
                     {
                         FlxG.level = (int)FlxU.random(1, 12) ;
-                        timer.time += 5;
+                        Lemonade_Globals.timeLeft = timer.time;
 
                         FlxG.write(FlxG.level.ToString() + " LEVEL STARTING");
                         FlxG.state = new PlayState();
@@ -714,6 +714,7 @@ namespace Lemonade
                     Lemonade_Globals.restartMusic = false;
                     FlxG.level--;
                     FlxG.write(FlxG.level.ToString() + " LEVEL STARTING");
+                    Lemonade_Globals.timeLeft = timer.time;
                     FlxG.state = new PlayState();
 
                     return;
@@ -722,6 +723,7 @@ namespace Lemonade
                 {
                     Lemonade_Globals.restartMusic = false;
                     FlxG.write(FlxG.level.ToString() + " LEVEL STARTING");
+                    Lemonade_Globals.timeLeft = timer.time;
                     FlxG.state = new PlayState();
                     return;
                 }
@@ -1038,6 +1040,9 @@ namespace Lemonade
 						FlxG.transition.resetAndStop();
 						return;
 					} else {
+
+                        Lemonade_Globals.timeLeft = timer.time;
+
 						FlxG.state = new PlayState ();
 						FlxG.transition.resetAndStop ();
 						return;

@@ -38,7 +38,7 @@ namespace Loader_SuperLemonadeFactory
             // Customize splash screen.
             FlxG.splashBGColor = new Color(77, 81, 60);
             FlxG.splashLogo = "initials/initialsLogoGameboy";
-
+            FlxG.buildDescription = "GAMEBOY";
 
             //Lemonade.Lemonade_Globals.PAID_VERSION = Lemonade.Lemonade_Globals.PIRATE_MODE;
             Lemonade.Lemonade_Globals.PAID_VERSION = Lemonade.Lemonade_Globals.FULL_MODE;
