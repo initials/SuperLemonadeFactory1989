@@ -663,13 +663,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Lemonade\music\level1.mp3">
-      <Name>level1</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Lemonade\music\Lemonade1989Theme.mp3">
       <Name>Lemonade1989Theme</Name>
       <Importer>Mp3Importer</Importer>
@@ -677,8 +670,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Lemonade\music\level2.mp3">
-      <Name>level2</Name>
+    <Compile Include="Lemonade\music\level1.mp3">
+      <Name>level1</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
     </Compile>
