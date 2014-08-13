@@ -1,10 +1,10 @@
 -----------------------------------
-| Super Lemonade Factory 1989     |
+|   Super Lemonade Factory 1989   |
 -----------------------------------
 
 Company		: Initials Video Games
-Website		: http://slf2.initialsgames.com/
-Platform	: PC
+Website		: http://initialsgames.com/
+Platform	: PC, OUYA
 
 ------------------------------------
 

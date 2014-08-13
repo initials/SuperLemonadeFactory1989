@@ -7,12 +7,14 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
+using XNATweener;
 
 namespace Lemonade
 {
     class Timer : FlxText
     {
         public float time = 0.0f;
+        public Tweener tween;
 
         public Timer(float X, float Y, float Width)
             : base(X, Y, Width)
@@ -21,7 +23,11 @@ namespace Lemonade
 
             alignment = FlxJustification.Left;
             scale = 2;
+
+            tween = new Tweener(4, 2, 1.2f, Bounce.EaseOut);
             
+
+
         }
 
         override public void update()
@@ -29,6 +35,12 @@ namespace Lemonade
 
             text = String.Format("{0:#,###.#}", time);
 
+            scale = tween.Position;
+            
+            if ((int)time % 3 == 0)
+            {
+                tween.Start();
+            }
 
             base.update();
 

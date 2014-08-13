@@ -612,6 +612,12 @@ namespace Lemonade
             timer.time = Lemonade_Globals.timeLeft;
             add(timer);
 
+            
+
+
+
+
+
 
 
         }

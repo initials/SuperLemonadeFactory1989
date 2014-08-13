@@ -39,6 +39,7 @@ namespace Lemonade
         public static Color GAMEBOY_COLOR_3 = new Color(176, 186, 142);
         public static Color GAMEBOY_COLOR_4 = new Color(199, 207, 162);
 
+        public static int coins = 3;
 
         public Lemonade_Globals()
         {

@@ -114,6 +114,7 @@
     <Compile Include="Lemonade\characters\Inspector.cs" />
     <Compile Include="Lemonade\characters\Liselot.cs" />
     <Compile Include="Lemonade\characters\Worker.cs" />
+    <Compile Include="Lemonade\extra\Coin.cs" />
     <Compile Include="Lemonade\extra\CratesBox.cs" />
     <Compile Include="Lemonade\extra\Exit.cs" />
     <Compile Include="Lemonade\extra\FilingCabinet.cs" />
