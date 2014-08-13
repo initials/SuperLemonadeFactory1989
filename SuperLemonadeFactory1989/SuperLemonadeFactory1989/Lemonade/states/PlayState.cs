@@ -485,30 +485,34 @@ namespace Lemonade
 
             //Level Adjust
 
-            if (Lemonade_Globals.location == "factory") FlxG.level += 12;
-            if (Lemonade_Globals.location == "management") FlxG.level += 24;
+            buildTileset();
+            buildActors();
+            buildBoxes();
 
-            // Build for slf2 (Tiled Maps)
-            if (Lemonade_Globals.location == "military" ||
-                Lemonade_Globals.location == "newyork" ||
-                Lemonade_Globals.location == "sydney")
-            {
-                buildTileset();
-                buildActors();
-                buildBoxes();
+            //if (Lemonade_Globals.location == "factory") FlxG.level += 12;
+            //if (Lemonade_Globals.location == "management") FlxG.level += 24;
+
+            //// Build for slf2 (Tiled Maps)
+            //if (Lemonade_Globals.location == "military" ||
+            //    Lemonade_Globals.location == "newyork" ||
+            //    Lemonade_Globals.location == "sydney")
+            //{
+            //    buildTileset();
+            //    buildActors();
+            //    buildBoxes();
                 
-                Lemonade_Globals.game_version = 2;
+            //    Lemonade_Globals.game_version = 2;
 
-            }
-            else if (   Lemonade_Globals.location == "warehouse" ||
-                        Lemonade_Globals.location == "factory" ||
-                        Lemonade_Globals.location == "management")
-            {
-                buildTilesetForOgmo1();
-                buildActorsForOgmo1();
+            //}
+            //else if (   Lemonade_Globals.location == "warehouse" ||
+            //            Lemonade_Globals.location == "factory" ||
+            //            Lemonade_Globals.location == "management")
+            //{
+            //    buildTilesetForOgmo1();
+            //    buildActorsForOgmo1();
 
-                Lemonade_Globals.game_version = 1;
-            }
+            //    Lemonade_Globals.game_version = 1;
+            //}
 
             add(trampolines);
             add(levelItems);
