@@ -24,7 +24,7 @@ namespace Lemonade
             alignment = FlxJustification.Left;
             scale = 2;
 
-            tween = new Tweener(4, 2, 1.2f, Bounce.EaseOut);
+            tween = new Tweener(0, 2, 0.4f, Bounce.EaseIn);
             
 
 
@@ -36,11 +36,18 @@ namespace Lemonade
             text = String.Format("{0:#,###.#}", time);
 
             scale = tween.Position;
-            
+
+            //Console.WriteLine("Tween {0} {1}", scale, tween.Position);
+
             if ((int)time % 3 == 0)
             {
+                //Console.WriteLine("Starting Tween");
+
+                tween = new Tweener(4, 2, 0.5f, Bounce.EaseOut);
                 tween.Start();
             }
+
+            tween.Update(FlxG.elapsedAsGameTime);
 
             base.update();
 
