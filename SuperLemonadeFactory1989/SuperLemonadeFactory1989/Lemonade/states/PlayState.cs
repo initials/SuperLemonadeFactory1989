@@ -806,7 +806,7 @@ namespace Lemonade
                         crateParticle.start(true, 0.0f, 50);
                         crate.kill();
 
-                        FlxG.play("Lemonade/sfx/SndExp", 0.5f, false);
+                        FlxG.play("Lemonade/sfx/cw_sound35", 0.5f, false);
                     }
                 }
             }
@@ -848,7 +848,7 @@ namespace Lemonade
                 else
                 {
 
-                    FlxG.play("Lemonade/sfx/whoosh", 0.5f, false);
+                    FlxG.play("Lemonade/sfx/cw_sound36", 0.5f, false);
 
                     if (follow.currentFollow == 1)
                     {

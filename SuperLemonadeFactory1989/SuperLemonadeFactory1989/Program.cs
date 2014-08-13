@@ -39,6 +39,8 @@ namespace Loader_SuperLemonadeFactory
             FlxG.splashBGColor = new Color(77, 81, 60);
             FlxG.splashLogo = "initials/initialsLogoGameboy";
             FlxG.buildDescription = "GAMEBOY";
+            FlxG.splashAudioWave = "Lemonade/sfx/cw_sound44";
+            FlxG.splashAudioWaveFlixel = "Lemonade/sfx/cw_sound19";
 
             //Lemonade.Lemonade_Globals.PAID_VERSION = Lemonade.Lemonade_Globals.PIRATE_MODE;
             Lemonade.Lemonade_Globals.PAID_VERSION = Lemonade.Lemonade_Globals.FULL_MODE;

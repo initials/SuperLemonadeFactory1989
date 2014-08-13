@@ -165,61 +165,6 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Lemonade\sfx\Blip_Select.wav">
-      <Name>Blip_Select</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-    </Compile>
-    <Compile Include="Lemonade\sfx\checkPoint.wav">
-      <Name>checkPoint</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-    </Compile>
-    <Compile Include="Lemonade\sfx\deathSFX.wav">
-      <Name>deathSFX</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-    </Compile>
-    <Compile Include="Lemonade\sfx\jump.wav">
-      <Name>jump</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-    </Compile>
-    <Compile Include="Lemonade\sfx\ping.wav">
-      <Name>ping</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-    </Compile>
-    <Compile Include="Lemonade\sfx\ping2.wav">
-      <Name>ping2</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-    </Compile>
-    <Compile Include="Lemonade\sfx\powerUp.wav">
-      <Name>powerUp</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-    </Compile>
-    <Compile Include="Lemonade\sfx\SndExp.wav">
-      <Name>SndExp</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-    </Compile>
-    <Compile Include="Lemonade\sfx\SndOnShoulders.wav">
-      <Name>SndOnShoulders</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-    </Compile>
-    <Compile Include="Lemonade\sfx\SwitchCharacters.wav">
-      <Name>SwitchCharacters</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-    </Compile>
-    <Compile Include="Lemonade\sfx\whoosh.wav">
-      <Name>whoosh</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-    </Compile>
     <Compile Include="Lemonade\slf1\icons.png">
       <Name>icons</Name>
       <Importer>TextureImporter</Importer>
@@ -674,6 +619,233 @@
       <Name>level1</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Lemonade\sfx\cw_sound01.wav">
+      <Name>cw_sound01</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound02.wav">
+      <Name>cw_sound02</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound03.wav">
+      <Name>cw_sound03</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound04.wav">
+      <Name>cw_sound04</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound05.wav">
+      <Name>cw_sound05</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound06.wav">
+      <Name>cw_sound06</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound07.wav">
+      <Name>cw_sound07</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound08.wav">
+      <Name>cw_sound08</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound09.wav">
+      <Name>cw_sound09</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound10.wav">
+      <Name>cw_sound10</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound11.wav">
+      <Name>cw_sound11</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound12.wav">
+      <Name>cw_sound12</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound13.wav">
+      <Name>cw_sound13</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound14.wav">
+      <Name>cw_sound14</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound15.wav">
+      <Name>cw_sound15</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound16.wav">
+      <Name>cw_sound16</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound17.wav">
+      <Name>cw_sound17</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound18.wav">
+      <Name>cw_sound18</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound19.wav">
+      <Name>cw_sound19</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound20.wav">
+      <Name>cw_sound20</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound21.wav">
+      <Name>cw_sound21</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound22.wav">
+      <Name>cw_sound22</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound23.wav">
+      <Name>cw_sound23</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound24.wav">
+      <Name>cw_sound24</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound25.wav">
+      <Name>cw_sound25</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound26.wav">
+      <Name>cw_sound26</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound27.wav">
+      <Name>cw_sound27</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound28.wav">
+      <Name>cw_sound28</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound29.wav">
+      <Name>cw_sound29</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound30.wav">
+      <Name>cw_sound30</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound31.wav">
+      <Name>cw_sound31</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound32.wav">
+      <Name>cw_sound32</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound33.wav">
+      <Name>cw_sound33</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound34.wav">
+      <Name>cw_sound34</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound35.wav">
+      <Name>cw_sound35</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound36.wav">
+      <Name>cw_sound36</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound37.wav">
+      <Name>cw_sound37</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound38.wav">
+      <Name>cw_sound38</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound39.wav">
+      <Name>cw_sound39</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound40.wav">
+      <Name>cw_sound40</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound41.wav">
+      <Name>cw_sound41</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound42.wav">
+      <Name>cw_sound42</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound43.wav">
+      <Name>cw_sound43</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound44.wav">
+      <Name>cw_sound44</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\sfx\cw_sound45.wav">
+      <Name>cw_sound45</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

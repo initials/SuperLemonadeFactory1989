@@ -112,6 +112,8 @@ namespace Lemonade
             // play some music
             FlxG.playMp3("Lemonade/music/Lemonade1989Theme", 0.75f);
 
+            FlxG.play("Lemonade/sfx/cw_sound15", 0.5f, false);
+
 
         }
 
@@ -122,10 +124,22 @@ namespace Lemonade
                 follower.velocity.Y += 1450;
             }
 
+
+
             base.update();
+
+            if (instruction.visible)
+            {
+                if (tween.hasEnded)
+                {
+                    FlxG.play("Lemonade/sfx/cw_sound09", 0.75f, false);
+                }
+            }
 
             tween.Update(FlxG.elapsedAsGameTime);
             instruction.y = tween.Position;
+
+
 
 
             if (follower.y > 2100 )
@@ -138,18 +152,28 @@ namespace Lemonade
             }
             if (follower.y > 2500)
             {
-                credits.text = "Music by\nGo Exploring";
+                credits.text = "Dithering Expert\nAndrio";
             }
             if (follower.y > 2700)
             {
-                credits.text = "Illustration by\nJessica Mao";
+                credits.text = "Super";
             }
             if (follower.y > 2900)
             {
-                credits.text = "Icons/Avatars by\nOlsonmabob";
+                credits.text = "Lemonade";
+            }
+            if (follower.y > 3000)
+            {
+                credits.text = "Factory";
             }
             if (follower.y > 3100)
             {
+                credits.scale = 5;
+                credits.text = "1989";
+            }
+            if (follower.y > 3200)
+            {
+                credits.scale = 2;
                 credits.text = "Super Lemonade\nFactory 1989";
             }
             if (follower.y > 3300)

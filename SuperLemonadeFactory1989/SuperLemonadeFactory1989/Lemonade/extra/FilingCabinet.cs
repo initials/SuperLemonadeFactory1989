@@ -48,7 +48,7 @@ namespace Lemonade
             {
 		        if (canClose > 4){
 
-                    FlxG.play("Lemonade/sfx/checkPoint", 0.8f, false);
+                    FlxG.play("Lemonade/sfx/cw_sound03", 0.8f, false);
 
 			        play("closed", true);
 				

@@ -117,7 +117,7 @@ namespace Lemonade
             {
                 if (piggyBacking == false && dead == false && flickering() == false)
                 {
-                    FlxG.play("Lemonade/sfx/SndOnShoulders", 0.8f, false);
+                    FlxG.play("Lemonade/sfx/cw_sound34", 0.8f, false);
 
                     //FlxG.follow(this, 11.0f);
                     f.currentFollow = 1;

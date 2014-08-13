@@ -1,49 +1,19 @@
 -----------------------------------
-| Super Lemonade Factory Part Two |
+| Super Lemonade Factory 1989     |
 -----------------------------------
 
-Lemonade:
-- [x] Make BGs bigger, need to be HD 1920x1080
-- [x] Need to texture pack control buttons.
-- [x] Make .nfo
-
-Cheats
-
-"ol" on menu screen - unlock Super Lemonade Factory 1 levels.
-"exits" during play - move to exits
-"pirate" set to pirate mode
-
-F10 (in debug mode) complete level with all kills registered.
-
-----
-
 Company		: Initials Video Games
-
 Website		: http://slf2.initialsgames.com/
-
-Platform	: PC, OUYA
-
-Projected Platforms: OSX, Linux
-
-Other Platforms: iOS - https://itunes.apple.com/au/app/super-lemonade-factory-part/id727504536?mt=8
+Platform	: PC
 
 ------------------------------------
 
-Description	:
+Gold Coin from OpenGameArt.org by morgan3d
+http://opengameart.org/content/spinning-gold-coin
 
-Usually when you see a description of a sequel that starts with "The two main characters are back and bigger than ever" it's a sure sign of a cash grab. Andre and Liselot are back, and this game is bigger than ever! Super Lemonade Factory Two has more of everything you loved about the first, more zany dialog, more gorgeous pixel art and more spikes. Taking place around the globe in Sydney Australia, New York City and a military base.
+Gameboy sound shots - lo-fi percussion and fx.
+wav format, 24 bit, 44100, stereo
 
-History		:
-Super Lemonade Factory was released in March 2012 and was immediately with passionate criticism, both positive and negative. The sequel hopes to please some of the people who made complaints about the game, while intentionally messing with the people who had complaints not based in reality.
-
-Other Info	:
-* Sequel to the quirky 2012 game Super Lemonade Factory, rewritten from the ground up. Other sequels we enjoy include Wonder Boy In Monster Land and Portal 2. Sequels we did not enjoy include S. Darko and California Games II.
-* Definitely not the first game to feature the Sydney Harbour Bridge or the Sydney Opera House, as International Karate had those features 27 years ago.
-* Trampolines! Crates! Enemies... but are they bad people?
-* Premium pixel art by Miguelito.
-
-The Hook	:
-This is an original IP, and that's not easy. In a world where nostalgia is sold as a commodity, launching an original series is tough.
-This is actually independent. The word indie has become overloaded and co-opted. We have no backers, sponsors or shareholders.
-Tweet directly to the characters and have them tweet back at you. Twitter accounts manned by the funniest and sharpest people on the internet.
-
+Produced by Dmitriy "Cyberworm" Vasilyev 
+All offered samples royalty free.
+http://www.rhythm-lab.com

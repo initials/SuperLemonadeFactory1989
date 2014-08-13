@@ -181,8 +181,8 @@ namespace Lemonade
                     obj.kill();
                     play("explode");
                     velocity.X = 0;
-                    
-                    FlxG.play("Lemonade/sfx/SndExp", 0.5f, false);
+
+                    FlxG.play("Lemonade/sfx/cw_sound38", 0.5f, false);
                     
                 }
                 else if (obj.GetType().ToString() == "Lemonade.Army" && obj.dead == false)
@@ -192,7 +192,7 @@ namespace Lemonade
                     play("explode");
                     velocity.X = 0;
 
-                    FlxG.play("Lemonade/sfx/SndExp", 0.5f, false);
+                    FlxG.play("Lemonade/sfx/cw_sound38", 0.5f, false);
 
                 }
                 else if (obj.GetType().ToString() == "Lemonade.Chef" && obj.dead == false)
@@ -202,7 +202,7 @@ namespace Lemonade
                     play("explode");
                     velocity.X = 0;
 
-                    FlxG.play("Lemonade/sfx/SndExp", 0.5f, false);
+                    FlxG.play("Lemonade/sfx/cw_sound38", 0.5f, false);
 
                 }
                 else if (obj.GetType().ToString() == "Lemonade.Inspector" && obj.dead == false)
@@ -212,7 +212,7 @@ namespace Lemonade
                     play("explode");
                     velocity.X = 0;
 
-                    FlxG.play("Lemonade/sfx/SndExp", 0.5f, false);
+                    FlxG.play("Lemonade/sfx/cw_sound38", 0.5f, false);
                 }
             }
 
