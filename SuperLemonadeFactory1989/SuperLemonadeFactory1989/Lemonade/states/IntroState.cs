@@ -210,7 +210,7 @@ namespace Lemonade
 
 
                 Lemonade_Globals.coins = 0;
-                Lemonade_Globals.timeLeft = 30.0f;
+                Lemonade_Globals.timeLeft = 6.5f;
 				FlxG.state = new PlayState();
 				#endif
                 return;

@@ -784,7 +784,16 @@ namespace Lemonade
 
             if (timer.time < 0.0f)
             {
-                FlxG.state = new IntroState();
+                int loc = (int)FlxU.random(0, 6);
+                if (loc == 0) Lemonade_Globals.location = "sydney";
+                else if (loc == 1) Lemonade_Globals.location = "newyork";
+                else if (loc == 2) Lemonade_Globals.location = "military";
+                else if (loc == 3) Lemonade_Globals.location = "warehouse";
+                else if (loc == 4) Lemonade_Globals.location = "factory";
+                else Lemonade_Globals.location = "management";
+                Console.WriteLine("Location: {0} {1}", Lemonade_Globals.location, loc);
+
+                FlxG.state = new PlayState();
             }
 
 
