@@ -45,6 +45,10 @@ namespace Loader_SuperLemonadeFactory
             //Lemonade.Lemonade_Globals.PAID_VERSION = Lemonade.Lemonade_Globals.PIRATE_MODE;
             Lemonade.Lemonade_Globals.PAID_VERSION = Lemonade.Lemonade_Globals.FULL_MODE;
 
+#if DEBUG
+            FlxG.debug = true;
+#endif
+
 #if DEMO
             Lemonade.Lemonade_Globals.PAID_VERSION = Lemonade.Lemonade_Globals.DEMO_MODE;
 #endif
