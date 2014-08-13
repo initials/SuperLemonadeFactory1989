@@ -878,8 +878,6 @@ namespace Lemonade
                         
                         follow.currentFollow = 2;
 
-
-
                         bubbleParticle.at(liselot);
                         bubbleParticle.start(true, 0, 30);
 
@@ -889,40 +887,16 @@ namespace Lemonade
                     {
                         follow.tweenX = new Tweener(liselot.x, andre.x, TimeSpan.FromSeconds(0.45f), Linear.EaseNone);
                         follow.tweenY = new Tweener(liselot.y, andre.y, TimeSpan.FromSeconds(0.45f), Linear.EaseNone);
-                        
 
                         follow.tweenX.Start();
                         follow.tweenY.Start();
 
                         follow.currentFollow = 1;
 
-
-
                         bubbleParticle.at(andre);
                         bubbleParticle.start(true, 0, 30);
 
                     } 
-
-                    //if (FlxG.followTarget.GetType().ToString() == "Lemonade.Liselot")
-                    //{
-                    //    FlxG.follow(andre, LERP);
-                    //    andre.control = FlxPlatformActor.Controls.player;
-                    //    liselot.control = FlxPlatformActor.Controls.none;
-
-                    //    bubbleParticle.at(andre);
-                    //    bubbleParticle.start(true, 0, 30);
-
-                    //}
-                    //else if (FlxG.followTarget.GetType().ToString() == "Lemonade.Andre")
-                    //{
-                    //    FlxG.follow(liselot, LERP);
-                    //    andre.control = FlxPlatformActor.Controls.none;
-                    //    liselot.control = FlxPlatformActor.Controls.player;
-
-                    //    bubbleParticle.at(liselot);
-                    //    bubbleParticle.start(true, 0, 30);
-
-                    //}
                 }
             }
 
@@ -957,71 +931,8 @@ namespace Lemonade
                 {
                     FlxG.play("initials/initials_empire_tagtone4", 0.8f, false);
                 }
-
-                //int incompleteScale = 2;
-
-                //if (//Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledArmy == false)
-                //{
-                    
-                //    badge1.scale = incompleteScale;
-                //    badge1.color = notDone;
-                //}
-                //else
-                //{
-                    
-                //    //badge1.scale = 1;
-                //    badge1.color = done;
-                //    badge1.scale += 0.25f;
-
-                //}
-
-                //if (//Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledChef == false)
-                //{
-                    
-                //    badge2.scale = incompleteScale;
-                //    badge2.color = notDone;
-                    
-                //}
-                //else
-                //{
-                    
-                //    //badge2.scale = 1;
-                //    badge2.color = done;
-                //    badge2.scale += 0.25f;
-                //}
-
-                //if (//Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledInspector == false)
-                //{
-                //    badge3.scale = incompleteScale;
-                //    badge3.color = notDone;
-                //}
-                //else
-                //{
-                //    //badge3.scale = 1;
-                //    badge3.color = done;
-                //    badge3.scale += 0.25f;
-                //}
-
-                //if (//Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledWorker == false)
-                //{
-                //    badge4.scale = incompleteScale;
-                //    badge4.color = notDone;
-                //}
-                //else
-                //{
-                //    //badge4.scale = 1;
-                //    badge4.color = done;
-                //    badge4.scale += 0.25f;
-                //}
-
-                //badge1.visible = true;
-                //badge2.visible = true;
-                //badge3.visible = true;
-                //badge4.visible = true;
-
-
-                FlxG.pauseMp3();
                 
+                FlxG.pauseMp3();
 
                 andre.control = FlxPlatformActor.Controls.none;
                 liselot.control = FlxPlatformActor.Controls.none;
@@ -1038,11 +949,6 @@ namespace Lemonade
             }
             if (FlxG.transition.complete)
             {
-
-                ////Lemonade_Globals.gameProgress[Lemonade_Globals.location+"_"+FlxG.level.ToString()].LevelComplete = true;
-
-                //Lemonade_Globals.writeGameProgressToFile();
-
                 if (FlxG.level != 12)
                 {
                     //FlxG.level++;

@@ -25,14 +25,10 @@ namespace Lemonade
             scale = 2;
 
             tween = new Tweener(0, 2, 0.4f, Bounce.EaseIn);
-            
-
-
         }
 
         override public void update()
         {
-
             text = String.Format("{0:#,###.#}", time);
 
             scale = tween.Position;
