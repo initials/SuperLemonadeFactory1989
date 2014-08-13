@@ -88,6 +88,13 @@ namespace Lemonade
                 //FlxU.solveXCollision(obj, null);
 
             }
+            else if (obj.GetType().ToString() == "Lemonade.Coin")
+            {
+                obj.kill();
+                Lemonade_Globals.coins++;
+                FlxG.play("Lemonade/sfx/cw_sound39");
+
+            }
             else if (obj.GetType().ToString() == "Lemonade.Spike")
             {
                 //Console.WriteLine("Spike overlapp");

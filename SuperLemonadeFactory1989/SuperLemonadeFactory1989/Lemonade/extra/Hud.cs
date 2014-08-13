@@ -26,8 +26,8 @@ namespace Lemonade
 
             setScrollFactors(0, 0);
 
-            addAnimation("andre", new int[] { 0 }, 0, true);
-            addAnimation("liselot", new int[] { 1 }, 0, true);
+            addAnimation("andre", new int[] { 2 }, 0, true);
+            //addAnimation("liselot", new int[] { 1 }, 0, true);
 
             play("andre");
 
@@ -40,7 +40,7 @@ namespace Lemonade
             coinCounter.setFormat(null, 1, Lemonade_Globals.GAMEBOY_COLOR_4, FlxJustification.Left, Lemonade_Globals.GAMEBOY_COLOR_1);
             coinCounter.alignment = FlxJustification.Left;
             coinCounter.setScrollFactors(0, 0);
-            coinCounter.text = Lemonade_Globals.coins.ToString();
+            
 
             tween = new Tweener(4, 12, 1, Quadratic.EaseInOut);
             tween.Start();
@@ -50,6 +50,8 @@ namespace Lemonade
 
         override public void update()
         {
+            coinCounter.text = Lemonade_Globals.coins.ToString();
+
             tween.Update(FlxG.elapsedAsGameTime);
 
             coin.update();

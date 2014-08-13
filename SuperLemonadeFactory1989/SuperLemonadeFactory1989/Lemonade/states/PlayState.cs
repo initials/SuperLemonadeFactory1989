@@ -194,6 +194,10 @@ namespace Lemonade
                 {
                     buildActor("smallCrate", xPos, yPos);
                 }
+                if (item == "390")
+                {
+                    buildActor("coin", xPos, yPos);
+                }
                 if (item == "391")
                 {
                     buildActor("spike_up", xPos, yPos+10);
@@ -296,6 +300,12 @@ namespace Lemonade
                 trampoline = new Trampoline(xPos, yPos);
                 trampolines.add(trampoline);
             }
+            else if (actor == "coin")
+            {
+                Coin coin = new Coin(xPos, yPos, false);
+                hazards.add(coin);
+            }
+
             else if (actor == "largeCrate")
             {
                 largeCrate = new LargeCrate(xPos, yPos);
