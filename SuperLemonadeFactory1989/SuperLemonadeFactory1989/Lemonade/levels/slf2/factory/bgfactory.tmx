@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="50" height="30" tilewidth="20" tileheight="20">
  <tileset firstgid="1" name="tiles_sydney" tilewidth="20" tileheight="20">
-  <image source="../../../../../XNAModeContent/Lemonade/bgtiles_factory.png" width="500" height="500"/>
+  <image source="../../../../../SuperLemonadeFactory1989Content/Lemonade/bgtiles_factory.png" width="500" height="500"/>
   <terraintypes>
    <terrain name="regularBlocks" tile="-1"/>
   </terraintypes>
