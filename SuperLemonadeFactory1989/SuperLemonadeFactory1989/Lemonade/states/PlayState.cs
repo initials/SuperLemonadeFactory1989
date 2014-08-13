@@ -250,34 +250,42 @@ namespace Lemonade
             else if (actor == "liselot")
             {
                 liselot = new Liselot(xPos, yPos);
-                liselot.control = FlxPlatformActor.Controls.none;
+                liselot.control = FlxPlatformActor.Controls.player;
                 liselot.ControllingPlayer = PlayerIndex.One;
                 actors.add(liselot);
             }
             else if (actor == "army")
             {
                 army = new Army(xPos, yPos);
+                army.control = FlxPlatformActor.Controls.player;
+                army.ControllingPlayer = PlayerIndex.One;
                 actors.add(army);
-                army.startPlayingBack();
+                //army.startPlayingBack();
             }
             else if (actor == "chef")
             {
                 chef = new Chef(xPos, yPos);
+                chef.control = FlxPlatformActor.Controls.player;
+                chef.ControllingPlayer = PlayerIndex.One;
                 actors.add(chef);
-                chef.startPlayingBack();
+                //chef.startPlayingBack();
 
             }
             else if (actor == "inspector")
             {
                 inspector = new Inspector(xPos, yPos);
+                inspector.control = FlxPlatformActor.Controls.player;
+                inspector.ControllingPlayer = PlayerIndex.One;
                 actors.add(inspector);
-                inspector.startPlayingBack();
+                //inspector.startPlayingBack();
             }
             else if (actor == "worker")
             {
                 worker = new Worker(xPos, yPos);
+                worker.control = FlxPlatformActor.Controls.player;
+                worker.ControllingPlayer = PlayerIndex.One;
                 actors.add(worker);
-                worker.startPlayingBack();
+                //worker.startPlayingBack();
 
             }
             else if (actor == "trampoline")
@@ -545,27 +553,21 @@ namespace Lemonade
             crateParticle.createSprites(FlxG.Content.Load<Texture2D>("Lemonade/crateShards"), 200, true, 1.0f, 0.65f);
             add(crateParticle);
 
-            follow = new Follower(0, 0);
-            add(follow);
-
-            follow.follow1 = andre;
-            follow.follow2 = liselot;
-            follow.tweenX = new Tweener(andre.x, andre.x, TimeSpan.FromSeconds(0.45f), Linear.EaseNone);
-            follow.tweenY = new Tweener(andre.y, andre.y, TimeSpan.FromSeconds(0.45f), Linear.EaseNone);
-            andre.f = follow;
-
 
             // follow.
             FlxG.followBounds(0,0,FlxG.levelWidth, FlxG.levelHeight);
 
-            FlxG.follow(follow, LERP);
+            if (Lemonade_Globals.location == "factory") FlxG.follow(worker, LERP);
+            if (Lemonade_Globals.location == "management") FlxG.follow(liselot, LERP);
+            if (Lemonade_Globals.location == "military") FlxG.follow(army, LERP);
+            if (Lemonade_Globals.location == "newyork") FlxG.follow(chef, LERP);
+            if (Lemonade_Globals.location == "warehouse") FlxG.follow(andre, LERP);
+            if (Lemonade_Globals.location == "sydney") FlxG.follow(inspector, LERP);
 
             playSong();
 
             currentCharHud = new Hud(5, 5);
             add(currentCharHud);
-
-            andre.liselot = liselot;
 
 
 
@@ -830,22 +832,6 @@ namespace Lemonade
             }
 
             base.update();
-
-
-
-            if (follow.currentFollow == 1)
-            {
-                currentCharHud.play("andre");
-                andre.control = FlxPlatformActor.Controls.player;
-                liselot.control = FlxPlatformActor.Controls.none;
-            }
-            else if (follow.currentFollow == 2)
-            {
-                currentCharHud.play("liselot");
-                andre.control = FlxPlatformActor.Controls.none;
-                liselot.control = FlxPlatformActor.Controls.player;
-
-            }
 
 
 

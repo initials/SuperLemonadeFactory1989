@@ -161,10 +161,7 @@ namespace Lemonade
             dead = true;
 
             piggyBacking = false;
-            liselot.piggyBacking = false;
-            liselot.parent = null;
 
-            //base.kill();
         }
 
     }

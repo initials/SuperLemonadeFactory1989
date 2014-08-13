@@ -17,7 +17,7 @@ namespace Lemonade
             : base(xPos, yPos)
         {
 
-            loadGraphic(FlxG.Content.Load<Texture2D>("Lemonade/tiles_" + Lemonade_Globals.location), true, false, 80, 20);
+            loadGraphic("Lemonade/tiles_" + Lemonade_Globals.location, true, false, 80, 20);
             
             frame = 14;
 
