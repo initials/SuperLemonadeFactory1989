@@ -20,6 +20,7 @@ namespace Lemonade
         public static bool[] isPlayerControlled;
 
         public static Dictionary<string, GameProgress> gameProgress;
+        public static Dictionary<string, Dictionary<string, Vector2>> stateSaver;
 
         public const int DEMO_MODE = 0;
         public const int FULL_MODE = 1;
@@ -42,12 +43,12 @@ namespace Lemonade
 
         public static int coins = 3;
 
-        public static FlxState STATE_FACTORY_STATE;
-        public static FlxState STATE_WAREHOUSE_STATE;
-        public static FlxState STATE_MANAGEMENT_STATE;
-        public static FlxState STATE_NEWYORK_STATE;
-        public static FlxState STATE_MILITARY_STATE;
-        public static FlxState STATE_SYDNEY_STATE;
+        //public static FlxState STATE_FACTORY_STATE;
+        //public static FlxState STATE_WAREHOUSE_STATE;
+        //public static FlxState STATE_MANAGEMENT_STATE;
+        //public static FlxState STATE_NEWYORK_STATE;
+        //public static FlxState STATE_MILITARY_STATE;
+        //public static FlxState STATE_SYDNEY_STATE;
 
         public Lemonade_Globals()
         {

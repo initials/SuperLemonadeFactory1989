@@ -625,9 +625,46 @@ namespace Lemonade
             add(timer);
 
             currentCharHud.time = Lemonade_Globals.timeLeft;
-            
 
 
+            foreach (FlxSprite item in actors.members)
+            {
+                //Lemonade_Globals.stateSaver[Lemonade_Globals.location][item.ToString()] = new Vector2(item.x, item.y);
+
+                try
+                {
+                    item.x = Lemonade_Globals.stateSaver[Lemonade_Globals.location][item.ToString()].X;
+                    item.y = Lemonade_Globals.stateSaver[Lemonade_Globals.location][item.ToString()].Y;
+                }
+                catch (Exception)
+                {
+                    
+                }
+
+
+
+            }
+            int count = 0;
+            foreach (FlxSprite item in hazards.members)
+            {
+
+                try
+                {
+                    //Lemonade_Globals.stateSaver[Lemonade_Globals.location][item.ToString() + count.ToString()] = new Vector2(item.x, item.y);
+                    if (item.ToString().StartsWith("Lemonade.Coin"))
+                    {
+                        item.x = Lemonade_Globals.stateSaver[Lemonade_Globals.location][item.ToString() + count.ToString()].X;
+                        item.y = Lemonade_Globals.stateSaver[Lemonade_Globals.location][item.ToString() + count.ToString()].Y;
+                    }
+
+                    count++;
+                }
+                catch (Exception)
+                {
+                    
+                }
+
+            }
 
 
 
@@ -988,45 +1025,74 @@ namespace Lemonade
 
             Lemonade_Globals.timeLeft = Lemonade_Globals.totalTimeAvailable;
 
+            foreach (FlxSprite item in actors.members)
+            {
+                Lemonade_Globals.stateSaver[Lemonade_Globals.location][item.ToString()] = new Vector2(item.x, item.y);
+
+                
+                //Lemonade_Globals.stateSaver[Lemonade_Globals.location].Add(item.ToString(), new Vector2(item.x, item.y));
+            }
+            int count = 0;
+            foreach (FlxSprite item in hazards.members)
+            {
+                //Lemonade_Globals.stateSaver[Lemonade_Globals.location].Add(item.ToString() + count.ToString(), new Vector2(item.x, item.y));
+                Lemonade_Globals.stateSaver[Lemonade_Globals.location][item.ToString() + count.ToString()] = new Vector2(item.x, item.y);
+
+
+                count++;
+            }
+
+            foreach (var item in Lemonade_Globals.stateSaver[Lemonade_Globals.location])
+            {
+                Console.WriteLine(item.Key + " " + item.Value);
+
+            }
+            
+
 
 
             int loc = (int)FlxU.random(0, 6);
             if (loc == 0)
             {
                 Lemonade_Globals.location = "sydney";
-                FlxG._game.switchState(Lemonade_Globals.STATE_SYDNEY_STATE);
+                //FlxG._game.switchState(Lemonade_Globals.STATE_SYDNEY_STATE);
             }
             else if (loc == 1)
             {
                 Lemonade_Globals.location = "newyork";
                 //FlxG.state = Lemonade_Globals.STATE_NEWYORK_STATE;
-                FlxG._game.switchState(Lemonade_Globals.STATE_NEWYORK_STATE);
+                //FlxG._game.switchState(Lemonade_Globals.STATE_NEWYORK_STATE);
             }
             else if (loc == 2)
             {
                 Lemonade_Globals.location = "military";
                 //FlxG.state = Lemonade_Globals.STATE_MILITARY_STATE;
-                FlxG._game.switchState(Lemonade_Globals.STATE_MILITARY_STATE);
+                //FlxG._game.switchState(Lemonade_Globals.STATE_MILITARY_STATE);
             }
             else if (loc == 3)
             {
                 Lemonade_Globals.location = "warehouse";
                 //FlxG.state = Lemonade_Globals.STATE_WAREHOUSE_STATE;
-                FlxG._game.switchState(Lemonade_Globals.STATE_WAREHOUSE_STATE);
+                //FlxG._game.switchState(Lemonade_Globals.STATE_WAREHOUSE_STATE);
             }
             else if (loc == 4)
             {
                 Lemonade_Globals.location = "factory";
                 //FlxG.state = Lemonade_Globals.STATE_FACTORY_STATE;
-                FlxG._game.switchState(Lemonade_Globals.STATE_FACTORY_STATE);
+                //FlxG._game.switchState(Lemonade_Globals.STATE_FACTORY_STATE);
             }
             else
             {
                 Lemonade_Globals.location = "management";
                 //FlxG.state = Lemonade_Globals.STATE_MANAGEMENT_STATE;
-                FlxG._game.switchState(Lemonade_Globals.STATE_MANAGEMENT_STATE);
+                //FlxG._game.switchState(Lemonade_Globals.STATE_MANAGEMENT_STATE);
             }
             Console.WriteLine("Location: {0} {1}", Lemonade_Globals.location, loc);
+
+
+
+            FlxG.state = new PlayState();
+
             return;
         }
 

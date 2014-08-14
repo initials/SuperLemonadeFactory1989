@@ -210,17 +210,27 @@ namespace Lemonade
                 
                 FlxG.level = 1 ;
 
-                Lemonade_Globals.STATE_FACTORY_STATE = new PlayState();
-                Lemonade_Globals.STATE_MANAGEMENT_STATE = new PlayState();
-                Lemonade_Globals.STATE_MILITARY_STATE = new PlayState();
-                Lemonade_Globals.STATE_NEWYORK_STATE = new PlayState();
-                Lemonade_Globals.STATE_SYDNEY_STATE = new PlayState();
-                Lemonade_Globals.STATE_WAREHOUSE_STATE = new PlayState();
+                //Lemonade_Globals.STATE_FACTORY_STATE = new PlayState();
+                //Lemonade_Globals.STATE_MANAGEMENT_STATE = new PlayState();
+                //Lemonade_Globals.STATE_MILITARY_STATE = new PlayState();
+                //Lemonade_Globals.STATE_NEWYORK_STATE = new PlayState();
+                //Lemonade_Globals.STATE_SYDNEY_STATE = new PlayState();
+                //Lemonade_Globals.STATE_WAREHOUSE_STATE = new PlayState();
 
+                Lemonade_Globals.stateSaver = new Dictionary<string, Dictionary<string, Vector2>> 
+                {  
+                    {"newyork", new Dictionary<string, Vector2>()},
+                    {"sydney", new Dictionary<string, Vector2>()},
+                    {"military", new Dictionary<string, Vector2>()},
+                    {"warehouse", new Dictionary<string, Vector2>()},
+                    {"factory", new Dictionary<string, Vector2>()},
+                    {"management", new Dictionary<string, Vector2>()},
+
+                };
 
                 Lemonade_Globals.coins = 0;
                 Lemonade_Globals.timeLeft  = Lemonade_Globals.totalTimeAvailable = 30.1f;
-                FlxG.state = Lemonade_Globals.STATE_NEWYORK_STATE;
+                FlxG.state = new PlayState();
 				#endif
                 return;
             }
