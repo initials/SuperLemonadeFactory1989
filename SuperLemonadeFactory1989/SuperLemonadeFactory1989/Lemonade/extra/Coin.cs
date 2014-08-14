@@ -13,6 +13,8 @@ namespace Lemonade
     class Coin : FlxSprite
     {
         private FlxEmitter fanfare;
+        private XNATweener.Tweener tween;
+        private XNATweener.Tweener tween2;
 
         public Coin(int xPos, int yPos, bool Outline)
             : base(xPos, yPos)
@@ -36,10 +38,19 @@ namespace Lemonade
             fanfare.gravity = 5;
             fanfare.delay = 3.0f;
 
+            tween = new XNATweener.Tweener(-25, 25, FlxU.random(0.8f,1.2f), XNATweener.Quadratic.EaseInOut);
+            tween.PingPong = true;
+            tween.Start();
+
+
         }
 
         override public void update()
         {
+            velocity.Y = tween.Position;
+
+            tween.Update(FlxG.elapsedAsGameTime);
+
             fanfare.update();
             base.update();
         }

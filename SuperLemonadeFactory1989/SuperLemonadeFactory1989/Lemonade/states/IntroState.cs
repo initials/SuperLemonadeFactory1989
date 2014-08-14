@@ -18,6 +18,8 @@ namespace Lemonade
         FlxText credits;
         FlxText instruction;
         Tweener tween;
+        FlxGroup rain;
+        FlxEmitter splashes;
 
         override public void create()
         {
@@ -114,6 +116,25 @@ namespace Lemonade
 
             //FlxG.play("Lemonade/sfx/cw_sound15", 0.5f, false);
 
+            rain = new FlxGroup();
+            for (int i = 0; i < 150; i++)
+            {
+                FlxSprite rainDrop = new FlxSprite((FlxU.random()* FlxG.width), -200 + (FlxU.random() * 1000));
+                rainDrop.loadGraphic("Lemonade/rain", true, false, 2, 2);
+                rainDrop.frame = (int)FlxU.random(0, 6);
+                rainDrop.velocity.Y = FlxU.random(350, 400);
+                rain.add(rainDrop);
+            }
+            add(rain);
+
+            splashes = new FlxEmitter();
+            splashes.createSprites("Lemonade/rain", 150, true, 0.0f, 0.0f);
+            splashes.setXSpeed(-25, 25);
+            splashes.setYSpeed(-30, 0);
+            splashes.gravity = 1.0f;
+            add(splashes);
+
+
 
         }
 
@@ -160,7 +181,16 @@ namespace Lemonade
 
 
 
+            foreach (FlxSprite item in rain.members)
+            {
+                if (item.y > 2000)
+                {
+                    splashes.at(item);
+                    splashes.start(true, 0.0f, 10);
 
+                    item.y = 1200;
+                }
+            }
 
 
 
