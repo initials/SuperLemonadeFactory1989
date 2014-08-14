@@ -96,7 +96,7 @@ namespace Lemonade
             credits.visible = false;
             add(credits);
 
-            instruction = new FlxText(0, FlxG.height / 1.3f, FlxG.width, "Press SPACE to Play");
+            instruction = new FlxText(0, FlxG.height / 1.3f, FlxG.width, "Press X to Continue");
             instruction.setFormat(FlxG.Content.Load<SpriteFont>("Lemonade/SMALL_PIXEL"), 2, Lemonade_Globals.GAMEBOY_COLOR_4, FlxJustification.Center, Lemonade_Globals.GAMEBOY_COLOR_1);
             instruction.setScrollFactors(0, 0);
             instruction.visible = false;
@@ -182,7 +182,7 @@ namespace Lemonade
             }
 
             if (((follower.y > int.MaxValue && follower.x == 0) || 
-                (FlxG.keys.justPressed(Keys.Space) && follower.y > 100) || 
+                (FlxG.keys.justPressed(Keys.X) && follower.y > 100) || 
                 (FlxG.gamepads.isNewButtonPress(Buttons.A) && follower.y > 100) ||  (FlxControl.ACTIONJUSTPRESSED && follower.y > 100)) 
                 && (FlxG.transition.members[0] as FlxSprite).scale < 0.001f )
             {
@@ -196,22 +196,31 @@ namespace Lemonade
 				#endif
 				#if !__ANDROID__
 
-                //int loc = (int)FlxU.random(0, 6);
-                //if (loc == 0) Lemonade_Globals.location = "sydney";
-                //else if (loc == 1) Lemonade_Globals.location = "newyork";
-                //else if (loc == 2) Lemonade_Globals.location = "military";
-                //else if (loc == 3) Lemonade_Globals.location = "warehouse";
-                //else if (loc == 4) Lemonade_Globals.location = "factory";
-                //else Lemonade_Globals.location = "management";
-                //Console.WriteLine("Location: {0} {1}", Lemonade_Globals.location, loc);
+                int loc = (int)FlxU.random(0, 6);
+                if (loc == 0) Lemonade_Globals.location = "sydney";
+                else if (loc == 1) Lemonade_Globals.location = "newyork";
+                else if (loc == 2) Lemonade_Globals.location = "military";
+                else if (loc == 3) Lemonade_Globals.location = "warehouse";
+                else if (loc == 4) Lemonade_Globals.location = "factory";
+                else Lemonade_Globals.location = "management";
+                Console.WriteLine("Location: {0} {1}", Lemonade_Globals.location, loc);
 
-                Lemonade_Globals.location = "factory";
+                //Lemonade_Globals.location = "factory";
+                
+                
                 FlxG.level = 1 ;
+
+                Lemonade_Globals.STATE_FACTORY_STATE = new PlayState();
+                Lemonade_Globals.STATE_MANAGEMENT_STATE = new PlayState();
+                Lemonade_Globals.STATE_MILITARY_STATE = new PlayState();
+                Lemonade_Globals.STATE_NEWYORK_STATE = new PlayState();
+                Lemonade_Globals.STATE_SYDNEY_STATE = new PlayState();
+                Lemonade_Globals.STATE_WAREHOUSE_STATE = new PlayState();
 
 
                 Lemonade_Globals.coins = 0;
-                Lemonade_Globals.timeLeft = 6.5f;
-				FlxG.state = new PlayState();
+                Lemonade_Globals.timeLeft  = Lemonade_Globals.totalTimeAvailable = 30.1f;
+                FlxG.state = Lemonade_Globals.STATE_NEWYORK_STATE;
 				#endif
                 return;
             }

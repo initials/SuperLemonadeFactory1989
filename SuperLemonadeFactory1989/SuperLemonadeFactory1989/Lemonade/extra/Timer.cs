@@ -29,7 +29,7 @@ namespace Lemonade
 
         override public void update()
         {
-            text = String.Format("{0:#,###.#}", time);
+            //text = String.Format("{0:#,###.#}", time);
 
             scale = tween.Position;
 

@@ -18,6 +18,8 @@ namespace Lemonade
         public FlxText coinCounter;
         private XNATweener.Tweener tween;
 
+        public FlxGroup powerBar;
+        public float time = 0.0f;
 
         public Hud(int xPos, int yPos)
             : base(xPos, yPos)
@@ -46,6 +48,17 @@ namespace Lemonade
             tween.Start();
             tween.PingPong = true;
 
+            powerBar = new FlxGroup();
+
+            for (int i = 0; i < 30; i++)
+            {
+                FlxSprite bar = new FlxSprite(5 + (i * 10), FlxG.height - 10);
+                bar.createGraphic(8, 8, Lemonade_Globals.GAMEBOY_COLOR_4);
+                bar.setScrollFactors(0, 0);
+                powerBar.add(bar);
+            }
+
+
         }
 
         override public void update()
@@ -60,8 +73,30 @@ namespace Lemonade
             coin.y = tween.Position;
             //coinCounter.y = tween.Position;
 
+            int count = 0;
+            foreach (FlxSprite item in powerBar.members)
+            {
+                if (count > Lemonade_Globals.totalTimeAvailable)
+                {
+                    item.visible = false;
+                }
+                if (count > time)
+                {
+                    item.color = Lemonade_Globals.GAMEBOY_COLOR_4;
+                }
+                else 
+                {
+                    item.color = Lemonade_Globals.GAMEBOY_COLOR_1;
+                }
+
+                item.update();
+                count++;
+            }
+            
 
             base.update();
+
+            time -= FlxG.elapsed;
 
         }
         public override void render(SpriteBatch spriteBatch)
@@ -71,6 +106,12 @@ namespace Lemonade
             coinCounter.render(spriteBatch);
 
             base.render(spriteBatch);
+
+            foreach (FlxSprite item in powerBar.members)
+            {
+                item.render(spriteBatch);
+            }
+
         }
 
     }

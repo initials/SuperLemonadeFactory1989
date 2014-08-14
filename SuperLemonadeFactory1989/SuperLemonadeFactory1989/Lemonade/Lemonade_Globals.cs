@@ -26,6 +26,7 @@ namespace Lemonade
         public const int PIRATE_MODE = 2;
 
         public static float timeLeft = 30.0f;
+        public static float totalTimeAvailable = 30.0f;
 
         public static int PAID_VERSION;
 
@@ -40,6 +41,13 @@ namespace Lemonade
         public static Color GAMEBOY_COLOR_4 = new Color(199, 207, 162);
 
         public static int coins = 3;
+
+        public static FlxState STATE_FACTORY_STATE;
+        public static FlxState STATE_WAREHOUSE_STATE;
+        public static FlxState STATE_MANAGEMENT_STATE;
+        public static FlxState STATE_NEWYORK_STATE;
+        public static FlxState STATE_MILITARY_STATE;
+        public static FlxState STATE_SYDNEY_STATE;
 
         public Lemonade_Globals()
         {

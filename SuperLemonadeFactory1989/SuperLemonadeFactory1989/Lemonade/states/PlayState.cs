@@ -624,6 +624,7 @@ namespace Lemonade
             timer.time = Lemonade_Globals.timeLeft;
             add(timer);
 
+            currentCharHud.time = Lemonade_Globals.timeLeft;
             
 
 
@@ -722,39 +723,20 @@ namespace Lemonade
                     }
                     else
                     {
-                        FlxG.level = (int)FlxU.random(1, 12) ;
-                        Lemonade_Globals.timeLeft = timer.time;
-
-                        FlxG.write(FlxG.level.ToString() + " LEVEL STARTING");
-                        FlxG.state = new PlayState();
+                        goToRandomLevel();
 
                         return;
                     }
                 }
                 else if (FlxG.keys.justPressed(Keys.F7) && FlxG.debug == true)
                 {
-                    Lemonade_Globals.restartMusic = false;
-                    FlxG.level--;
-                    FlxG.write(FlxG.level.ToString() + " LEVEL STARTING");
-                    Lemonade_Globals.timeLeft = timer.time;
-                    FlxG.state = new PlayState();
+                    goToRandomLevel();
 
                     return;
                 }
                 else if (FlxG.keys.justPressed(Keys.F8) && FlxG.debug == true)
                 {
-                    int loc = (int)FlxU.random(0, 6);
-                    if (loc == 0) Lemonade_Globals.location = "sydney";
-                    else if (loc == 1) Lemonade_Globals.location = "newyork";
-                    else if (loc == 2) Lemonade_Globals.location = "military";
-                    else if (loc == 3) Lemonade_Globals.location = "warehouse";
-                    else if (loc == 4) Lemonade_Globals.location = "factory";
-                    else Lemonade_Globals.location = "management";
-                    Console.WriteLine("Location: {0} {1}", Lemonade_Globals.location, loc);
-
-                    Lemonade_Globals.restartMusic = false;
-                    Lemonade_Globals.timeLeft = timer.time;
-                    FlxG.state = new PlayState();
+                    goToRandomLevel();
                     return;
                 }
             }
@@ -782,18 +764,14 @@ namespace Lemonade
 
             //FlxU.collideRamp(actors, ramps);
 
-            if (timer.time < 0.0f)
+            if (timer.time < 0.0f )
             {
-                int loc = (int)FlxU.random(0, 6);
-                if (loc == 0) Lemonade_Globals.location = "sydney";
-                else if (loc == 1) Lemonade_Globals.location = "newyork";
-                else if (loc == 2) Lemonade_Globals.location = "military";
-                else if (loc == 3) Lemonade_Globals.location = "warehouse";
-                else if (loc == 4) Lemonade_Globals.location = "factory";
-                else Lemonade_Globals.location = "management";
-                Console.WriteLine("Location: {0} {1}", Lemonade_Globals.location, loc);
 
-                FlxG.state = new PlayState();
+
+                if (Lemonade_Globals.totalTimeAvailable < 0.9f)
+                    FlxG.state = new DeathState();
+                else
+                    goToRandomLevel();
             }
 
 
@@ -958,16 +936,7 @@ namespace Lemonade
                 {
                     //FlxG.level++;
 
-                    int loc = (int)FlxU.random(0, 6);
-                    if (loc == 0) Lemonade_Globals.location = "sydney";
-                    else if (loc == 1) Lemonade_Globals.location = "newyork";
-                    else if (loc == 2) Lemonade_Globals.location = "military";
-                    else if (loc == 3) Lemonade_Globals.location = "warehouse";
-                    else if (loc == 4) Lemonade_Globals.location = "factory";
-                    else Lemonade_Globals.location = "management";
-                    Console.WriteLine("Location: {0} {1}", Lemonade_Globals.location, loc);
-
-
+                    goToRandomLevel();
                     
                     Lemonade_Globals.restartMusic = false;
 
@@ -983,10 +952,12 @@ namespace Lemonade
 					} else {
 
                         Lemonade_Globals.timeLeft = timer.time;
-
-						FlxG.state = new PlayState ();
+						
 						FlxG.transition.resetAndStop ();
-						return;
+                        
+                        goToRandomLevel();
+
+                        return;
 					}
                 }
                 if (FlxG.level == 12 && Lemonade_Globals.game_version == 2)
@@ -1009,6 +980,55 @@ namespace Lemonade
             }
         }
 
+        public void goToRandomLevel()
+        {
+            Lemonade_Globals.restartMusic = false;
+
+            Lemonade_Globals.totalTimeAvailable -= 2;
+
+            Lemonade_Globals.timeLeft = Lemonade_Globals.totalTimeAvailable;
+
+
+
+            int loc = (int)FlxU.random(0, 6);
+            if (loc == 0)
+            {
+                Lemonade_Globals.location = "sydney";
+                FlxG._game.switchState(Lemonade_Globals.STATE_SYDNEY_STATE);
+            }
+            else if (loc == 1)
+            {
+                Lemonade_Globals.location = "newyork";
+                //FlxG.state = Lemonade_Globals.STATE_NEWYORK_STATE;
+                FlxG._game.switchState(Lemonade_Globals.STATE_NEWYORK_STATE);
+            }
+            else if (loc == 2)
+            {
+                Lemonade_Globals.location = "military";
+                //FlxG.state = Lemonade_Globals.STATE_MILITARY_STATE;
+                FlxG._game.switchState(Lemonade_Globals.STATE_MILITARY_STATE);
+            }
+            else if (loc == 3)
+            {
+                Lemonade_Globals.location = "warehouse";
+                //FlxG.state = Lemonade_Globals.STATE_WAREHOUSE_STATE;
+                FlxG._game.switchState(Lemonade_Globals.STATE_WAREHOUSE_STATE);
+            }
+            else if (loc == 4)
+            {
+                Lemonade_Globals.location = "factory";
+                //FlxG.state = Lemonade_Globals.STATE_FACTORY_STATE;
+                FlxG._game.switchState(Lemonade_Globals.STATE_FACTORY_STATE);
+            }
+            else
+            {
+                Lemonade_Globals.location = "management";
+                //FlxG.state = Lemonade_Globals.STATE_MANAGEMENT_STATE;
+                FlxG._game.switchState(Lemonade_Globals.STATE_MANAGEMENT_STATE);
+            }
+            Console.WriteLine("Location: {0} {1}", Lemonade_Globals.location, loc);
+            return;
+        }
 
         protected bool exitOverlap(object Sender, FlxSpriteCollisionEvent e)
         {
