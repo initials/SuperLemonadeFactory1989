@@ -119,9 +119,9 @@ namespace Lemonade
 
         override public void update()
         {
-            if (FlxG.keys.Q)
+            if (FlxG.keys.justPressed(Keys.Q))
             {
-                FlxG.bloom.Visible = true;
+                FlxG.bloom.Visible = !FlxG.bloom.Visible;
                 FlxG.bloom.usePresets = true;
 
                 follower.velocity.Y += 1450;

@@ -59,7 +59,6 @@ Content\oga\GoldCoin.xnb
 Content\buttons\Map360Gameboy.xnb
 Content\buttons\MapOuyaGameboy.xnb
 Content\buttons\MapWhiteGameboy.xnb
-Content\fx\BadTV.xnb
 Content\Lemonade\bgtiles_factory.xnb
 Content\Lemonade\bgtiles_management.xnb
 Content\Lemonade\bgtiles_military.xnb
@@ -407,7 +406,6 @@ Content\oga\GoldCoin.xnb
 Content\buttons\Map360Gameboy.xnb
 Content\buttons\MapOuyaGameboy.xnb
 Content\buttons\MapWhiteGameboy.xnb
-Content\fx\BadTV.xnb
 GAMESETTINGS.txt
 Lemonade\characters\control\army.txt
 Lemonade\characters\control\chef.txt
