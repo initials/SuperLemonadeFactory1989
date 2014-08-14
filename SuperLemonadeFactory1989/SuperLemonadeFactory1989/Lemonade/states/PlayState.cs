@@ -688,7 +688,7 @@ namespace Lemonade
             {
                 if (Lemonade_Globals.location == "sydney")
                 {
-                    FlxG.playMp3("Lemonade/music/level1", 0.5f);
+                    FlxG.playMp3("Lemonade/music/level3", 0.5f);
                 }
                 else if (Lemonade_Globals.location == "newyork")
                 {
@@ -696,11 +696,11 @@ namespace Lemonade
                 }
                 else if (Lemonade_Globals.location == "military")
                 {
-                    FlxG.playMp3("Lemonade/music/level1", 0.5f);
+                    FlxG.playMp3("Lemonade/music/level2", 0.5f);
                 }
                 else
                 {
-                    FlxG.playMp3("Lemonade/music/level1", 0.5f);
+                    FlxG.playMp3("Lemonade/music/level3", 0.5f);
                 }
             }
 

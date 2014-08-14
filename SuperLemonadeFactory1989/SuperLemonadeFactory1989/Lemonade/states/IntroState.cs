@@ -105,14 +105,14 @@ namespace Lemonade
 
             //rgb(237, 0, 142)
 
-            tween = new Tweener(FlxG.height / 1.3f, FlxG.height / 1.2f, TimeSpan.FromSeconds(1.0f), XNATweener.Cubic.EaseInOut);
+            tween = new Tweener(FlxG.height / 1.3f, FlxG.height / 1.2f, TimeSpan.FromSeconds(0.67f), XNATweener.Cubic.EaseInOut);
             tween.PingPong = true;
             tween.Start();
 
             // play some music
-            FlxG.playMp3("Lemonade/music/Lemonade1989Theme", 0.75f);
+            FlxG.playMp3("Lemonade/music/level2", 0.75f);
 
-            FlxG.play("Lemonade/sfx/cw_sound15", 0.5f, false);
+            //FlxG.play("Lemonade/sfx/cw_sound15", 0.5f, false);
 
 
         }
@@ -121,8 +121,47 @@ namespace Lemonade
         {
             if (FlxG.keys.Q)
             {
+                FlxG.bloom.Visible = true;
+                FlxG.bloom.usePresets = true;
+
                 follower.velocity.Y += 1450;
             }
+            if (FlxG.keys.ONE)
+            {
+                FlxG.bloom.Settings = BloomPostprocess.BloomSettings.PresetSettings[1];
+            }
+            if (FlxG.keys.TWO)
+            {
+                FlxG.bloom.Settings = BloomPostprocess.BloomSettings.PresetSettings[2];
+            }
+            if (FlxG.keys.THREE)
+            {
+                FlxG.bloom.Settings = BloomPostprocess.BloomSettings.PresetSettings[3];
+            }
+            if (FlxG.keys.FOUR)
+            {
+                FlxG.bloom.Settings = BloomPostprocess.BloomSettings.PresetSettings[4];
+            }
+            if (FlxG.keys.FIVE)
+            {
+                FlxG.bloom.Settings = BloomPostprocess.BloomSettings.PresetSettings[5];
+            }
+            if (FlxG.keys.SIX)
+            {
+                FlxG.bloom.Settings = BloomPostprocess.BloomSettings.PresetSettings[6];
+            }
+            if (FlxG.keys.SEVEN)
+            {
+                FlxG.bloom.Settings = BloomPostprocess.BloomSettings.PresetSettings[7];
+            }
+
+
+
+
+
+
+
+
 
 
 
@@ -138,9 +177,6 @@ namespace Lemonade
 
             tween.Update(FlxG.elapsedAsGameTime);
             instruction.y = tween.Position;
-
-
-
 
             if (follower.y > 2100 )
             {

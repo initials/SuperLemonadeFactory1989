@@ -59,6 +59,7 @@ Content\oga\GoldCoin.xnb
 Content\buttons\Map360Gameboy.xnb
 Content\buttons\MapOuyaGameboy.xnb
 Content\buttons\MapWhiteGameboy.xnb
+Content\fx\BadTV.xnb
 Content\Lemonade\bgtiles_factory.xnb
 Content\Lemonade\bgtiles_management.xnb
 Content\Lemonade\bgtiles_military.xnb
@@ -175,6 +176,8 @@ Content\Lemonade\GoldCoinGameboyWithOutline.xnb
 Content\Lemonade\SMALL_PIXEL.xnb
 Content\Lemonade\music\Lemonade1989Theme.xnb
 Content\Lemonade\music\level1.xnb
+Content\Lemonade\music\level2.xnb
+Content\Lemonade\music\level3.xnb
 Content\Lemonade\sfx\cw_sound01.xnb
 Content\Lemonade\sfx\cw_sound02.xnb
 Content\Lemonade\sfx\cw_sound03.xnb
@@ -222,6 +225,8 @@ Content\Lemonade\sfx\cw_sound44.xnb
 Content\Lemonade\sfx\cw_sound45.xnb
 Content\Lemonade\music\Lemonade1989Theme.wma
 Content\Lemonade\music\level1.wma
+Content\Lemonade\music\level2.wma
+Content\Lemonade\music\level3.wma
 OgmoEditor2\OgmoEditor2Project.oep
 OgmoEditor2\SportsGround.oel
 Lemonade\levels\slf2\sydney\sydney_level1.tmx
@@ -402,6 +407,7 @@ Content\oga\GoldCoin.xnb
 Content\buttons\Map360Gameboy.xnb
 Content\buttons\MapOuyaGameboy.xnb
 Content\buttons\MapWhiteGameboy.xnb
+Content\fx\BadTV.xnb
 GAMESETTINGS.txt
 Lemonade\characters\control\army.txt
 Lemonade\characters\control\chef.txt

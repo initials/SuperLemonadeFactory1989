@@ -82,10 +82,15 @@ namespace Lemonade
                 }
                 if (count > time)
                 {
+                    if (item.color == Lemonade_Globals.GAMEBOY_COLOR_1 && count < 4)
+                    {
+                        FlxG.play("Lemonade/sfx/cw_sound09");
+                    }
                     item.color = Lemonade_Globals.GAMEBOY_COLOR_4;
                 }
                 else 
                 {
+
                     item.color = Lemonade_Globals.GAMEBOY_COLOR_1;
                 }
 
