@@ -12,6 +12,7 @@ namespace Lemonade
 {
     class Coin : FlxSprite
     {
+        private FlxEmitter fanfare;
 
         public Coin(int xPos, int yPos, bool Outline)
             : base(xPos, yPos)
@@ -28,11 +29,25 @@ namespace Lemonade
             height = 16;
             setOffset(8, 8);
 
+            fanfare = new FlxEmitter();
+            fanfare.createSprites("Lemonade/bubble",8,true,0.0f,0.0f);
+            fanfare.setXSpeed(-100, 100);
+            fanfare.setYSpeed(-100, 100);
+            fanfare.gravity = 5;
+            fanfare.delay = 3.0f;
+
         }
 
         override public void update()
         {
+            fanfare.update();
             base.update();
+        }
+
+        public override void render(SpriteBatch spriteBatch)
+        {
+            fanfare.render(spriteBatch);
+            base.render(spriteBatch);
         }
 
         public override void overlapped(FlxObject obj)
@@ -42,9 +57,13 @@ namespace Lemonade
 
         public override void kill()
         {
+            fanfare.at(this);
+            fanfare.start(true,1.0f,20);
+
             x = -100;
             y = -100;
-            base.kill();
+
+            //base.kill();
         }
     }
 }

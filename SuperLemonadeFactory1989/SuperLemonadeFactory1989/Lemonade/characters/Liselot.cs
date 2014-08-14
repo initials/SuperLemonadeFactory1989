@@ -12,9 +12,7 @@ namespace Lemonade
 {
     public class Liselot : Actor
     {
-
         public FlxObject parent;
-        private bool piggybackingAtTimeOfDeath;
 
         public Liselot(int xPos, int yPos)
             : base(xPos, yPos)
@@ -56,10 +54,6 @@ namespace Lemonade
             _runningMax = maxVelocity.X;
 
             parent = null;
-            piggybackingAtTimeOfDeath = false;
-
-            
-
 
         }
 
@@ -188,16 +182,6 @@ namespace Lemonade
 
         public override void kill()
         {
-            //Console.WriteLine("piggyBacking {0} {1} control {2}", piggyBacking,piggybackingAtTimeOfDeath, control.ToString());
-
-            if ((piggyBacking == true || control == Controls.none) && dead==false)
-            {
-                piggybackingAtTimeOfDeath = true;
-            }
-            else
-            {
-                piggybackingAtTimeOfDeath = false;
-            }
             control = Controls.none;
             dead = true;
             //base.kill();

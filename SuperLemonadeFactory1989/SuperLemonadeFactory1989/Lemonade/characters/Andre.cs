@@ -11,9 +11,6 @@ namespace Lemonade
 {
     class Andre : Actor
     {
-
-        public Follower f;
-
         public Andre(int xPos, int yPos)
             : base(xPos, yPos)
         {
@@ -119,10 +116,6 @@ namespace Lemonade
                 {
                     FlxG.play("Lemonade/sfx/cw_sound34", 0.8f, false);
 
-                    //FlxG.follow(this, 11.0f);
-                    f.currentFollow = 1;
-
-                    Console.WriteLine("Piggybacking is GO!");
                     control = Controls.player;
                     piggyBacking = true;
                     ((Liselot)(obj)).piggyBacking = true;

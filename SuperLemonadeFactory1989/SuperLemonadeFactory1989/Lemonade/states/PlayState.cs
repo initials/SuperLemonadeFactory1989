@@ -66,7 +66,6 @@ namespace Lemonade
         FlxSprite badge3;
         FlxSprite badge4;
 
-        int currentSelected;
         Color notDone;
         Color done;
 
@@ -534,12 +533,16 @@ namespace Lemonade
 
             add(trampolines);
             add(levelItems);
-            add(hazards);
+            
             add(ramps);
             add(smallCrates);
             add(movingPlatforms);
             add(actors);
             add(collidableTileblocks);
+
+            add(hazards);
+
+            
             
 
             //set up a little bubble particle system.
@@ -651,7 +654,7 @@ namespace Lemonade
                 try
                 {
                     //Lemonade_Globals.stateSaver[Lemonade_Globals.location][item.ToString() + count.ToString()] = new Vector2(item.x, item.y);
-                    if (item.ToString().StartsWith("Lemonade.Coin"))
+                    if (item.ToString().StartsWith("Lemonade. Coin"))
                     {
                         item.x = Lemonade_Globals.stateSaver[Lemonade_Globals.location][item.ToString() + count.ToString()].X;
                         item.y = Lemonade_Globals.stateSaver[Lemonade_Globals.location][item.ToString() + count.ToString()].Y;

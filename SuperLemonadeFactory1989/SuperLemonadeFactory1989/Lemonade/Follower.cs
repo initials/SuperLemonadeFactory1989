@@ -12,10 +12,6 @@ namespace Lemonade
 {
     class Follower : FlxSprite
     {
-
-        public FlxSprite follow1;
-        public FlxSprite follow2;
-
         public Tweener tweenX;
         public Tweener tweenY;
 
@@ -43,21 +39,6 @@ namespace Lemonade
 
             x = tweenX.Position;
             y = tweenY.Position;
-
-            if (!tweenX.Running)
-            {
-                if (currentFollow == 1)
-                {
-                    x = follow1.x;
-                    y = follow1.y;
-                }
-                if (currentFollow == 2)
-                {
-                    x = follow2.x;
-                    y = follow2.y;
-                }
-
-            }
 
             base.update();
 
