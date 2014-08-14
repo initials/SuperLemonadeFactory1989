@@ -39,5 +39,12 @@ namespace Lemonade
         {
             base.overlapped(obj);
         }
+
+        public override void kill()
+        {
+            x = -100;
+            y = -100;
+            base.kill();
+        }
     }
 }
