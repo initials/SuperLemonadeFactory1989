@@ -71,7 +71,7 @@ namespace Lemonade
         Color notDone;
         Color done;
 
-
+        private LevelIntro levelIntro;
 
         private float transitionPause;
 
@@ -676,12 +676,15 @@ namespace Lemonade
             }
 
 
-            //LevelIntro levelIntro = new LevelIntro();
-            //add(levelIntro);
+            levelIntro = new LevelIntro();
+            add(levelIntro);
+
+            levelIntro.bT1.text = Lemonade_Globals.location;
+            levelIntro.bT2.text = actors.members[0].ToString().Split('.')[1];
 
             //FlxG.transition.startTweenOut();
-            FlxG.transition.startFadeIn(0.05f);
-
+            //FlxG.transition.startFadeIn(0.05f);
+            
 
         }
 
