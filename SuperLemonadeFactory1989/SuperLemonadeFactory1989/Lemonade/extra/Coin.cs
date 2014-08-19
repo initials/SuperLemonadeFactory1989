@@ -74,6 +74,8 @@ namespace Lemonade
             x = -100;
             y = -100;
 
+            this.dead = true;
+
             //base.kill();
         }
     }

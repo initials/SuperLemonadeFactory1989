@@ -30,6 +30,8 @@ namespace Lemonade
         private FlxGroup ramps;
         private FlxGroup smallCrates;
         private FlxGroup movingPlatforms;
+        private FlxGroup coins;
+
         private Timer timer;
 
         /// <summary>
@@ -68,6 +70,8 @@ namespace Lemonade
 
         Color notDone;
         Color done;
+
+
 
         private float transitionPause;
 
@@ -302,7 +306,7 @@ namespace Lemonade
             else if (actor == "coin")
             {
                 Coin coin = new Coin(xPos, yPos, false);
-                hazards.add(coin);
+                coins.add(coin);
             }
 
             else if (actor == "largeCrate")
@@ -499,6 +503,8 @@ namespace Lemonade
             movingPlatforms = new FlxGroup();
             hazards = new FlxGroup();
             collidableTileblocks = new FlxGroup();
+            coins = new FlxGroup();
+
 
             //Level Adjust
 
@@ -541,7 +547,7 @@ namespace Lemonade
             add(collidableTileblocks);
 
             add(hazards);
-
+            add(coins);
             
             
 
@@ -654,7 +660,7 @@ namespace Lemonade
                 try
                 {
                     //Lemonade_Globals.stateSaver[Lemonade_Globals.location][item.ToString() + count.ToString()] = new Vector2(item.x, item.y);
-                    if (item.ToString().StartsWith("Lemonade. Coin"))
+                    if (item.ToString().StartsWith("Lemonade.Coin"))
                     {
                         item.x = Lemonade_Globals.stateSaver[Lemonade_Globals.location][item.ToString() + count.ToString()].X;
                         item.y = Lemonade_Globals.stateSaver[Lemonade_Globals.location][item.ToString() + count.ToString()].Y;
@@ -670,9 +676,11 @@ namespace Lemonade
             }
 
 
-            LevelIntro levelIntro = new LevelIntro();
-            add(levelIntro);
+            //LevelIntro levelIntro = new LevelIntro();
+            //add(levelIntro);
 
+            //FlxG.transition.startTweenOut();
+            FlxG.transition.startFadeIn(0.05f);
 
 
         }
@@ -806,10 +814,16 @@ namespace Lemonade
 
             //FlxU.collideRamp(actors, ramps);
 
+            if (FlxG.keys.justPressed(Keys.F11))
+            {
+                if (coins.getFirstAlive() != null)
+                {
+                    ((FlxSprite)(actors.members[0])).at(coins.getFirstAlive());
+                }
+            }
+
             if (timer.time < 0.0f )
             {
-
-
                 if (Lemonade_Globals.totalTimeAvailable < 0.9f)
                     FlxG.state = new DeathState();
                 else
@@ -836,6 +850,7 @@ namespace Lemonade
             FlxU.overlap(actors, trampolines, trampolinesOverlap);
             FlxU.overlap(actors, levelItems, genericOverlap);
             FlxU.overlap(actors, hazards, genericOverlap);
+            FlxU.overlap(actors, coins, genericOverlap);
             FlxU.overlap(actors, smallCrates, genericOverlap);
             FlxU.overlap(smallCrates, trampolines, trampolinesOverlap);
 
