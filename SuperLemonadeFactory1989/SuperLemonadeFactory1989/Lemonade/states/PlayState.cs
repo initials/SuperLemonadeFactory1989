@@ -670,6 +670,8 @@ namespace Lemonade
             }
 
 
+            LevelIntro levelIntro = new LevelIntro();
+            add(levelIntro);
 
 
 

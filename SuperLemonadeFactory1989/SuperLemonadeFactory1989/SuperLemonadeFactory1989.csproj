@@ -120,6 +120,7 @@
     <Compile Include="Lemonade\extra\FilingCabinet.cs" />
     <Compile Include="Lemonade\extra\Hud.cs" />
     <Compile Include="Lemonade\extra\LargeCrate.cs" />
+    <Compile Include="Lemonade\extra\LevelIntro.cs" />
     <Compile Include="Lemonade\extra\MovingPlatform.cs" />
     <Compile Include="Lemonade\extra\Palettes.cs" />
     <Compile Include="Lemonade\extra\Plant.cs" />
