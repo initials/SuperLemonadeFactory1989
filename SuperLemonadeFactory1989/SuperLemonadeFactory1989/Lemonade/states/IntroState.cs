@@ -114,8 +114,6 @@ namespace Lemonade
             // play some music
             FlxG.playMp3("Lemonade/music/level2", 0.75f);
 
-            //FlxG.play("Lemonade/sfx/cw_sound15", 0.5f, false);
-
             rain = new FlxGroup();
             for (int i = 0; i < 150; i++)
             {
