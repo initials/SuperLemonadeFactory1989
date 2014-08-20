@@ -260,14 +260,14 @@ namespace Lemonade
 				#endif
 				#if !__ANDROID__
 
-                int loc = (int)FlxU.random(0, 6);
-                if (loc == 0) Lemonade_Globals.location = "sydney";
-                else if (loc == 1) Lemonade_Globals.location = "newyork";
-                else if (loc == 2) Lemonade_Globals.location = "military";
-                else if (loc == 3) Lemonade_Globals.location = "warehouse";
-                else if (loc == 4) Lemonade_Globals.location = "factory";
-                else Lemonade_Globals.location = "management";
-                Console.WriteLine("Location: {0} {1}", Lemonade_Globals.location, loc);
+                //int loc = (int)FlxU.random(0, 6);
+                //if (loc == 0) Lemonade_Globals.location = "sydney";
+                //else if (loc == 1) Lemonade_Globals.location = "newyork";
+                //else if (loc == 2) Lemonade_Globals.location = "military";
+                //else if (loc == 3) Lemonade_Globals.location = "warehouse";
+                //else if (loc == 4) Lemonade_Globals.location = "factory";
+                //else Lemonade_Globals.location = "management";
+                //Console.WriteLine("Location: {0} {1}", Lemonade_Globals.location, loc);
 
                 //Lemonade_Globals.location = "factory";
                 
@@ -292,8 +292,11 @@ namespace Lemonade
 
                 };
 
+                Lemonade_Globals.levelChanges = 0;
                 Lemonade_Globals.coins = 0;
                 Lemonade_Globals.timeLeft  = Lemonade_Globals.totalTimeAvailable = 30.1f;
+                Lemonade_Globals.location = Lemonade_Globals.locationOrder[0];
+
                 FlxG.state = new PlayState();
 				#endif
                 return;

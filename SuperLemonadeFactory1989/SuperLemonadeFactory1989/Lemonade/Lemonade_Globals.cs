@@ -41,7 +41,28 @@ namespace Lemonade
         public static Color GAMEBOY_COLOR_3 = new Color(176, 186, 142);
         public static Color GAMEBOY_COLOR_4 = new Color(199, 207, 162);
 
-        public static int coins = 3;
+        public static int coins = 0;
+        public static int levelChanges = 0;
+
+        public static string[] locationOrder = { "factory", "warehouse", "sydney", "newyork", "warehouse", "factory", "management", "military", "sydney", "newyork", "warehouse", "factory", "management", "military", "sydney", "newyork", "warehouse", "factory", "management", "military" };
+
+        public static Dictionary<string, string> niceLocationNames = new Dictionary<string, string> { 
+        { "sydney", "Sydney" }, 
+        { "newyork", "New York" }, 
+        { "warehouse", "Warehouse" },
+        { "factory", "Factory" },
+        { "management", "Management\nOffice" },
+        { "military", "Military\nComplex" },
+        };
+
+        public static Dictionary<string, string> niceActorNames = new Dictionary<string, string> { 
+        { "sydney", "Doust, The Inspector" }, 
+        { "newyork", "Reeder The Dirty Chef" }, 
+        { "warehouse", "Andre" },
+        { "factory", "Working Man Hero" },
+        { "management", "Liselot" },
+        { "military", "Mr Amsterdaam" },
+        };
 
         //public static FlxState STATE_FACTORY_STATE;
         //public static FlxState STATE_WAREHOUSE_STATE;

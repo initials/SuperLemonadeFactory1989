@@ -19,10 +19,10 @@ namespace Lemonade
 
         // --
 
-        FlxSprite b1;
-        FlxSprite b2;
-        FlxSprite b3;
-        FlxSprite b4;
+        public FlxSprite b1;
+        public FlxSprite b2;
+        public FlxSprite b3;
+        public FlxSprite b4;
 
         public FlxText bT1;
         public FlxText bT2;
@@ -59,13 +59,13 @@ namespace Lemonade
             bT1 = new FlxText(0, FlxG.height / 4, FlxG.width);
             bT1.setFormat(null, 3, Lemonade_Globals.GAMEBOY_COLOR_1, FlxJustification.Center, Lemonade_Globals.GAMEBOY_COLOR_3);
 
-            bT1.text = "SYDNEY";
+            bT1.text = Lemonade_Globals.niceLocationNames[Lemonade_Globals.location];
             add(bT1);
 
             bT2 = new FlxText(0, (FlxG.height / 4 )* 3, FlxG.width);
             bT2.setFormat(null, 2, Lemonade_Globals.GAMEBOY_COLOR_1, FlxJustification.Center, Lemonade_Globals.GAMEBOY_COLOR_3);
 
-            bT2.text = "MR. AMSTERDAAM";
+            bT2.text = Lemonade_Globals.niceActorNames[Lemonade_Globals.location];
             add(bT2);
 
 
@@ -83,11 +83,11 @@ namespace Lemonade
             {
                 b4.visible = false;
             }
-            if (timer > 0.9f)
+            if (timer > 0.5f)
             {
                 b3.visible = false;
             }
-            if (timer > 1.4f)
+            if (timer > 0.7f)
             {
                 b2.visible = false;
                 b1.velocity.Y = -500;
