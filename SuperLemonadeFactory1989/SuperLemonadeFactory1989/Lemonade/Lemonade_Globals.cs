@@ -44,7 +44,7 @@ namespace Lemonade
         public static int coins = 0;
         public static int levelChanges = 0;
 
-        public static string[] locationOrder = { "factory", "warehouse", "sydney", "newyork", "warehouse", "factory", "management", "military", "sydney", "newyork", "warehouse", "factory", "management", "military", "sydney", "newyork", "warehouse", "factory", "management", "military" };
+        public static string[] locationOrder = { "management", "military", "sydney", "newyork", "warehouse", "factory", "management", "military", "sydney", "newyork", "warehouse", "factory", "management", "military", "sydney", "newyork", "warehouse", "factory", "management", "military", "sydney", "newyork", "warehouse", "factory", "management", "military", "sydney", "newyork", "warehouse", "factory", "management", "military", "sydney", "newyork", "warehouse", "factory", "management", "military", "sydney", "newyork", "warehouse", "factory" };
 
         public static Dictionary<string, string> niceLocationNames = new Dictionary<string, string> { 
         { "sydney", "Sydney" }, 
