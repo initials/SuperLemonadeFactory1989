@@ -16,7 +16,8 @@ namespace Lemonade
 
         Tweener textTween1;
         Tweener textTween2;
-
+        Tweener textTween3;
+        Tweener textTween4;
         // --
 
         public FlxSprite b1;
@@ -69,8 +70,10 @@ namespace Lemonade
             add(bT2);
 
 
-            textTween1 = new Tweener(FlxG.height / 4, -1000, 4.0f, XNATweener.Bounce.EaseOut);
-            textTween2 = new Tweener((FlxG.height / 4) * 3, 1000, 4.5f, XNATweener.Bounce.EaseOut);
+            textTween1 = new Tweener(FlxG.height / 4, -1000, 1.20f, XNATweener.Elastic.EaseInOut);
+            textTween2 = new Tweener((FlxG.height / 4) * 3, 1000, 1.5f, XNATweener.Elastic.EaseInOut);
+            textTween3 = new Tweener(-20, FlxG.height / 4, 0.7f, XNATweener.Elastic.EaseOut);
+            textTween4 = new Tweener(800, (FlxG.height / 4) * 3, 1.2f, XNATweener.Elastic.EaseOut);
 
             timer = 0.0f;
 
@@ -97,7 +100,7 @@ namespace Lemonade
                 //b1.visible = false;
             }
 
-            if (timer > 2.0f)
+            if (timer > 0.85f)
             {
                 textTween1.Update(FlxG.elapsedAsGameTime);
                 textTween2.Update(FlxG.elapsedAsGameTime);
@@ -105,7 +108,14 @@ namespace Lemonade
                 bT2.y = textTween2.Position;
 
             }
+            else 
+            {
+                textTween3.Update(FlxG.elapsedAsGameTime);
+                textTween4.Update(FlxG.elapsedAsGameTime);
+                bT1.y = textTween3.Position;
+                bT2.y = textTween4.Position;
 
+            }
 
 
 
