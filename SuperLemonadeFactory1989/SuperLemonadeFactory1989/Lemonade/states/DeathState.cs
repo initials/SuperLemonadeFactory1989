@@ -74,16 +74,18 @@ namespace Lemonade
 
             add(text1);
 
-            credits = new FlxText(0, FlxG.height / 2 - 100, FlxG.width, "Time Makes\nFools Of\nUs All");
+
+            string howWellDidYouGo = "Collected " + Lemonade_Globals.coins.ToString() + " from " + Lemonade_Globals.totalCoins.ToString() + " Coins ";
+            credits = new FlxText(0, FlxG.height / 2 - 100, FlxG.width, "");
             credits.setFormat(FlxG.Content.Load<SpriteFont>("Lemonade/SMALL_PIXEL"), 2, Lemonade_Globals.GAMEBOY_COLOR_4, FlxJustification.Center, Lemonade_Globals.GAMEBOY_COLOR_1);
             credits.setScrollFactors(0, 0);
-            credits.visible = false;
+            credits.visible = true;
             add(credits);
 
             instruction = new FlxText(0, FlxG.height / 1.3f, FlxG.width, "Press X to Continue");
             instruction.setFormat(FlxG.Content.Load<SpriteFont>("Lemonade/SMALL_PIXEL"), 2, Lemonade_Globals.GAMEBOY_COLOR_4, FlxJustification.Center, Lemonade_Globals.GAMEBOY_COLOR_1);
             instruction.setScrollFactors(0, 0);
-            instruction.visible = false;
+            instruction.visible = true;
             add(instruction);
 
 
@@ -118,48 +120,6 @@ namespace Lemonade
             instruction.y = tween.Position;
 
 
-
-            float mult = 3.3f;
-
-            if (follower.y > 2100 * mult)
-            {
-                credits.visible = true;
-            }
-            if (follower.y > 2300 * mult)
-            {
-                credits.text = "You Do";
-            }
-            if (follower.y > 2500 * mult)
-            {
-                credits.text = "Not Own";
-            }
-            if (follower.y > 2700 * mult)
-            {
-                credits.text = "Super";
-            }
-            if (follower.y > 2900 * mult)
-            {
-                credits.text = "Lemonade";
-            }
-            if (follower.y > 3000 * mult)
-            {
-                credits.text = "Factory";
-            }
-            if (follower.y > 3100 * mult)
-            {
-                credits.scale = 5;
-                credits.text = "1989";
-            }
-            if (follower.y > 3200 * mult)
-            {
-                credits.scale = 2;
-                credits.text = "Great Shame";
-            }
-            if (follower.y > 3300 * mult)
-            {
-                instruction.visible = true;
-            }
-
             if (((follower.y > int.MaxValue && follower.x == 0) ||
                 (FlxG.keys.justPressed(Keys.X) && follower.y > 100) ||
                 (FlxG.gamepads.isNewButtonPress(Buttons.A) && follower.y > 100) || (FlxControl.ACTIONJUSTPRESSED && follower.y > 100))
@@ -175,21 +135,6 @@ namespace Lemonade
 #endif
 #if !__ANDROID__
 
-                //int loc = (int)FlxU.random(0, 6);
-                //if (loc == 0) Lemonade_Globals.location = "sydney";
-                //else if (loc == 1) Lemonade_Globals.location = "newyork";
-                //else if (loc == 2) Lemonade_Globals.location = "military";
-                //else if (loc == 3) Lemonade_Globals.location = "warehouse";
-                //else if (loc == 4) Lemonade_Globals.location = "factory";
-                //else Lemonade_Globals.location = "management";
-                //Console.WriteLine("Location: {0} {1}", Lemonade_Globals.location, loc);
-
-                Lemonade_Globals.location = "factory";
-                FlxG.level = 1;
-
-
-                Lemonade_Globals.coins = 0;
-                Lemonade_Globals.timeLeft = Lemonade_Globals.totalTimeAvailable = 30.1f;
                 FlxG.state = new IntroState();
 #endif
                 return;
