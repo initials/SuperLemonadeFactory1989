@@ -92,6 +92,8 @@ namespace Lemonade
             {
                 obj.kill();
                 Lemonade_Globals.coins++;
+                Lemonade_Globals.coinsThisLevel++;
+
                 FlxG.play("Lemonade/sfx/cw_sound39");
                 //FlxG.flash.start(Color.White);
                 FlxG.quake.start(0.008f, 0.155f);

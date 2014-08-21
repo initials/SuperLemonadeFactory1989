@@ -478,6 +478,8 @@ namespace Lemonade
 
             base.create();
 
+            Lemonade_Globals.coinsThisLevel = 0;
+
             Console.WriteLine("Starting Level {0} : {1}", FlxG.level, Lemonade_Globals.location);
             FlxG.transition.resetAndStop();
 
@@ -664,8 +666,6 @@ namespace Lemonade
 				if (FlxG.keys.justPressed(Keys.F9) || (FlxG.gamepads.isButtonDown(Buttons.RightStick) && FlxG.debug==true ))
                 {
                     Lemonade_Globals.restartMusic = false;
-
-                    Lemonade_Globals.writeGameProgressToFile();
 
                     if (FlxG.level == 12 && Lemonade_Globals.game_version == 2)
                     {

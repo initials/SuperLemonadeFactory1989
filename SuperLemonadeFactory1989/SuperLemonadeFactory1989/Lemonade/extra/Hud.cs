@@ -24,6 +24,12 @@ namespace Lemonade
 
         private FlxSound s;
 
+        private float coinsPerMinute;
+        private float totalTime;
+
+        public FlxSprite toastySprite;
+
+
         public Hud(int xPos, int yPos)
             : base(xPos, yPos)
         {
@@ -45,7 +51,32 @@ namespace Lemonade
             coinCounter.setFormat(null, 1, Lemonade_Globals.GAMEBOY_COLOR_4, FlxJustification.Left, Lemonade_Globals.GAMEBOY_COLOR_1);
             coinCounter.alignment = FlxJustification.Left;
             coinCounter.setScrollFactors(0, 0);
+
+            toastySprite = new FlxSprite(0, FlxG.height);
+
+            string person = "Lemonade/illustration/andre_drawing";
+            int ran = (int)FlxU.random(0, 4);
+            switch (ran)
+            {
+                case 0:
+                    person = "Lemonade/illustration/andre_drawing";
+                    break;
+                case 1:
+                    person = "Lemonade/illustration/liselot_drawing";
+                    break;
+                case 2:
+                    person = "Lemonade/illustration/army_drawing";
+                    break;
+                case 3:
+                    person = "Lemonade/illustration/worker_drawing";
+                    break;
+                default:
+                    person = "Lemonade/illustration/andre_drawing";
+                    break;
+            }
             
+            toastySprite.loadGraphic(person, false, false, 302, 640);
+            toastySprite.setScrollFactors(0, 0);
 
             tween = new Tweener(4, 12, 1, Quadratic.EaseInOut);
             tween.Start();
@@ -61,9 +92,6 @@ namespace Lemonade
                 powerBar.add(bar);
             }
 
-
-            
-
         }
 
         override public void update()
@@ -74,6 +102,7 @@ namespace Lemonade
 
             coin.update();
             coinCounter.update();
+            toastySprite.update();
 
             coin.y = tween.Position;
             //coinCounter.y = tween.Position;
@@ -90,6 +119,28 @@ namespace Lemonade
                     if (item.color == Lemonade_Globals.GAMEBOY_COLOR_1 && count < 4)
                     {
                         FlxG.play("Lemonade/sfx/cw_sound09");
+                    }
+                    else if (item.color == Lemonade_Globals.GAMEBOY_COLOR_1 )
+                    {
+                        Console.WriteLine("Coins per minute {0}", coinsPerMinute);
+
+                        if (coinsPerMinute > 2.5f)
+                        {
+                            //toastySprite.y = FlxG.height - 180;
+
+                            toastySprite.velocity.Y = -200;
+
+                            Lemonade_Globals.coinsThisLevel = 0;
+
+                            FlxG.play("Lemonade/sfx/cw_sound12", 0.25f, false);
+                            FlxG.play("Lemonade/sfx/cw_sound15", 0.44f, false);
+
+                            FlxG.quake.start(0.005f, 0.5f);
+
+
+
+                        }
+
                     }
                     item.color = Lemonade_Globals.GAMEBOY_COLOR_4;
                 }
@@ -110,6 +161,11 @@ namespace Lemonade
                     FlxG.play("Lemonade/sfx/cw_sound09");
             }
 
+            if (toastySprite.y < FlxG.height - 180)
+            {
+                toastySprite.velocity.Y *= -1;
+            }
+
             base.update();
 
             if (canStart)
@@ -119,7 +175,14 @@ namespace Lemonade
                 if (FlxG.keys.F5) mult = 10;
 
                 time -= FlxG.elapsed * mult;
+
+                totalTime += FlxG.elapsed;
+
             }
+
+            coinsPerMinute = Lemonade_Globals.coinsThisLevel / totalTime;
+
+
         }
         public override void render(SpriteBatch spriteBatch)
         {
@@ -127,6 +190,8 @@ namespace Lemonade
             coin.render(spriteBatch);
             coinCounter.render(spriteBatch);
             powerBar.render(spriteBatch);
+            toastySprite.render(spriteBatch);
+
             //foreach (FlxSprite item in powerBar.members)
             //{
             //    item.render(spriteBatch);

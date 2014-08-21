@@ -42,6 +42,7 @@ namespace Lemonade
         public static Color GAMEBOY_COLOR_4 = new Color(199, 207, 162);
 
         public static int coins = 0;
+        public static int coinsThisLevel = 0;
         public static int levelChanges = 0;
 
         public static string[] locationOrder = { "management", "military", "sydney", "newyork", "warehouse", "factory", "management", "military", "sydney", "newyork", "warehouse", "factory", "management", "military", "sydney", "newyork", "warehouse", "factory", "management", "military", "sydney", "newyork", "warehouse", "factory", "management", "military", "sydney", "newyork", "warehouse", "factory", "management", "military", "sydney", "newyork", "warehouse", "factory", "management", "military", "sydney", "newyork", "warehouse", "factory" };
