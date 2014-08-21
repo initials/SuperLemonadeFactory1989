@@ -58,7 +58,7 @@ namespace Lemonade
             //b4.setScrollFactors(0, 0);
             //add(b4);
 
-            block = new FlxTileblock(0, 0, FlxG.width, FlxG.height);
+            block = new FlxTileblock(0, 0, FlxG.width + 20, FlxG.height + 20);
             block.auto = FlxTileblock.FRAMENUMBER;
             block.frameNumber = 0;
             block.setScrollFactors(0, 0);
@@ -80,8 +80,8 @@ namespace Lemonade
             add(bT2);
 
 
-            textTween1 = new Tweener(FlxG.height / 4, -1000, 1.20f, XNATweener.Elastic.EaseInOut);
-            textTween2 = new Tweener((FlxG.height / 4) * 3, 1000, 1.5f, XNATweener.Elastic.EaseInOut);
+            textTween1 = new Tweener(FlxG.height / 4, -95, 1.20f, XNATweener.Elastic.EaseInOut);
+            textTween2 = new Tweener((FlxG.height / 4) * 3, FlxG.height + 95, 1.5f, XNATweener.Elastic.EaseInOut);
             textTween3 = new Tweener(-20, FlxG.height / 4, 0.7f, XNATweener.Quintic.EaseOut);
             textTween4 = new Tweener(800, (FlxG.height / 4) * 3, 1.2f, XNATweener.Quintic.EaseOut);
 

@@ -126,13 +126,15 @@ namespace Lemonade
 
             coin.render(spriteBatch);
             coinCounter.render(spriteBatch);
+            powerBar.render(spriteBatch);
+            //foreach (FlxSprite item in powerBar.members)
+            //{
+            //    item.render(spriteBatch);
+            //}
 
             base.render(spriteBatch);
 
-            foreach (FlxSprite item in powerBar.members)
-            {
-                item.render(spriteBatch);
-            }
+
 
         }
 

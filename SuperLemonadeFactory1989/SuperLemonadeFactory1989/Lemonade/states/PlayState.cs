@@ -510,31 +510,6 @@ namespace Lemonade
             buildActors();
             buildBoxes();
 
-            //if (Lemonade_Globals.location == "factory") FlxG.level += 12;
-            //if (Lemonade_Globals.location == "management") FlxG.level += 24;
-
-            //// Build for slf2 (Tiled Maps)
-            //if (Lemonade_Globals.location == "military" ||
-            //    Lemonade_Globals.location == "newyork" ||
-            //    Lemonade_Globals.location == "sydney")
-            //{
-            //    buildTileset();
-            //    buildActors();
-            //    buildBoxes();
-                
-            //    Lemonade_Globals.game_version = 2;
-
-            //}
-            //else if (   Lemonade_Globals.location == "warehouse" ||
-            //            Lemonade_Globals.location == "factory" ||
-            //            Lemonade_Globals.location == "management")
-            //{
-            //    buildTilesetForOgmo1();
-            //    buildActorsForOgmo1();
-
-            //    Lemonade_Globals.game_version = 1;
-            //}
-
             add(trampolines);
             add(levelItems);
             
@@ -586,53 +561,10 @@ namespace Lemonade
             currentCharHud = new Hud(5, 5);
             add(currentCharHud);
 
-
-
-            int YPOS = 125;
-
-            notDone = new Color(0.1f, 0.1f, 0.1f);
-            done = Color.White;
-            badge1 = new FlxSprite((FlxG.width / 2) - 150, YPOS);
-            badge1.loadGraphic(FlxG.Content.Load<Texture2D>("Lemonade/offscreenIcons"), true, false, 12, 12);
-            badge1.frame = 4;
-            badge1.color = notDone;
-            add(badge1);
-            badge1.visible = false;
-            badge1.setScrollFactors(0, 0);
-
-            badge2 = new FlxSprite((FlxG.width / 2) - 50, YPOS);
-            badge2.loadGraphic(FlxG.Content.Load<Texture2D>("Lemonade/offscreenIcons"), true, false, 12, 12);
-            badge2.frame = 5;
-            badge2.color = notDone;
-            add(badge2);
-            badge2.setScrollFactors(0, 0);
-
-            badge3 = new FlxSprite((FlxG.width / 2) + 50, YPOS);
-            badge3.loadGraphic(FlxG.Content.Load<Texture2D>("Lemonade/offscreenIcons"), true, false, 12, 12);
-            badge3.frame = 3;
-            badge3.color = notDone;
-            add(badge3);
-            badge3.setScrollFactors(0, 0);
-
-            badge4 = new FlxSprite((FlxG.width / 2) + 150, YPOS);
-            badge4.loadGraphic(FlxG.Content.Load<Texture2D>("Lemonade/offscreenIcons"), true, false, 12, 12);
-            badge4.frame = 2;
-            badge4.color = notDone;
-            add(badge4);
-            badge4.setScrollFactors(0, 0);
-
-            badge1.visible = false;
-            badge2.visible = false;
-            badge3.visible = false;
-            badge4.visible = false;
-
-
-            //timer = new Timer(FlxG.width / 2 - 50, 10, 200);
-            //timer.time = Lemonade_Globals.timeLeft;
-            //add(timer);
+            levelIntro = new LevelIntro();
+            add(levelIntro);
 
             currentCharHud.time = Lemonade_Globals.timeLeft;
-
 
             foreach (FlxSprite item in actors.members)
             {
@@ -649,11 +581,6 @@ namespace Lemonade
                         Console.WriteLine("State saver not working for actors.");
                     }
                 }
-
-
-
-
-
             }
             int count = 0;
             foreach (FlxSprite item in coins.members)
@@ -678,18 +605,6 @@ namespace Lemonade
                 }
                 
             }
-
-
-            levelIntro = new LevelIntro();
-            add(levelIntro);
-
-            //levelIntro.bT1.text = Lemonade_Globals.location;
-            //levelIntro.bT2.text = actors.members[0].ToString().Split('.')[1];
-
-            //FlxG.transition.startTweenOut();
-            //FlxG.transition.startFadeIn(0.05f);
-            
-
         }
 
         /// <summary>
@@ -740,10 +655,6 @@ namespace Lemonade
                 }
                 if (FlxG.keys.justPressed(Keys.F10) && FlxG.debug==true)
                 {
-                    //Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledArmy = true;
-                    //Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledChef = true;
-                    //Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledInspector = true;
-                    //Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledWorker = true;
                     andre.x = exit.x;
                     andre.y = exit.y;
                     liselot.x = exit.x;
@@ -753,13 +664,6 @@ namespace Lemonade
 				if (FlxG.keys.justPressed(Keys.F9) || (FlxG.gamepads.isButtonDown(Buttons.RightStick) && FlxG.debug==true ))
                 {
                     Lemonade_Globals.restartMusic = false;
-                    //Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].LevelComplete = true;
-                    //Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledArmy = true;
-                    //Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledChef = true;
-                    //Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledInspector = true;
-                    //Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledWorker = true;
-
-
 
                     Lemonade_Globals.writeGameProgressToFile();
 
@@ -829,8 +733,6 @@ namespace Lemonade
                 }
             }
 
-
-
             currentCharHud.canStart = !levelIntro.block.visible;
 
             if (currentCharHud.canStart)
@@ -846,7 +748,7 @@ namespace Lemonade
             if (currentCharHud.time < -0.5f)
             {
                 if (Lemonade_Globals.totalTimeAvailable < -0.5f)
-                    FlxG.state = new DeathState();
+                    FlxG.state = new BaseInformationState();
                 else
                     goToNextScheduledLevel();
             }
@@ -908,30 +810,6 @@ namespace Lemonade
 
             base.update();
 
-
-
-            // Console.WriteLine("The current follow target is : {0}  SCROLL {1} {2}", FlxG.followTarget.GetType().ToString() ,FlxG.scroll.X, FlxG.scroll.Y);
-
-            // Switch Controlling Character.
-            if (FlxG.keys.justPressed(Keys.V) || FlxG.gamepads.isNewButtonPress(Buttons.B))
-            {
-                //Console.WriteLine("The current follow target is : {0} ", FlxG.followTarget.GetType().ToString());
-
-                //Console.WriteLine("The current follow target is : {0} ", FlxG.followTarget.GetType().ToString());
-
-                if (andre.piggyBacking || andre.dead || liselot.dead)
-                {
-                    // do nothing.
-
-                }
-                else
-                {
-
-                    FlxG.play("Lemonade/sfx/cw_sound36", 0.5f, false);
-
-                }
-            }
-
 #if __ANDROID__
 			if (FlxG.pauseAction == "Exit")
 			{
@@ -949,7 +827,7 @@ namespace Lemonade
 				FlxG.state = new OuyaEasyMenuState();
 				#endif
 				#if !__ANDROID__
-				FlxG.state = new IntroState();
+				FlxG.state = new BaseInformationState();
 				#endif
             }
             if (levelComplete == true)
