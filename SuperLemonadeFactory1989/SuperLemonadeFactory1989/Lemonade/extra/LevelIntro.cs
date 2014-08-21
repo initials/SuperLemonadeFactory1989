@@ -18,12 +18,7 @@ namespace Lemonade
         Tweener textTween2;
         Tweener textTween3;
         Tweener textTween4;
-        // --
-
-        public FlxSprite b1;
-        public FlxSprite b2;
-        public FlxSprite b3;
-        public FlxSprite b4;
+        
 
         public FlxTileblock block;
 

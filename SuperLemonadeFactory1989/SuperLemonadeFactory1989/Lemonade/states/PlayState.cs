@@ -60,12 +60,6 @@ namespace Lemonade
 
         private Hud currentCharHud;
 
-
-        FlxSprite badge1;
-        FlxSprite badge2;
-        FlxSprite badge3;
-        FlxSprite badge4;
-
         Color notDone;
         Color done;
 

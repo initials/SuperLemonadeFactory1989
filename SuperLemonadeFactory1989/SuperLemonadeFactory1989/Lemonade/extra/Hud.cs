@@ -22,7 +22,6 @@ namespace Lemonade
         public float time = 0.0f;
         public bool canStart = false;
 
-        private FlxSound s;
 
         private float coinsPerMinute;
         private float totalTime;
