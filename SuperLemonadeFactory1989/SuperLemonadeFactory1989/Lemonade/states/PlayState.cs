@@ -658,7 +658,7 @@ namespace Lemonade
             int count = 0;
             foreach (FlxSprite item in coins.members)
             {
-                if (Lemonade_Globals.stateSaver[Lemonade_Globals.location].ContainsKey(item.ToString()))
+                if (Lemonade_Globals.stateSaver[Lemonade_Globals.location].ContainsKey(item.ToString() + count.ToString()))
                 {
                     try
                     {
@@ -676,7 +676,7 @@ namespace Lemonade
                         Console.WriteLine("State saver not working for coins");
                     }
                 }
-
+                
             }
 
 
@@ -832,7 +832,16 @@ namespace Lemonade
 
 
             currentCharHud.canStart = !levelIntro.block.visible;
-            
+
+            if (currentCharHud.canStart)
+            {
+                ((FlxPlatformActor)(actors.members[0])).control = FlxPlatformActor.Controls.player;
+            }
+            else if (!currentCharHud.canStart)
+            {
+                ((FlxPlatformActor)(actors.members[0])).control = FlxPlatformActor.Controls.none;
+            }
+
 
             if (currentCharHud.time < -0.5f)
             {

@@ -91,7 +91,7 @@ namespace Lemonade
 
         override public void update()
         {
-            if (frames % 8 == 1)
+            if (frames % 4 == 1)
             {
                 block.frameNumber ++;
                 block.loadTiles(FlxG.Content.Load<Texture2D>("Lemonade/fade"), 20, 20, 0);
