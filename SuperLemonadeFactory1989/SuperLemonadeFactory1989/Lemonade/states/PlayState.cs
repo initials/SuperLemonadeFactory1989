@@ -53,8 +53,6 @@ namespace Lemonade
         private Spike spike;
         private Ramp ramp;
 
-        private Follower follow;
-
         private FlxEmitter bubbleParticle;
         private FlxEmitter crateParticle;
 
@@ -629,26 +627,30 @@ namespace Lemonade
             badge4.visible = false;
 
 
-            timer = new Timer(FlxG.width / 2 - 50, 10, 200);
-            timer.time = Lemonade_Globals.timeLeft;
-            add(timer);
+            //timer = new Timer(FlxG.width / 2 - 50, 10, 200);
+            //timer.time = Lemonade_Globals.timeLeft;
+            //add(timer);
 
             currentCharHud.time = Lemonade_Globals.timeLeft;
 
 
             foreach (FlxSprite item in actors.members)
             {
-                //Lemonade_Globals.stateSaver[Lemonade_Globals.location][item.ToString()] = new Vector2(item.x, item.y);
 
-                try
+                if (Lemonade_Globals.stateSaver[Lemonade_Globals.location].ContainsKey(item.ToString()))
                 {
-                    item.x = Lemonade_Globals.stateSaver[Lemonade_Globals.location][item.ToString()].X;
-                    item.y = Lemonade_Globals.stateSaver[Lemonade_Globals.location][item.ToString()].Y;
+                    try
+                    {
+                        item.x = Lemonade_Globals.stateSaver[Lemonade_Globals.location][item.ToString()].X;
+                        item.y = Lemonade_Globals.stateSaver[Lemonade_Globals.location][item.ToString()].Y;
+                    }
+                    catch (Exception)
+                    {
+                        Console.WriteLine("State saver not working for actors.");
+                    }
                 }
-                catch (Exception)
-                {
-                    
-                }
+
+
 
 
 
@@ -656,21 +658,23 @@ namespace Lemonade
             int count = 0;
             foreach (FlxSprite item in coins.members)
             {
-
-                try
+                if (Lemonade_Globals.stateSaver[Lemonade_Globals.location].ContainsKey(item.ToString()))
                 {
-                    //Lemonade_Globals.stateSaver[Lemonade_Globals.location][item.ToString() + count.ToString()] = new Vector2(item.x, item.y);
-                    if (item.ToString().StartsWith("Lemonade.Coin"))
+                    try
                     {
-                        item.x = Lemonade_Globals.stateSaver[Lemonade_Globals.location][item.ToString() + count.ToString()].X;
-                        item.y = Lemonade_Globals.stateSaver[Lemonade_Globals.location][item.ToString() + count.ToString()].Y;
-                    }
+                        //Lemonade_Globals.stateSaver[Lemonade_Globals.location][item.ToString() + count.ToString()] = new Vector2(item.x, item.y);
+                        if (item.ToString().StartsWith("Lemonade.Coin"))
+                        {
+                            item.x = Lemonade_Globals.stateSaver[Lemonade_Globals.location][item.ToString() + count.ToString()].X;
+                            item.y = Lemonade_Globals.stateSaver[Lemonade_Globals.location][item.ToString() + count.ToString()].Y;
+                        }
 
-                    count++;
-                }
-                catch (Exception)
-                {
-                    
+                        count++;
+                    }
+                    catch (Exception)
+                    {
+                        Console.WriteLine("State saver not working for coins");
+                    }
                 }
 
             }
@@ -825,13 +829,14 @@ namespace Lemonade
                 }
             }
 
-            if (levelIntro.b1.y >= -300)
+
+
+            currentCharHud.canStart = !levelIntro.block.visible;
+            
+
+            if (currentCharHud.time < -0.5f)
             {
-                timer.time += FlxG.elapsed + 0.1f;
-            }
-            if (timer.time < 0.0f )
-            {
-                if (Lemonade_Globals.totalTimeAvailable < 0.9f)
+                if (Lemonade_Globals.totalTimeAvailable < -0.5f)
                     FlxG.state = new DeathState();
                 else
                     goToNextScheduledLevel();
@@ -915,35 +920,6 @@ namespace Lemonade
 
                     FlxG.play("Lemonade/sfx/cw_sound36", 0.5f, false);
 
-                    if (follow.currentFollow == 1)
-                    {
-                        follow.tweenX = new Tweener(andre.x, liselot.x, TimeSpan.FromSeconds(0.45f), Linear.EaseNone);
-                        follow.tweenY = new Tweener(andre.y, liselot.y, TimeSpan.FromSeconds(0.45f), Linear.EaseNone);
-
-                        follow.tweenX.Start();
-                        follow.tweenY.Start();
-                        
-                        follow.currentFollow = 2;
-
-                        bubbleParticle.at(liselot);
-                        bubbleParticle.start(true, 0, 30);
-
-
-                    }
-                    else if (follow.currentFollow == 2)
-                    {
-                        follow.tweenX = new Tweener(liselot.x, andre.x, TimeSpan.FromSeconds(0.45f), Linear.EaseNone);
-                        follow.tweenY = new Tweener(liselot.y, andre.y, TimeSpan.FromSeconds(0.45f), Linear.EaseNone);
-
-                        follow.tweenX.Start();
-                        follow.tweenY.Start();
-
-                        follow.currentFollow = 1;
-
-                        bubbleParticle.at(andre);
-                        bubbleParticle.start(true, 0, 30);
-
-                    } 
                 }
             }
 
@@ -1015,7 +991,7 @@ namespace Lemonade
 						return;
 					} else {
 
-                        Lemonade_Globals.timeLeft = timer.time;
+                        Lemonade_Globals.timeLeft = currentCharHud.time;
 						
 						FlxG.transition.resetAndStop ();
                         
@@ -1048,7 +1024,7 @@ namespace Lemonade
         {
             Lemonade_Globals.restartMusic = false;
 
-            Lemonade_Globals.totalTimeAvailable -= 2;
+            Lemonade_Globals.totalTimeAvailable -= 3;
 
             Lemonade_Globals.timeLeft = Lemonade_Globals.totalTimeAvailable;
 

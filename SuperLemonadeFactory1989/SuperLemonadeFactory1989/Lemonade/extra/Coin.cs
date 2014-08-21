@@ -14,7 +14,6 @@ namespace Lemonade
     {
         private FlxEmitter fanfare;
         private XNATweener.Tweener tween;
-        private XNATweener.Tweener tween2;
 
         public Coin(int xPos, int yPos, bool Outline)
             : base(xPos, yPos)

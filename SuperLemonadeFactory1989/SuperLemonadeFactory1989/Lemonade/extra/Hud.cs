@@ -20,6 +20,9 @@ namespace Lemonade
 
         public FlxGroup powerBar;
         public float time = 0.0f;
+        public bool canStart = false;
+
+        private FlxSound s;
 
         public Hud(int xPos, int yPos)
             : base(xPos, yPos)
@@ -59,6 +62,8 @@ namespace Lemonade
             }
 
 
+            
+
         }
 
         override public void update()
@@ -73,7 +78,7 @@ namespace Lemonade
             coin.y = tween.Position;
             //coinCounter.y = tween.Position;
 
-            int count = 0;
+            int count = 1;
             foreach (FlxSprite item in powerBar.members)
             {
                 if (count > Lemonade_Globals.totalTimeAvailable)
@@ -88,7 +93,8 @@ namespace Lemonade
                     }
                     item.color = Lemonade_Globals.GAMEBOY_COLOR_4;
                 }
-                else 
+
+                else
                 {
 
                     item.color = Lemonade_Globals.GAMEBOY_COLOR_1;
@@ -97,12 +103,23 @@ namespace Lemonade
                 item.update();
                 count++;
             }
-            
+
+            if (time <= 0.5f)
+            {
+                if (FlxU.random() < 0.1f)
+                    FlxG.play("Lemonade/sfx/cw_sound09");
+            }
 
             base.update();
 
-            time -= FlxG.elapsed;
+            if (canStart)
+            {
+                int mult = 1;
 
+                if (FlxG.keys.F5) mult = 10;
+
+                time -= FlxG.elapsed * mult;
+            }
         }
         public override void render(SpriteBatch spriteBatch)
         {

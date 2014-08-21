@@ -64,6 +64,8 @@ namespace Lemonade
         { "military", "Mr Amsterdaam" },
         };
 
+        public static int totalCoins = 0;
+
         //public static FlxState STATE_FACTORY_STATE;
         //public static FlxState STATE_WAREHOUSE_STATE;
         //public static FlxState STATE_MANAGEMENT_STATE;
@@ -73,6 +75,29 @@ namespace Lemonade
 
         public Lemonade_Globals()
         {
+            
+
+        }
+
+        public static int calculateTotalCoins()
+        {
+            string[] locs = { "management", "military", "sydney", "newyork", "warehouse", "factory" };
+            int coinCount = 0;
+
+            foreach (var loc in locs)
+            {
+                List<Dictionary<string,string>> actorsString = FlxXMLReader.readNodesFromTmxFile("Lemonade/levels/slf2/" + loc + "/" + loc + "_level1"  + ".tmx", "map", "bg", FlxXMLReader.ACTORS);
+                string[] actorsSpl = actorsString[0]["csvData"].Split(',');
+                foreach (string item in actorsSpl)
+                {
+                    if (item == "390")
+                    {
+                        coinCount++;
+                    }
+                }
+            }
+
+            return coinCount;
 
         }
 

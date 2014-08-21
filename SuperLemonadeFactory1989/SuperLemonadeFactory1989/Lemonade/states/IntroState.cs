@@ -25,6 +25,10 @@ namespace Lemonade
         {
             base.create();
 
+            Lemonade_Globals.totalCoins = Lemonade_Globals.calculateTotalCoins();
+
+            Console.WriteLine("Total coins = {0}", Lemonade_Globals.totalCoins);
+
 			#if __ANDROID__
 			FlxG.BUILD_TYPE = FlxG.BUILD_TYPE_OUYA;
 			#endif
