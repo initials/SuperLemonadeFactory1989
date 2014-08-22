@@ -132,6 +132,7 @@
     <Compile Include="Lemonade\Follower.cs" />
     <Compile Include="Lemonade\GameProgress.cs" />
     <Compile Include="Lemonade\Lemonade_Globals.cs" />
+    <Compile Include="Lemonade\states\LevelChooserState.cs" />
     <Compile Include="Lemonade\states\InformationStates\BaseInformationState.cs" />
     <Compile Include="Lemonade\states\DataEntryState.cs" />
     <Compile Include="Lemonade\states\DeathState.cs" />

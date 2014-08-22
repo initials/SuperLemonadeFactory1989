@@ -958,7 +958,7 @@ namespace Lemonade
 
             //Console.WriteLine("Location: {0} {1}", Lemonade_Globals.location, loc);
 
-            FlxG.state = new PlayState();
+            FlxG.state = new LevelChooserState();
 
             return;
         }

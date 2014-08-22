@@ -37,14 +37,12 @@ namespace Lemonade
             setScrollFactors(0, 0);
 
             addAnimation("andre", new int[] { 2 }, 0, true);
-            //addAnimation("liselot", new int[] { 1 }, 0, true);
 
             play("andre");
 
 
             coin = new Coin(FlxG.width - 24, 2, true);
             coin.setScrollFactors(0, 0);
-            //add(coin);
 
             coinCounter = new FlxText(FlxG.width - 36, 10, 100);
             coinCounter.setFormat(null, 1, Lemonade_Globals.GAMEBOY_COLOR_4, FlxJustification.Left, Lemonade_Globals.GAMEBOY_COLOR_1);
@@ -125,8 +123,6 @@ namespace Lemonade
 
                         if (coinsPerMinute > 2.5f)
                         {
-                            //toastySprite.y = FlxG.height - 180;
-
                             toastySprite.velocity.Y = -200;
 
                             Lemonade_Globals.coinsThisLevel = 0;
@@ -136,8 +132,6 @@ namespace Lemonade
 
                             FlxG.quake.start(0.005f, 0.5f);
 
-
-
                         }
 
                     }
@@ -146,7 +140,6 @@ namespace Lemonade
 
                 else
                 {
-
                     item.color = Lemonade_Globals.GAMEBOY_COLOR_1;
                 }
 
@@ -190,11 +183,6 @@ namespace Lemonade
             coinCounter.render(spriteBatch);
             powerBar.render(spriteBatch);
             toastySprite.render(spriteBatch);
-
-            //foreach (FlxSprite item in powerBar.members)
-            //{
-            //    item.render(spriteBatch);
-            //}
 
             base.render(spriteBatch);
 
