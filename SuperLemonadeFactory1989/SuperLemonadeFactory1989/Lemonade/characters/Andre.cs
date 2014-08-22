@@ -31,9 +31,6 @@ namespace Lemonade
 
             play("idle");
 
-            addAnimationCallback(resetAfterDeath);
-
-
             width = 10;
             height = 41;
             setOffset(20, 39);
@@ -56,20 +53,6 @@ namespace Lemonade
             //flickerStyle = FLICKER_TYPE_SCALE;
             //flicker(3);
 
-        }
-
-        public void resetAfterDeath(string Name, uint Frame, int FrameIndex)
-        {
-            //Console.WriteLine("Name {0} Frame {1}",Name, Frame);
-            
-            if (Name == "death" && Frame >= _curAnim.frames.Length - 1)
-            {
-                reset(originalPosition.X, originalPosition.Y);
-                dead = false;
-                control = Controls.player;
-                play("idle");
-
-            }
         }
 
         override public void update()

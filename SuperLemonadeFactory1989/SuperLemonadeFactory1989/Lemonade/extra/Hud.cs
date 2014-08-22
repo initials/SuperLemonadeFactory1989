@@ -121,7 +121,7 @@ namespace Lemonade
                     }
                     else if (item.color == Lemonade_Globals.GAMEBOY_COLOR_1 )
                     {
-                        Console.WriteLine("Coins per minute {0}", coinsPerMinute);
+                        //Console.WriteLine("Coins per minute {0}", coinsPerMinute);
 
                         if (coinsPerMinute > 2.5f)
                         {

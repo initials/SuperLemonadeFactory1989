@@ -17,11 +17,6 @@ namespace Lemonade
         public float dashTimer = 200000;
         protected const float dashMaxLimit = 0.075f;
 
-        /// <summary>
-        /// reference to liselot for destroying piggyback action
-        /// </summary>
-        public Liselot liselot;
-
         public Actor(int xPos, int yPos)
             : base(xPos, yPos)
         {
@@ -29,8 +24,20 @@ namespace Lemonade
 
             play("idle");
 
-            piggyBacking = false;
+            addAnimationCallback(resetAfterDeath);
 
+        }
+
+        public void resetAfterDeath(string Name, uint Frame, int FrameIndex)
+        {
+            if (Name == "death" && Frame >= _curAnim.frames.Length - 1)
+            {
+                reset(originalPosition.X, originalPosition.Y);
+                dead = false;
+
+                control = Controls.player;
+
+            }
         }
 
         override public void update()
@@ -81,13 +88,13 @@ namespace Lemonade
                 velocity.Y = -1000;
                 trampolineTimer = 0.0f;
             }
-            else if (obj.GetType().ToString() == "Lemonade.Ramp")
-            {
-                float delta = x % 20;
+            //else if (obj.GetType().ToString() == "Lemonade.Ramp")
+            //{
+            //    float delta = x % 20;
 
-                //FlxU.solveXCollision(obj, null);
+            //    //FlxU.solveXCollision(obj, null);
 
-            }
+            //}
             else if (obj.GetType().ToString() == "Lemonade.Coin")
             {
                 obj.kill();

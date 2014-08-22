@@ -32,7 +32,6 @@ namespace Lemonade
             addAnimation("death", new int [] {64,64,65,65,66,66,67,67} ,12 , false);
 
             play("idle");
-            addAnimationCallback(resetAfterDeath);
             runSpeed = 50;
 
             width = 10;
@@ -114,27 +113,7 @@ namespace Lemonade
             base.update();
         }
 
-        public void resetAfterDeath(string Name, uint Frame, int FrameIndex)
-        {
-            //if (Name == "death")
-            //{
-            //    Console.WriteLine("Death {0}", Frame);
-            //}
-            if (Name == "death" && Frame >= _curAnim.frames.Length - 1)
-            {
-                //Console.WriteLine("RESEST piggyBacking {0} {1} control {2}", piggyBacking, piggybackingAtTimeOfDeath,  control.ToString());
-
-                reset(originalPosition.X, originalPosition.Y);
-                dead = false;
-
-                control = Controls.player;
-
-                //if (piggybackingAtTimeOfDeath)
-                //    control = Controls.none;
-                //else
-                //    control = Controls.player;
-            }
-        }
+       
 
         override public void overlapped(FlxObject obj)
         {
