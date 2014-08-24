@@ -148,9 +148,9 @@ namespace Lemonade
             }
 
             t1.text = Lemonade_Globals.niceLocationNames[Lemonade_Globals.location].ToString();
-            t2.text = String.Format("{0:#,###.#}", timer);
+            //t2.text = String.Format("{0:#,###.#}", timer);
 
-            if (timer < 0)
+            if (FlxControl.ACTIONJUSTPRESSED)
             {
                 FlxG.state = new PlayState();
                 return;
