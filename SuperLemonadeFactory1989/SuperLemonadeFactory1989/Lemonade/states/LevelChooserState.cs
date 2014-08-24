@@ -88,6 +88,9 @@ namespace Lemonade
 
             if (FlxControl.LEFTJUSTPRESSED)
             {
+
+                FlxG.play("Lemonade/sfx/cw_sound01");
+
                 selected--;
 
                 tweeners[selected + 1].Reset();
@@ -100,6 +103,9 @@ namespace Lemonade
             }
             if (FlxControl.RIGHTJUSTPRESSED)
             {
+                
+                FlxG.play("Lemonade/sfx/cw_sound01");
+
                 selected++;
 
                 tweeners[selected - 1].Reset();
