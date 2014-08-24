@@ -158,8 +158,9 @@ namespace Lemonade
             t1.text = Lemonade_Globals.niceLocationNames[Lemonade_Globals.location].ToString();
             //t2.text = String.Format("{0:#,###.#}", timer);
 
-            if (FlxControl.ACTIONJUSTPRESSED)
+            if (FlxControl.ACTIONJUSTPRESSED && FlxG.elapsedTotal > 0.4f)
             {
+                Lemonade_Globals.restartMusic = true;
                 FlxG.state = new PlayState();
                 return;
             }

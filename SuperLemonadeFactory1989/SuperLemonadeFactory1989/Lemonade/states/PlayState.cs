@@ -616,15 +616,15 @@ namespace Lemonade
             {
                 if (Lemonade_Globals.location == "sydney")
                 {
-                    FlxG.playMp3("Lemonade/music/level3", 0.5f);
+                    FlxG.playMp3("Lemonade/music/Coffee", 0.5f);
                 }
                 else if (Lemonade_Globals.location == "newyork")
                 {
-                    FlxG.playMp3("Lemonade/music/level1", 0.5f);
+                    FlxG.playMp3("Lemonade/music/Greenland", 0.5f);
                 }
                 else if (Lemonade_Globals.location == "military")
                 {
-                    FlxG.playMp3("Lemonade/music/level2", 0.5f);
+                    FlxG.playMp3("Lemonade/music/MostAction", 0.5f);
                 }
                 else
                 {
@@ -717,9 +717,14 @@ namespace Lemonade
 
             #endregion
 
+
+            //FlxG.color(Color.MediumPurple);
+
+
             //FlxU.collideRamp(actors, ramps);
 
-            if (FlxG.keys.justPressed(Keys.F11))
+            //if (FlxG.keys.justPressed(Keys.F11))
+            if (FlxG.keys.F11)
             {
                 if (coins.getFirstAlive() != null)
                 {
@@ -899,13 +904,25 @@ namespace Lemonade
                     return;
                 }
             }
+
+            if (coins.countLiving() == 0 && !FlxG.transition.hasStarted)
+            {
+                if (Lemonade_Globals.coins == Lemonade_Globals.totalCoins)
+                {
+                    FlxG.state = new BaseInformationState();
+                }
+                else
+                {
+                    FlxG.transition.startFadeOut(0.05f, -90, 150);
+                }
+            }
         }
 
         public void goToNextScheduledLevel()
         {
             Lemonade_Globals.restartMusic = false;
 
-            Lemonade_Globals.totalTimeAvailable -= 3;
+            //Lemonade_Globals.totalTimeAvailable -= 3;
 
             Lemonade_Globals.timeLeft = Lemonade_Globals.totalTimeAvailable;
 
