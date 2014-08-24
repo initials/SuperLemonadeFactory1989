@@ -29,10 +29,10 @@ namespace Lemonade
             setOffset(10, 40);
             setDrags(500, 0);
 
-            maxVelocity.X = 130;
+            maxVelocity.X = 230;
             maxVelocity.Y = 2830;
 
-            runSpeed = 12;
+            runSpeed = 44;
             setJumpValues(-250.0f, -250.0f, 0.315f, 0.0715f);
             numberOfJumps = 1;
 
