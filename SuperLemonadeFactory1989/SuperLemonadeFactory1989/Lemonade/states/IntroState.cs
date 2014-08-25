@@ -249,6 +249,12 @@ namespace Lemonade
 
                 };
 
+                foreach (var item in Lemonade_Globals.stateSaver)
+                {
+                    Lemonade_Globals.thisTurnProgress[item.Key] = 0;
+                }
+
+
                 Lemonade_Globals.levelChanges = 0;
                 Lemonade_Globals.coins = 0;
                 Lemonade_Globals.timeLeft  = Lemonade_Globals.totalTimeAvailable = 30.1f;

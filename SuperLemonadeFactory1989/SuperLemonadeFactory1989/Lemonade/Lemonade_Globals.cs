@@ -13,35 +13,57 @@ namespace Lemonade
     /// </summary>
     public class Lemonade_Globals
     {
+
         public static string location = "";
+        
         public static int game_version = 2;
 
         public const float GRAVITY = 2040.0f;
 
-
         public static string[] characterSelected;
+        
         public static bool[] isPlayerControlled;
 
         public static Dictionary<string, GameProgress> gameProgress;
+        
         public static Dictionary<string, Dictionary<string, Vector2>> stateSaver;
 
         public const int DEMO_MODE = 0;
+        
         public const int FULL_MODE = 1;
+        
         public const int PIRATE_MODE = 2;
 
         public static float timeLeft = 30.0f;
+        
         public static float totalTimeAvailable = 30.0f;
 
         public static int PAID_VERSION;
 
         public static int LAST_LOCATION;
+        
         public static int LAST_SELECTED_ON_MENU;
 
         public static bool restartMusic = true;
 
+        /// <summary>
+        /// Darkest color
+        /// </summary>
         public static Color GAMEBOY_COLOR_1 = new Color(77, 81, 60);
+
+        /// <summary>
+        /// Second Darkest Color
+        /// </summary>
         public static Color GAMEBOY_COLOR_2 = new Color(107, 116, 84);
+
+        /// <summary>
+        /// Second Lightest Color
+        /// </summary>
         public static Color GAMEBOY_COLOR_3 = new Color(176, 186, 142);
+
+        /// <summary>
+        /// Lightest Color
+        /// </summary>
         public static Color GAMEBOY_COLOR_4 = new Color(199, 207, 162);
 
         /// <summary>
@@ -72,17 +94,28 @@ namespace Lemonade
         { "military", "Mr Amsterdaam" },
         };
 
+        public static Dictionary<string, int> thisTurnProgress = new Dictionary<string, int> { 
+        { "sydney", 0 }, 
+        { "newyork", 0 }, 
+        { "warehouse", 0 },
+        { "factory", 0 },
+        { "management", 0},
+        { "military", 0},
+        };
+
+        public static Dictionary<string, int> framesForIllustration = new Dictionary<string, int> { 
+        { "sydney", 3 }, 
+        { "newyork", 2 }, 
+        { "warehouse", 0 },
+        { "factory", 5 },
+        { "management", 4},
+        { "military", 1},
+        };
+
         /// <summary>
         /// The total number of coins available.
         /// </summary>
         public static int totalCoins = 0;
-
-        //public static FlxState STATE_FACTORY_STATE;
-        //public static FlxState STATE_WAREHOUSE_STATE;
-        //public static FlxState STATE_MANAGEMENT_STATE;
-        //public static FlxState STATE_NEWYORK_STATE;
-        //public static FlxState STATE_MILITARY_STATE;
-        //public static FlxState STATE_SYDNEY_STATE;
 
         public Lemonade_Globals()
         {

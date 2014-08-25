@@ -49,11 +49,7 @@ namespace Lemonade
                 p1.loadGraphic("Lemonade/illustration/people", true, false, 302, 640);
                 p1.frame = i;
                 icons.add(p1);
-
-                tweeners.Add(new Vector3Tweener(new Vector3(-100 + (i * 36), -290, 0.1f), new Vector3(12, 100 , 1), 0.45f, Bounce.EaseOut));
-
-                
-
+                tweeners.Add(new Vector3Tweener(new Vector3(-100 + (i * 36), -290, 0.1f), new Vector3(12, 100, 1), 0.45f, Bounce.EaseOut));
             }
 
             foreach (var item in tweeners)
@@ -177,13 +173,24 @@ namespace Lemonade
             }
 
             t1.text = Lemonade_Globals.niceLocationNames[Lemonade_Globals.location].ToString();
+            if (Lemonade_Globals.thisTurnProgress[Lemonade_Globals.location] == 1)
+            {
+                t1.text += " Complete!";
+            }
             //t2.text = String.Format("{0:#,###.#}", timer);
 
             if (FlxControl.ACTIONJUSTPRESSED && FlxG.elapsedTotal > 0.4f)
             {
-                Lemonade_Globals.restartMusic = true;
-                FlxG.state = new PlayState();
-                return;
+                if (Lemonade_Globals.thisTurnProgress[Lemonade_Globals.location] == 1)
+                {
+                    //t1.text += " Complete!";
+                }
+                else
+                {
+                    Lemonade_Globals.restartMusic = true;
+                    FlxG.state = new PlayState();
+                    return;
+                }
             }
 
             base.update();
