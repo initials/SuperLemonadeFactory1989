@@ -329,19 +329,6 @@ namespace Lemonade
                 // end read.
             }
 
-            //if (Lemonade_Globals.gameProgress["newyork_12"].LevelComplete==true)
-            //{
-            //    possibleLocations.Add("warehouse");
-            //}
-            //if (Lemonade_Globals.gameProgress["sydney_12"].LevelComplete == true)
-            //{
-            //    possibleLocations.Add("factory");
-            //}
-            //if (Lemonade_Globals.gameProgress["military_12"].LevelComplete == true)
-            //{
-            //    possibleLocations.Add("management");
-            //}
-
         }
 
         public FlxTilemap createMap(string MapFile, string Layer, string Tiles)
@@ -356,12 +343,6 @@ namespace Lemonade
             ny.visible = false;
             return ny;
         }
-
-//        public string LoadFromDevice()
-//        {
-//            string value1 = File.ReadAllText("nameinfo.txt");
-//            return value1.Substring(0, value1.Length - 1);
-//        }
 
         override public void update()
         {
@@ -385,17 +366,7 @@ namespace Lemonade
                 }
             }
 
-
-            //FlxG.cameras[0].angle += 5;
-
-			//currentLevel = 1;
-
             tweenBounce.Update(FlxG.elapsedAsGameTime);
-
-//            foreach (var item in Lemonade_Globals.gameProgress)
-//            {
-//                Console.WriteLine("K.{0} V.{1} {2} {3} {4}", item.Key, item.Value.KilledArmy, item.Value.KilledChef, item.Value.KilledInspector, item.Value.KilledWorker);
-//            }
 
             int incompleteScale = 2;
 
