@@ -583,8 +583,15 @@ namespace Lemonade
                         //Lemonade_Globals.stateSaver[Lemonade_Globals.location][item.ToString() + count.ToString()] = new Vector2(item.x, item.y);
                         if (item.ToString().StartsWith("Lemonade.Coin"))
                         {
-                            item.x = Lemonade_Globals.stateSaver[Lemonade_Globals.location][item.ToString() + count.ToString()].X;
-                            item.y = Lemonade_Globals.stateSaver[Lemonade_Globals.location][item.ToString() + count.ToString()].Y;
+                            //item.x = Lemonade_Globals.stateSaver[Lemonade_Globals.location][item.ToString() + count.ToString()].X;
+                            //item.y = Lemonade_Globals.stateSaver[Lemonade_Globals.location][item.ToString() + count.ToString()].Y;
+                            item.dead = Convert.ToBoolean(Lemonade_Globals.stateSaver[Lemonade_Globals.location][item.ToString() + count.ToString()].X);
+
+                            if (Convert.ToBoolean(Lemonade_Globals.stateSaver[Lemonade_Globals.location][item.ToString() + count.ToString()].X))
+                            {
+                                item.x = -100;
+                                item.y = -100;
+                            }
                         }
 
                         count++;
@@ -615,7 +622,7 @@ namespace Lemonade
                 }
                 else if (Lemonade_Globals.location == "newyork")
                 {
-                    FlxG.playMp3("Lemonade/music/GreenlandIsAlive", 0.5f);
+                    FlxG.playMp3("Lemonade/music/January", 0.5f);
                 }
                 else if (Lemonade_Globals.location == "military")
                 {
@@ -623,11 +630,11 @@ namespace Lemonade
                 }
                 else if (Lemonade_Globals.location == "warehouse")
                 {
-                    FlxG.playMp3("Lemonade/music/Beyond", 0.5f);
+                    FlxG.playMp3("Lemonade/music/February", 0.5f);
                 }
                 else if (Lemonade_Globals.location == "factory")
                 {
-                    FlxG.playMp3("Lemonade/music/AmbulanceCalls", 0.5f);
+                    FlxG.playMp3("Lemonade/music/April", 0.5f);
                 }
                 else if (Lemonade_Globals.location == "management")
                 {
@@ -861,10 +868,23 @@ namespace Lemonade
             {
                 if (Lemonade_Globals.coins == Lemonade_Globals.totalCoins)
                 {
+
+
                     FlxG.state = new BaseInformationState();
+                    return;
                 }
                 else
                 {
+
+                    Lemonade_Globals.thisTurnProgress[Lemonade_Globals.location] = 1;
+
+                    foreach (var item in Lemonade_Globals.thisTurnProgress)
+                    {
+                        Console.WriteLine("This Location: {0} -- K {1} V {2}", Lemonade_Globals.location, item.Key, item.Value);
+
+                    }
+
+
                     FlxG.transition.startFadeOut(0.05f, -90, 150);
                 }
             }
@@ -872,13 +892,7 @@ namespace Lemonade
 
         public void goToNextScheduledLevel()
         {
-            Lemonade_Globals.thisTurnProgress[Lemonade_Globals.location] = 1;
 
-            foreach (var item in Lemonade_Globals.thisTurnProgress)
-            {
-                Console.WriteLine("This Location: {0} -- K {1} V {2}", Lemonade_Globals.location, item.Key, item.Value);
-
-            }
 
             Lemonade_Globals.restartMusic = false;
 
@@ -893,7 +907,7 @@ namespace Lemonade
             int count = 0;
             foreach (FlxSprite item in coins.members)
             {
-                Lemonade_Globals.stateSaver[Lemonade_Globals.location][item.ToString() + count.ToString()] = new Vector2(item.x, item.y);
+                Lemonade_Globals.stateSaver[Lemonade_Globals.location][item.ToString() + count.ToString()] = new Vector2(Convert.ToInt32(item.dead), item.y);
                 count++;
             }
 

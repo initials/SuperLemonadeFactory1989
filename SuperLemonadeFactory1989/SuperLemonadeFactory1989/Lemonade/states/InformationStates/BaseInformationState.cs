@@ -108,7 +108,7 @@ namespace Lemonade
             tween.Start();
 
             // play some music
-            FlxG.playMp3("Lemonade/music/GreenlandFuneral", 0.75f);
+            FlxG.playMp3("Lemonade/music/March", 0.75f);
 
             rain = new FlxGroup();
             for (int i = 0; i < 150; i++)

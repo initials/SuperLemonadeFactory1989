@@ -30,7 +30,7 @@ namespace Lemonade
         {
             base.create();
 
-            FlxG.playMp3("Lemonade/music/Coffee", 1.0f);
+            FlxG.playMp3("Lemonade/music/AmbulanceCalls", 0.5f);
 
             block = new FlxTileblock(0, 0, FlxG.width + 20, FlxG.height + 20);
             block.auto = FlxTileblock.FRAMENUMBER;
