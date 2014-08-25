@@ -99,7 +99,7 @@ namespace Lemonade
                 instruction.setFormat(FlxG.Content.Load<SpriteFont>("Lemonade/SMALL_PIXEL"), 1, Lemonade_Globals.GAMEBOY_COLOR_4, FlxJustification.Center, Lemonade_Globals.GAMEBOY_COLOR_1);
                 instruction.text = "Press X to Open Browser And\nDownload Super Lemonade Factory Part Two";
 
-                FlxU.openURL("http://initials.itch.io/slf2/download/Y9wdBOHe7a92Qpo9t5UJdz05HhZR5p10F0L6wfdP");
+                //FlxU.openURL("http://initials.itch.io/slf2/download/Y9wdBOHe7a92Qpo9t5UJdz05HhZR5p10F0L6wfdP");
 
             }
             
