@@ -89,14 +89,14 @@ namespace Lemonade
 
 
             levelString = FlxXMLReader.readNodesFromTmxFile("Lemonade/levels/slf2/" + Lemonade_Globals.location + "/" + Lemonade_Globals.location + "_level" + FlxG.level.ToString() + ".tmx", "map", "bg", FlxXMLReader.TILES);
-            foreach (Dictionary<string, string> nodes in levelString)
-            {
-                foreach (KeyValuePair<string, string> kvp in nodes)
-                {
-                    //Console.Write("Key = {0}, Value = {1}, ", kvp.Key, kvp.Value);
-                }
-                //Console.Write("\r\n");
-            }
+            //foreach (Dictionary<string, string> nodes in levelString)
+            //{
+            //    foreach (KeyValuePair<string, string> kvp in nodes)
+            //    {
+            //        //Console.Write("Key = {0}, Value = {1}, ", kvp.Key, kvp.Value);
+            //    }
+            //    //Console.Write("\r\n");
+            //}
 
             bgElementsTilemap = new FlxTilemap();
             bgElementsTilemap.auto = FlxTilemap.STRING;
@@ -872,6 +872,14 @@ namespace Lemonade
 
         public void goToNextScheduledLevel()
         {
+            Lemonade_Globals.thisTurnProgress[Lemonade_Globals.location] = 1;
+
+            foreach (var item in Lemonade_Globals.thisTurnProgress)
+            {
+                Console.WriteLine("This Location: {0} -- K {1} V {2}", Lemonade_Globals.location, item.Key, item.Value);
+
+            }
+
             Lemonade_Globals.restartMusic = false;
 
             //Lemonade_Globals.totalTimeAvailable -= 3;
@@ -891,8 +899,6 @@ namespace Lemonade
 
             Lemonade_Globals.levelChanges++;
 
-            Lemonade_Globals.location = Lemonade_Globals.locationOrder[Lemonade_Globals.levelChanges];
-            
             FlxG.state = new LevelChooserState();
 
             return;
