@@ -41,7 +41,11 @@ namespace Lemonade
         public static Color GAMEBOY_COLOR_3 = new Color(176, 186, 142);
         public static Color GAMEBOY_COLOR_4 = new Color(199, 207, 162);
 
+        /// <summary>
+        /// Coins that have been collected.
+        /// </summary>
         public static int coins = 0;
+
         public static int coinsThisLevel = 0;
         public static int levelChanges = 0;
 
@@ -65,6 +69,9 @@ namespace Lemonade
         { "military", "Mr Amsterdaam" },
         };
 
+        /// <summary>
+        /// The total number of coins available.
+        /// </summary>
         public static int totalCoins = 0;
 
         //public static FlxState STATE_FACTORY_STATE;

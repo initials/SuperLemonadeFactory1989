@@ -615,13 +615,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Lemonade\music\level1.mp3">
-      <Name>level1</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Lemonade\sfx\cw_sound01.wav">
       <Name>cw_sound01</Name>
       <Importer>WavImporter</Importer>
@@ -856,18 +849,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Lemonade\music\level2.mp3">
-      <Name>level2</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-    </Compile>
-    <Compile Include="Lemonade\music\level3.mp3">
-      <Name>level3</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Lemonade\rain.png">
       <Name>rain</Name>
       <Importer>TextureImporter</Importer>
@@ -906,13 +887,30 @@
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
     </Compile>
-    <Compile Include="Lemonade\music\Greenland.mp3">
-      <Name>Greenland</Name>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Lemonade\music\AmbulanceCalls.mp3">
+      <Name>AmbulanceCalls</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
     </Compile>
-    <Compile Include="Lemonade\music\MostAction.mp3">
-      <Name>MostAction</Name>
+    <Compile Include="Lemonade\music\Beyond.mp3">
+      <Name>Beyond</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\music\Graveyard.mp3">
+      <Name>Graveyard</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\music\GreenlandFuneral.mp3">
+      <Name>GreenlandFuneral</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+    </Compile>
+    <Compile Include="Lemonade\music\GreenlandIsAlive.mp3">
+      <Name>GreenlandIsAlive</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
     </Compile>

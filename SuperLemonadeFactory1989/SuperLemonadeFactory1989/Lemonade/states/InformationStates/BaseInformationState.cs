@@ -77,6 +77,11 @@ namespace Lemonade
             heading.setScrollFactors(0, 0);
             add(heading);
 
+            if (Lemonade_Globals.coins == Lemonade_Globals.totalCoins)
+            {
+                heading.text = "Complete Collection!!";
+            }
+
             string howWellDidYouGo = "Collected " + Lemonade_Globals.coins.ToString() + "\nfrom " + Lemonade_Globals.totalCoins.ToString() + " Coins ";
             credits = new FlxText(0, FlxG.height / 1.75f , FlxG.width, howWellDidYouGo);
             credits.setFormat(FlxG.Content.Load<SpriteFont>("Lemonade/SMALL_PIXEL"), 2, Lemonade_Globals.GAMEBOY_COLOR_4, FlxJustification.Center, Lemonade_Globals.GAMEBOY_COLOR_1);
@@ -95,7 +100,7 @@ namespace Lemonade
             tween.Start();
 
             // play some music
-            FlxG.playMp3("Lemonade/music/level2", 0.75f);
+            FlxG.playMp3("Lemonade/music/GreenlandFuneral", 0.75f);
 
             rain = new FlxGroup();
             for (int i = 0; i < 150; i++)

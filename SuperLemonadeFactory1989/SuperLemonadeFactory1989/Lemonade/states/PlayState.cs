@@ -620,15 +620,27 @@ namespace Lemonade
                 }
                 else if (Lemonade_Globals.location == "newyork")
                 {
-                    FlxG.playMp3("Lemonade/music/Greenland", 0.5f);
+                    FlxG.playMp3("Lemonade/music/GreenlandIsAlive", 0.5f);
                 }
                 else if (Lemonade_Globals.location == "military")
                 {
-                    FlxG.playMp3("Lemonade/music/MostAction", 0.5f);
+                    FlxG.playMp3("Lemonade/music/Graveyard", 0.5f);
+                }
+                else if (Lemonade_Globals.location == "warehouse")
+                {
+                    FlxG.playMp3("Lemonade/music/Beyond", 0.5f);
+                }
+                else if (Lemonade_Globals.location == "factory")
+                {
+                    FlxG.playMp3("Lemonade/music/AmbulanceCalls", 0.5f);
+                }
+                else if (Lemonade_Globals.location == "management")
+                {
+                    FlxG.playMp3("Lemonade/music/GreenlandFuneral", 0.5f);
                 }
                 else
                 {
-                    FlxG.playMp3("Lemonade/music/level3", 0.5f);
+                    FlxG.playMp3("Lemonade/music/GreenlandFuneral", 0.5f);
                 }
             }
 
