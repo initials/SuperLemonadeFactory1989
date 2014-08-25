@@ -8,6 +8,9 @@ using Microsoft.Xna.Framework;
 
 namespace Lemonade
 {
+    /// <summary>
+    /// A Global Holder
+    /// </summary>
     public class Lemonade_Globals
     {
         public static string location = "military";
