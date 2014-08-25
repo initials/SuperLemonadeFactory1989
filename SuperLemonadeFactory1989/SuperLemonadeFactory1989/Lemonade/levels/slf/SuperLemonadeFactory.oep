@@ -275,11 +275,7 @@
 		<object name="level2_spike3" image="level2/level2_spike3.png" width="10" height="10" originX="0" originY="0" resizableX="true" resizableY="true" tile="true"/>
 
 
-		<!-------------------------->
-		<!--                      -->
-		<!-- Level 3 - Management -->
-		<!--                      -->
-		<!-------------------------->
+
 
 
 

@@ -77,10 +77,7 @@ namespace Lemonade
             heading.setScrollFactors(0, 0);
             add(heading);
 
-            if (Lemonade_Globals.coins == Lemonade_Globals.totalCoins)
-            {
-                heading.text = "Complete Collection!!";
-            }
+
 
             string howWellDidYouGo = "Collected " + Lemonade_Globals.coins.ToString() + "\nfrom " + Lemonade_Globals.totalCoins.ToString() + " Coins ";
             credits = new FlxText(0, FlxG.height / 1.75f , FlxG.width, howWellDidYouGo);
@@ -94,6 +91,17 @@ namespace Lemonade
             instruction.setScrollFactors(0, 0);
             instruction.visible = false;
             add(instruction);
+
+            if (Lemonade_Globals.coins == Lemonade_Globals.totalCoins)
+            {
+                heading.setFormat(FlxG.Content.Load<SpriteFont>("Lemonade/SMALL_PIXEL"), 1, Lemonade_Globals.GAMEBOY_COLOR_4, FlxJustification.Center, Lemonade_Globals.GAMEBOY_COLOR_1);
+                heading.text = "Complete Collection!!\nYou Win A Prize\nDownload Super\nLemonade Factory\nPart Two\nFor Free.";
+                instruction.setFormat(FlxG.Content.Load<SpriteFont>("Lemonade/SMALL_PIXEL"), 1, Lemonade_Globals.GAMEBOY_COLOR_4, FlxJustification.Center, Lemonade_Globals.GAMEBOY_COLOR_1);
+                instruction.text = "Press X to Open Browser And\nDownload Super Lemonade Factory Part Two";
+
+                FlxU.openURL("http://initials.itch.io/slf2/download/Y9wdBOHe7a92Qpo9t5UJdz05HhZR5p10F0L6wfdP");
+
+            }
             
             tween = new Tweener(FlxG.height / 1.3f, FlxG.height / 1.2f, TimeSpan.FromSeconds(0.67f), XNATweener.Cubic.EaseInOut);
             tween.PingPong = true;
@@ -200,6 +208,11 @@ namespace Lemonade
                 (FlxG.gamepads.isNewButtonPress(Buttons.A) && follower.y > 100) ||  (FlxControl.ACTIONJUSTPRESSED && follower.y > 100)) 
                 && (FlxG.transition.members[0] as FlxSprite).scale < 0.001f )
             {
+                if (Lemonade_Globals.coins == Lemonade_Globals.totalCoins)
+                {
+                    FlxU.openURL("http://initials.itch.io/slf2/download/Y9wdBOHe7a92Qpo9t5UJdz05HhZR5p10F0L6wfdP");
+                }
+
                 follower.velocity.X = -250;
             }
             if (follower.x < 0)

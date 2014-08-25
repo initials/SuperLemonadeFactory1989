@@ -32,8 +32,6 @@ namespace Lemonade
         private FlxGroup movingPlatforms;
         private FlxGroup coins;
 
-        private Timer timer;
-
         /// <summary>
         /// Use for SLF1 style Ogmo1 levels; Collide only on version 1 style.
         /// </summary>
@@ -59,9 +57,6 @@ namespace Lemonade
         private const float LERP = 6.0f;
 
         private Hud currentCharHud;
-
-        Color notDone;
-        Color done;
 
         private LevelIntro levelIntro;
 
@@ -649,63 +644,8 @@ namespace Lemonade
         override public void update()
         {
             #region cheats
-            // Run cheats.
             if (FlxG.debug == true && elapsedInState>0.2f)
             {
-                if (FlxGlobal.cheatString == "exits")
-                {
-                    andre.at(exit);
-                    liselot.at(exit);
-                }
-                if (FlxGlobal.cheatString == "pirate")
-                {
-                    Lemonade_Globals.PAID_VERSION = Lemonade_Globals.PIRATE_MODE;
-                }
-                if (FlxG.keys.justPressed(Keys.F10) && FlxG.debug==true)
-                {
-                    andre.x = exit.x;
-                    andre.y = exit.y;
-                    liselot.x = exit.x;
-                    liselot.y = exit.y;
-
-                }
-				if (FlxG.keys.justPressed(Keys.F9) || (FlxG.gamepads.isButtonDown(Buttons.RightStick) && FlxG.debug==true ))
-                {
-                    Lemonade_Globals.restartMusic = false;
-
-                    if (FlxG.level == 12 && Lemonade_Globals.game_version == 2)
-                    {
-                        FlxG.state = new VictoryState();
-                        return;
-                    }
-                    else if (FlxG.level == 12 && Lemonade_Globals.game_version == 1)
-                    {
-						#if __ANDROID__
-						FlxG.state = new OuyaEasyMenuState();
-						#endif
-						#if !__ANDROID__
-						FlxG.state = new IntroState();
-						#endif
-                        return;
-                    }
-                    else
-                    {
-                        goToNextScheduledLevel();
-
-                        return;
-                    }
-                }
-                else if (FlxG.keys.justPressed(Keys.F7) && FlxG.debug == true)
-                {
-                    goToNextScheduledLevel();
-
-                    return;
-                }
-                else if (FlxG.keys.justPressed(Keys.F8) && FlxG.debug == true)
-                {
-                    goToNextScheduledLevel();
-                    return;
-                }
             }
             #endregion
 
@@ -883,7 +823,7 @@ namespace Lemonade
 						FlxG.state = new OuyaEasyMenuState();
 						#endif
 						#if !__ANDROID__
-						FlxG.state = new EasyMenuState();
+						FlxG.state = new BaseInformationState();
 						#endif
 						FlxG.transition.resetAndStop();
 						return;
@@ -900,7 +840,7 @@ namespace Lemonade
                 }
                 if (FlxG.level == 12 && Lemonade_Globals.game_version == 2)
                 {
-                    FlxG.state = new VictoryState();
+                    FlxG.state = new BaseInformationState();
                     FlxG.transition.resetAndStop();
                     return;
                 }
@@ -910,7 +850,7 @@ namespace Lemonade
 					FlxG.state = new OuyaEasyMenuState();
 					#endif
 					#if !__ANDROID__
-					FlxG.state = new EasyMenuState();
+					FlxG.state = new BaseInformationState();
 					#endif
                     FlxG.transition.resetAndStop();
                     return;
@@ -949,44 +889,10 @@ namespace Lemonade
                 count++;
             }
 
-            //foreach (var item in Lemonade_Globals.stateSaver[Lemonade_Globals.location])
-            //{
-            //    Console.WriteLine(item.Key + " " + item.Value);
-            //}
-
-            //int loc = (int)FlxU.random(0, 6);
-            //if (loc == 0)
-            //{
-            //    Lemonade_Globals.location = "sydney";
-            //}
-            //else if (loc == 1)
-            //{
-            //    Lemonade_Globals.location = "newyork";
-            //}
-            //else if (loc == 2)
-            //{
-            //    Lemonade_Globals.location = "military";
-            //}
-            //else if (loc == 3)
-            //{
-            //    Lemonade_Globals.location = "warehouse";
-            //}
-            //else if (loc == 4)
-            //{
-            //    Lemonade_Globals.location = "factory";
-            //}
-            //else
-            //{
-            //    Lemonade_Globals.location = "management";
-            //}
-
             Lemonade_Globals.levelChanges++;
 
             Lemonade_Globals.location = Lemonade_Globals.locationOrder[Lemonade_Globals.levelChanges];
-
-
-            //Console.WriteLine("Location: {0} {1}", Lemonade_Globals.location, loc);
-
+            
             FlxG.state = new LevelChooserState();
 
             return;
@@ -1023,9 +929,5 @@ namespace Lemonade
             e.Object2.overlapped(e.Object1);
             return true;
         }
-
-
-        
-
     }
 }

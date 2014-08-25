@@ -136,13 +136,11 @@
     <Compile Include="Lemonade\states\InformationStates\BaseInformationState.cs" />
     <Compile Include="Lemonade\states\DataEntryState.cs" />
     <Compile Include="Lemonade\states\DeathState.cs" />
-    <Compile Include="Lemonade\states\EasyMenuState.cs" />
     <Compile Include="Lemonade\states\IntroState.cs" />
     <Compile Include="Lemonade\states\Lemonade.cs" />
     <Compile Include="Lemonade\states\MultiplayerMenuState.cs" />
     <Compile Include="Lemonade\states\MultiplayerPlayerState.cs" />
     <Compile Include="Lemonade\states\PlayState.cs" />
-    <Compile Include="Lemonade\states\VictoryState.cs" />
     <Compile Include="Lemonade\states\_____MenuState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
@@ -168,17 +166,6 @@
     <Content Include="Lemonade\characters\control\worker.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Lemonade\characters\reference\Andre.h" />
-    <Content Include="Lemonade\characters\reference\BaseCharacter.h" />
-    <Content Include="Lemonade\characters\reference\Enemy.h" />
-    <Content Include="Lemonade\characters\reference\EnemyArmy.h" />
-    <Content Include="Lemonade\characters\reference\EnemyChef.h" />
-    <Content Include="Lemonade\characters\reference\EnemyGeneric.h" />
-    <Content Include="Lemonade\characters\reference\EnemyInspector.h" />
-    <Content Include="Lemonade\characters\reference\EnemyWorker.h" />
-    <Content Include="Lemonade\characters\reference\Liselot %282%29.h" />
-    <Content Include="Lemonade\characters\reference\Liselot.h" />
-    <Content Include="Lemonade\characters\reference\Player.h" />
     <Content Include="Lemonade\levels\custom\PLACE_CUSTOM_LEVELS_HERE.txt" />
     <Content Include="Lemonade\script\script.xml" />
   </ItemGroup>
@@ -226,22 +213,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Lemonade\characters\reference\Andre.m" />
-    <None Include="Lemonade\characters\reference\BaseCharacter.m" />
-    <None Include="Lemonade\characters\reference\Crate.m" />
-    <None Include="Lemonade\characters\reference\Enemy.m" />
-    <None Include="Lemonade\characters\reference\EnemyArmy.m" />
-    <None Include="Lemonade\characters\reference\EnemyChef.m" />
-    <None Include="Lemonade\characters\reference\EnemyGeneric.m" />
-    <None Include="Lemonade\characters\reference\EnemyInspector.m" />
-    <None Include="Lemonade\characters\reference\EnemyWorker.m" />
-    <None Include="Lemonade\characters\reference\Exit.m" />
-    <None Include="Lemonade\characters\reference\LargeCrate.m" />
-    <None Include="Lemonade\characters\reference\Liselot %282%29.m" />
-    <None Include="Lemonade\characters\reference\Liselot.m" />
-    <None Include="Lemonade\characters\reference\Player.m" />
-    <None Include="Lemonade\characters\reference\SugarBag.m" />
-    <None Include="Lemonade\characters\reference\Trampoline.m" />
     <None Include="Lemonade\levels\slf2\factory\bgfactory.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

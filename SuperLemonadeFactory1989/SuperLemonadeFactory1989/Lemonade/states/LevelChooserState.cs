@@ -63,12 +63,33 @@ namespace Lemonade
 
             add(icons);
 
-            selected = 0;
-
+            switch (Lemonade_Globals.location)
+            {
+                case "warehouse":
+                    selected=0;
+                    break;
+                case "military":
+                    selected = 1;
+                    break;
+                case "newyork":
+                    selected = 2;
+                    break;
+                case "sydney":
+                    selected = 3;
+                    break;
+                case "management":
+                    selected = 4;
+                    break;
+                case "factory":
+                    selected = 5;
+                    break;
+                default:
+                    selected = 0;
+                    break;
+            }
             tweeners[selected].Play();
 
             timer = 5.0f;
-
 
             t1 = new FlxText(0, FlxG.height - 72, FlxG.width);
             t1.setFormat(null, 2, Lemonade_Globals.GAMEBOY_COLOR_1, FlxJustification.Center, Lemonade_Globals.GAMEBOY_COLOR_4);

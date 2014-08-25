@@ -73,23 +73,6 @@ namespace Lemonade
             FlxG.follow(follower, 20.0f);
             FlxG.followBounds(0, 0, int.MaxValue, 2000);
 
-
-            /*
-             *     logoText = [FlxText textWithWidth:FlxG.width
-                                 text:@"Initials Video Games\nPresents"
-                                 font:SMALLPIXEL
-                                 size:16.0];
-                    logoText.color = 0xffed008e;
-                    logoText.alignment = CENTER_ALIGN;
-                    logoText.scrollFactor = CGPointMake(1.05, 1.05);
-                    logoText.x = 0;
-                    logoText.y = FlxG.height/2;
-                    logoText.scale = CGPointMake(0, 0.5);
-                    logoText.alpha = 0 ;
-             */
-
-            //
-
             FlxText text1 = new FlxText(0, FlxG.height / 2 - 50, FlxG.width, "Initials\nVideo\nGames\nPresents");
             text1.setFormat(FlxG.Content.Load<SpriteFont>("Lemonade/SMALL_PIXEL"), 2, Lemonade_Globals.GAMEBOY_COLOR_4, FlxJustification.Center, Lemonade_Globals.GAMEBOY_COLOR_1);
             text1.setScrollFactors(1.5f, 1.5f);
@@ -107,9 +90,6 @@ namespace Lemonade
             instruction.setScrollFactors(0, 0);
             instruction.visible = false;
             add(instruction);
-
-
-            //rgb(237, 0, 142)
 
             tween = new Tweener(FlxG.height / 1.3f, FlxG.height / 1.2f, TimeSpan.FromSeconds(0.67f), XNATweener.Cubic.EaseInOut);
             tween.PingPong = true;
@@ -178,11 +158,6 @@ namespace Lemonade
                 FlxG.bloom.Settings = BloomPostprocess.BloomSettings.PresetSettings[7];
             }
 
-
-
-
-
-
             foreach (FlxSprite item in rain.members)
             {
                 if (item.y > 2000)
@@ -193,9 +168,6 @@ namespace Lemonade
                     item.y = 1200;
                 }
             }
-
-
-
 
             base.update();
 
@@ -280,7 +252,6 @@ namespace Lemonade
                 Lemonade_Globals.levelChanges = 0;
                 Lemonade_Globals.coins = 0;
                 Lemonade_Globals.timeLeft  = Lemonade_Globals.totalTimeAvailable = 30.1f;
-                Lemonade_Globals.location = Lemonade_Globals.locationOrder[0];
 
                 FlxG.state = new LevelChooserState();
 				#endif

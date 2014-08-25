@@ -49,12 +49,6 @@ namespace Lemonade
         {
             base.overlapped(obj);
 
-            //if (obj.GetType().ToString() == "Lemonade.SmallCrate" && (Math.Abs(obj.velocity.X) > 1 || Math.Abs(obj.velocity.Y) > 1))
-            //{
-            //    Lemonade_Globals.gameProgress[Lemonade_Globals.location + "_" + FlxG.level.ToString()].KilledInspector = true;
-            //    kill();
-            //}
-
         }
     }
 }
