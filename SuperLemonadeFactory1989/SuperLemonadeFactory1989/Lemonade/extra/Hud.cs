@@ -83,7 +83,17 @@ namespace Lemonade
 
             for (int i = 0; i < 30; i++)
             {
-                FlxSprite bar = new FlxSprite(5 + (i * 10), FlxG.height - 10);
+
+				int offsetY = 0;
+				int offsetS = 0;
+
+				#if __ANDROID__
+				offsetY = 50;
+				offsetS = 150;
+
+				#endif 
+
+				FlxSprite bar = new FlxSprite(offsetS + 5 + (i * 10), FlxG.height - 10 - offsetY);
                 bar.createGraphic(8, 8, Lemonade_Globals.GAMEBOY_COLOR_4);
                 bar.setScrollFactors(0, 0);
                 powerBar.add(bar);

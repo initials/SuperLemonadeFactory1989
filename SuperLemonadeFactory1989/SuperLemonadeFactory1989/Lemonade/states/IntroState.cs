@@ -231,10 +231,6 @@ namespace Lemonade
             }
             if (FlxG.transition.complete)
             {
-				#if __ANDROID__
-				FlxG.state = new OuyaEasyMenuState();
-				#endif
-				#if !__ANDROID__
 
                 FlxG.level = 1 ;
 
@@ -260,7 +256,7 @@ namespace Lemonade
                 Lemonade_Globals.timeLeft  = Lemonade_Globals.totalTimeAvailable = 30.1f;
 
                 FlxG.state = new LevelChooserState();
-				#endif
+
                 return;
             }
 

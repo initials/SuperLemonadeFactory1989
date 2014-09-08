@@ -48,6 +48,9 @@ namespace Loader_SuperLemonadeFactory
             {
                 //resX = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
                 //resY = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
+				#if !__ANDROID__
+
+
                 if (GraphicsAdapter.DefaultAdapter.IsWideScreen)
                 {
                     //if user has it set to widescreen, let's make sure this
@@ -56,7 +59,9 @@ namespace Loader_SuperLemonadeFactory
                     {
                         FlxG.resolutionWidth = (FlxG.resolutionHeight / 9) * 16;
                     }
-                }
+				}
+				#endif
+
             }
 
             //we don't need no new-fangled pixel processing

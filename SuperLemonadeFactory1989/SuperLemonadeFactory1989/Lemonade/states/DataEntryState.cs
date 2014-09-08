@@ -139,7 +139,7 @@ namespace Lemonade
             FlxG.hideHud();
 
 			#if __ANDROID__
-			FlxG.state = new OuyaEasyMenuState();
+			FlxG.state = new IntroState();
 			#endif
 			#if !__ANDROID__
             FlxG.state = new IntroState();

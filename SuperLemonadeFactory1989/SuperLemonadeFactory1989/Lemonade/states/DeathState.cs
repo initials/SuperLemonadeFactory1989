@@ -131,7 +131,7 @@ namespace Lemonade
             if (FlxG.transition.complete)
             {
 #if __ANDROID__
-				FlxG.state = new OuyaEasyMenuState();
+				FlxG.state = new IntroState();
 #endif
 #if !__ANDROID__
 

@@ -772,7 +772,7 @@ namespace Lemonade
 			if (FlxG.pauseAction == "Exit")
 			{
 #if __ANDROID__
-				FlxG.state = new OuyaEasyMenuState();
+				FlxG.state = new IntroState();
 #endif
 #if !__ANDROID__
 				FlxG.state = new EasyMenuState();
@@ -782,7 +782,7 @@ namespace Lemonade
             if (FlxG.keys.justPressed(Keys.Escape) || FlxG.gamepads.isButtonDown(Buttons.Back))
             {
 				#if __ANDROID__
-				FlxG.state = new OuyaEasyMenuState();
+				FlxG.state = new IntroState();
 				#endif
 				#if !__ANDROID__
 				FlxG.state = new BaseInformationState();
@@ -827,7 +827,7 @@ namespace Lemonade
 
 					if (Lemonade_Globals.PAID_VERSION == Lemonade_Globals.DEMO_MODE && FlxG.level >= 3) {
 						#if __ANDROID__
-						FlxG.state = new OuyaEasyMenuState();
+						FlxG.state = new IntroState();
 						#endif
 						#if !__ANDROID__
 						FlxG.state = new BaseInformationState();
@@ -854,7 +854,7 @@ namespace Lemonade
                 else if (FlxG.level == 12 && Lemonade_Globals.game_version == 1)
                 {
 					#if __ANDROID__
-					FlxG.state = new OuyaEasyMenuState();
+					FlxG.state = new IntroState();
 					#endif
 					#if !__ANDROID__
 					FlxG.state = new BaseInformationState();
