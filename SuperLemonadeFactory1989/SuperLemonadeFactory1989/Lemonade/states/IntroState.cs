@@ -160,7 +160,12 @@ namespace Lemonade
 
             foreach (FlxSprite item in rain.members)
             {
-                if (item.y > 2000)
+				int rainOffset = 0;
+
+				#if __ANDROID__
+				rainOffset = 50;
+				#endif
+				if (item.y > 2000 - rainOffset)
                 {
                     splashes.at(item);
                     splashes.start(true, 0.0f, 10);
@@ -214,6 +219,12 @@ namespace Lemonade
             if (follower.y > 3200)
             {
                 credits.scale = 2;
+
+				#if __ANDROID__
+				credits.scale = 4;
+				#endif
+
+
                 credits.text = "Super Lemonade\nFactory 1989";
             }
             if (follower.y > 3300)

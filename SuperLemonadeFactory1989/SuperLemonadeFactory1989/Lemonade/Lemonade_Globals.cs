@@ -76,6 +76,7 @@ namespace Lemonade
 
         public static string[] locationOrder = { "management", "military", "sydney", "newyork", "warehouse", "factory", "management", "military", "sydney", "newyork", "warehouse", "factory", "management", "military", "sydney", "newyork", "warehouse", "factory", "management", "military", "sydney", "newyork", "warehouse", "factory", "management", "military", "sydney", "newyork", "warehouse", "factory", "management", "military", "sydney", "newyork", "warehouse", "factory", "management", "military", "sydney", "newyork", "warehouse", "factory" };
 
+		#if !__ANDROID__
         public static Dictionary<string, string> niceLocationNames = new Dictionary<string, string> { 
         { "sydney", "Sydney" }, 
         { "newyork", "New York" }, 
@@ -85,15 +86,26 @@ namespace Lemonade
         { "military", "Military\nComplex" },
         };
 
-        public static Dictionary<string, string> niceActorNames = new Dictionary<string, string> { 
-        { "sydney", "Doust, The Inspector" }, 
-        { "newyork", "Reeder The Dirty Chef" }, 
-        { "warehouse", "Andre" },
-        { "factory", "Working Man Hero" },
-        { "management", "Liselot" },
-        { "military", "Mr Amsterdaam" },
-        };
+		#endif
 
+		#if __ANDROID__
+		public static Dictionary<string, string> niceLocationNames = new Dictionary<string, string> { 
+			{ "sydney", "Sydney" }, 
+			{ "newyork", "New York" }, 
+			{ "warehouse", "Warehouse" },
+			{ "factory", "Factory" },
+			{ "management", "Management Office" },
+			{ "military", "Military Complex" },
+		};
+		#endif
+		public static Dictionary<string, string> niceActorNames = new Dictionary<string, string> { 
+			{ "sydney", "Doust, The Inspector" }, 
+			{ "newyork", "Reeder The Dirty Chef" }, 
+			{ "warehouse", "Andre" },
+			{ "factory", "Working Man Hero" },
+			{ "management", "Liselot" },
+			{ "military", "Mr Amsterdaam" },
+		};
         public static Dictionary<string, int> thisTurnProgress = new Dictionary<string, int> { 
         { "sydney", 0 }, 
         { "newyork", 0 }, 

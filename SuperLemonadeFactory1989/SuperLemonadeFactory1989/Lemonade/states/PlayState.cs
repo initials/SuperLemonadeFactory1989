@@ -683,7 +683,7 @@ namespace Lemonade
             //FlxU.collideRamp(actors, ramps);
 
             //if (FlxG.keys.justPressed(Keys.F11))
-            if (FlxG.keys.F11 && FlxG.debug)
+			if (FlxG.gamepads.isButtonDown(Buttons.LeftTrigger) && FlxG.debug)
             {
                 if (coins.getFirstAlive() != null)
                 {

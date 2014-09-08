@@ -71,9 +71,16 @@ namespace Lemonade
 
             FlxG.follow(follower, 20.0f);
             FlxG.followBounds(0, 0, int.MaxValue, 2000);
+
+			int textSize = 2;
+
+			#if __ANDROID__
+			textSize = 4;
+			#endif
+
             
             heading = new FlxText(0, 50, FlxG.width, "Collection Incomplete");
-            heading.setFormat(FlxG.Content.Load<SpriteFont>("Lemonade/SMALL_PIXEL"), 2, Lemonade_Globals.GAMEBOY_COLOR_4, FlxJustification.Center, Lemonade_Globals.GAMEBOY_COLOR_1);
+			heading.setFormat(FlxG.Content.Load<SpriteFont>("Lemonade/SMALL_PIXEL"), textSize, Lemonade_Globals.GAMEBOY_COLOR_4, FlxJustification.Center, Lemonade_Globals.GAMEBOY_COLOR_1);
             heading.setScrollFactors(0, 0);
             add(heading);
 
@@ -81,23 +88,23 @@ namespace Lemonade
 
             string howWellDidYouGo = "Collected " + Lemonade_Globals.coins.ToString() + "\nfrom " + Lemonade_Globals.totalCoins.ToString() + " Coins ";
             credits = new FlxText(0, FlxG.height / 1.75f , FlxG.width, howWellDidYouGo);
-            credits.setFormat(FlxG.Content.Load<SpriteFont>("Lemonade/SMALL_PIXEL"), 2, Lemonade_Globals.GAMEBOY_COLOR_4, FlxJustification.Center, Lemonade_Globals.GAMEBOY_COLOR_1);
+			credits.setFormat(FlxG.Content.Load<SpriteFont>("Lemonade/SMALL_PIXEL"), textSize, Lemonade_Globals.GAMEBOY_COLOR_4, FlxJustification.Center, Lemonade_Globals.GAMEBOY_COLOR_1);
             credits.setScrollFactors(0,0);
             credits.visible = false;
             add(credits);
 
             instruction = new FlxText(0, FlxG.height / 1.3f, FlxG.width, "Press X to Continue");
-            instruction.setFormat(FlxG.Content.Load<SpriteFont>("Lemonade/SMALL_PIXEL"), 2, Lemonade_Globals.GAMEBOY_COLOR_4, FlxJustification.Center, Lemonade_Globals.GAMEBOY_COLOR_1);
+			instruction.setFormat(FlxG.Content.Load<SpriteFont>("Lemonade/SMALL_PIXEL"), textSize, Lemonade_Globals.GAMEBOY_COLOR_4, FlxJustification.Center, Lemonade_Globals.GAMEBOY_COLOR_1);
             instruction.setScrollFactors(0, 0);
             instruction.visible = false;
             add(instruction);
 
             if (Lemonade_Globals.coins == Lemonade_Globals.totalCoins)
             {
-                heading.setFormat(FlxG.Content.Load<SpriteFont>("Lemonade/SMALL_PIXEL"), 1, Lemonade_Globals.GAMEBOY_COLOR_4, FlxJustification.Center, Lemonade_Globals.GAMEBOY_COLOR_1);
-                heading.text = "Complete Collection!!\nYou Win A Prize\nDownload Super\nLemonade Factory\nPart Two\nFor Free.";
-                instruction.setFormat(FlxG.Content.Load<SpriteFont>("Lemonade/SMALL_PIXEL"), 1, Lemonade_Globals.GAMEBOY_COLOR_4, FlxJustification.Center, Lemonade_Globals.GAMEBOY_COLOR_1);
-                instruction.text = "Press X to Open Browser And\nDownload Super Lemonade Factory Part Two";
+				heading.setFormat(FlxG.Content.Load<SpriteFont>("Lemonade/SMALL_PIXEL"), textSize, Lemonade_Globals.GAMEBOY_COLOR_4, FlxJustification.Center, Lemonade_Globals.GAMEBOY_COLOR_1);
+				heading.text = "Complete Collection!!\nThe Lemonade Factory is saved.";
+				instruction.setFormat(FlxG.Content.Load<SpriteFont>("Lemonade/SMALL_PIXEL"), textSize, Lemonade_Globals.GAMEBOY_COLOR_4, FlxJustification.Center, Lemonade_Globals.GAMEBOY_COLOR_1);
+				instruction.text = "Press X to Continue.";
 
                 //FlxU.openURL("http://initials.itch.io/slf2/download/Y9wdBOHe7a92Qpo9t5UJdz05HhZR5p10F0L6wfdP");
 
@@ -210,8 +217,11 @@ namespace Lemonade
             {
                 if (Lemonade_Globals.coins == Lemonade_Globals.totalCoins)
                 {
+					#if !__ANDROID__
                     FlxU.openURL("http://initials.itch.io/slf2/download/Y9wdBOHe7a92Qpo9t5UJdz05HhZR5p10F0L6wfdP");
-                }
+					#endif
+
+				}
 
                 follower.velocity.X = -250;
             }
