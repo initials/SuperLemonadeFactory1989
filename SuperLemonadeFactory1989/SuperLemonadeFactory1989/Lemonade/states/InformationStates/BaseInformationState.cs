@@ -93,7 +93,12 @@ namespace Lemonade
             credits.visible = false;
             add(credits);
 
-            instruction = new FlxText(0, FlxG.height / 1.3f, FlxG.width, "Press X to Continue");
+            string ins = "Press X to Continue";
+#if __ANDROID__
+            ins = "Press O to Continue";
+#endif
+
+            instruction = new FlxText(0, FlxG.height / 1.3f, FlxG.width, ins);
 			instruction.setFormat(FlxG.Content.Load<SpriteFont>("Lemonade/SMALL_PIXEL"), textSize, Lemonade_Globals.GAMEBOY_COLOR_4, FlxJustification.Center, Lemonade_Globals.GAMEBOY_COLOR_1);
             instruction.setScrollFactors(0, 0);
             instruction.visible = false;
@@ -104,7 +109,14 @@ namespace Lemonade
 				heading.setFormat(FlxG.Content.Load<SpriteFont>("Lemonade/SMALL_PIXEL"), textSize, Lemonade_Globals.GAMEBOY_COLOR_4, FlxJustification.Center, Lemonade_Globals.GAMEBOY_COLOR_1);
 				heading.text = "Complete Collection!!\nThe Lemonade Factory is saved.";
 				instruction.setFormat(FlxG.Content.Load<SpriteFont>("Lemonade/SMALL_PIXEL"), textSize, Lemonade_Globals.GAMEBOY_COLOR_4, FlxJustification.Center, Lemonade_Globals.GAMEBOY_COLOR_1);
-				instruction.text = "Press X to Continue.";
+
+
+                string ins = "Press X to Continue";
+#if __ANDROID__
+            ins = "Press O to Continue";
+#endif
+
+                instruction.text = ins;
 
                 //FlxU.openURL("http://initials.itch.io/slf2/download/Y9wdBOHe7a92Qpo9t5UJdz05HhZR5p10F0L6wfdP");
 

@@ -82,7 +82,12 @@ namespace Lemonade
             credits.visible = true;
             add(credits);
 
-            instruction = new FlxText(0, FlxG.height / 1.3f, FlxG.width, "Press X to Continue");
+            string ins = "Press X to Continue";
+#if __ANDROID__
+            ins = "Press O to Continue";
+#endif
+
+            instruction = new FlxText(0, FlxG.height / 1.3f, FlxG.width, ins);
             instruction.setFormat(FlxG.Content.Load<SpriteFont>("Lemonade/SMALL_PIXEL"), 2, Lemonade_Globals.GAMEBOY_COLOR_4, FlxJustification.Center, Lemonade_Globals.GAMEBOY_COLOR_1);
             instruction.setScrollFactors(0, 0);
             instruction.visible = true;
