@@ -111,12 +111,12 @@ namespace Lemonade
 				instruction.setFormat(FlxG.Content.Load<SpriteFont>("Lemonade/SMALL_PIXEL"), textSize, Lemonade_Globals.GAMEBOY_COLOR_4, FlxJustification.Center, Lemonade_Globals.GAMEBOY_COLOR_1);
 
 
-                string ins = "Press X to Continue";
+				string ins2 = "Press X to Continue";
 #if __ANDROID__
-            ins = "Press O to Continue";
+				ins2 = "Press O to Continue";
 #endif
 
-                instruction.text = ins;
+				instruction.text = ins2;
 
                 //FlxU.openURL("http://initials.itch.io/slf2/download/Y9wdBOHe7a92Qpo9t5UJdz05HhZR5p10F0L6wfdP");
 
