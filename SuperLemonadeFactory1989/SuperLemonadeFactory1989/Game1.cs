@@ -28,7 +28,7 @@ namespace Loader_SuperLemonadeFactory
         public FlxFactory()
         {
             //Read the GAMESETTINGS.txt file
-
+            /*
             string gameSettings = File.ReadAllText("GAMESETTINGS.txt");
             string[] splitter = gameSettings.Split('\n');
             //Console.WriteLine(splitter[0]);
@@ -38,6 +38,19 @@ namespace Loader_SuperLemonadeFactory
             if (splitter[2].Substring(11).StartsWith("1"))
                 FlxG.fullscreen = true;
             FlxG.zoom = Convert.ToInt32(splitter[3].Substring(5));
+            */
+            int div = 3;
+            FlxG.zoom = 1;
+#if ! DEBUG
+            FlxG.zoom = 3;
+            div = 1;
+            FlxG.fullscreen = true;
+
+#endif
+            FlxG.resolutionWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width / div;
+            FlxG.resolutionHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height / div;
+
+
 
 
             //set up the graphics device and the content manager
@@ -48,9 +61,6 @@ namespace Loader_SuperLemonadeFactory
             {
                 //resX = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
                 //resY = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
-				#if !__ANDROID__
-
-
                 if (GraphicsAdapter.DefaultAdapter.IsWideScreen)
                 {
                     //if user has it set to widescreen, let's make sure this
@@ -59,9 +69,7 @@ namespace Loader_SuperLemonadeFactory
                     {
                         FlxG.resolutionWidth = (FlxG.resolutionHeight / 9) * 16;
                     }
-				}
-				#endif
-
+                }
             }
 
             //we don't need no new-fangled pixel processing
@@ -79,7 +87,7 @@ namespace Loader_SuperLemonadeFactory
             }
             _graphics.ApplyChanges();
 
-            Console.WriteLine("Running Game at Settings: {0}x{1} Fullscreen?:{2} // Preferrred {3} {4}", FlxG.resolutionWidth, FlxG.resolutionHeight, FlxG.fullscreen, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height);
+            Console.WriteLine("Running Game at Settings: {0}x{1}\nFullscreen?: {2}\nPreferrred: {3}x{4}", FlxG.resolutionWidth, FlxG.resolutionHeight, FlxG.fullscreen, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height);
 
             FlxG.Game = this;
 #if !WINDOWS_PHONE

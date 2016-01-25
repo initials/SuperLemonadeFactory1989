@@ -37,7 +37,7 @@ namespace Loader_SuperLemonadeFactory
 
             // Customize splash screen.
             FlxG.splashBGColor = new Color(77, 81, 60);
-            FlxG.splashLogo = "initials/initialsLogoGameboy";
+            FlxG.splashLogo = "flixel/initials/initialsLogoGameboy";
             FlxG.buildDescription = "GAMEBOY";
             FlxG.splashAudioWave = "Lemonade/sfx/cw_sound44";
             FlxG.splashAudioWaveFlixel = "Lemonade/sfx/cw_sound19";

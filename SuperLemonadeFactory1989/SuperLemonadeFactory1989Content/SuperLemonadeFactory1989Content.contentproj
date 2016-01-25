@@ -595,12 +595,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\XNAFlixel\XFlixel\XFlixel.csproj">
-      <Project>{50463AEB-DA30-46D5-B01B-93F9C42F5765}</Project>
-      <Name>XFlixel</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Lemonade\GoldCoinGameboy.png">
       <Name>GoldCoinGameboy</Name>
       <Importer>TextureImporter</Importer>
