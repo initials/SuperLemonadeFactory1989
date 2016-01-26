@@ -41,6 +41,7 @@ namespace Loader_SuperLemonadeFactory
             */
             int div = 3;
             FlxG.zoom = 1;
+
 #if ! DEBUG
             FlxG.zoom = 3;
             div = 1;

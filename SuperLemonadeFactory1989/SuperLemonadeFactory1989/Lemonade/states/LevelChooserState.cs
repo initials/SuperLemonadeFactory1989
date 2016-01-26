@@ -45,7 +45,7 @@ namespace Lemonade
 
             for (int i = 0; i < 6; i++)
             {
-				int offsetX = 0;
+				int offsetX = 75;
 				int offsetY = 0;
 				int offsetY2 = 0;
 
@@ -60,7 +60,7 @@ namespace Lemonade
                 p1.loadGraphic("Lemonade/illustration/people", true, false, 302, 640);
                 p1.frame = i;
                 icons.add(p1);
-				tweeners.Add(new Vector3Tweener(new Vector3(-100 + (i * 36) + offsetX, -290 + offsetY2, 0.1f), new Vector3(12 + offsetY, 100, 1), 0.45f, Bounce.EaseOut));
+				tweeners.Add(new Vector3Tweener(new Vector3(-100 + (i * 36) + offsetX, -290 + offsetY2, 0.1f), new Vector3(12 + offsetY + offsetX, 100, 1), 0.45f, Bounce.EaseOut));
             }
 
             foreach (var item in tweeners)

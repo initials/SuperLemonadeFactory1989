@@ -1,19 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual C# Express 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFlixel", "..\..\XNAFlixel\XFlixel\XFlixel.csproj", "{50463AEB-DA30-46D5-B01B-93F9C42F5765}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFlixel", "..\XNAFlixel\XFlixel\XFlixel.csproj", "{50463AEB-DA30-46D5-B01B-93F9C42F5765}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFlixelContent", "..\..\XNAFlixel\XFlixelContent\XFlixelContent.contentproj", "{327F8527-448C-470E-9016-949859914C92}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFlixelContent", "..\XNAFlixel\XFlixelContent\XFlixelContent.contentproj", "{327F8527-448C-470E-9016-949859914C92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farseer Physics XNA", "..\..\XNAFlixel\XFlixel\Farseer Physics Engine 3.5\Farseer Physics XNA.csproj", "{0A850700-1ABB-4288-A391-6726B90EBEB9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farseer Physics XNA", "..\XNAFlixel\XFlixel\Farseer Physics Engine 3.5\Farseer Physics XNA.csproj", "{0A850700-1ABB-4288-A391-6726B90EBEB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFlixelTemplate", "..\..\XFlixelTemplate\XFlixelTemplate\XFlixelTemplate\XFlixelTemplate.csproj", "{390EC2F8-722B-42FB-8ED4-4273C94245B6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFlixelTemplate", "..\XFlixelTemplate\XFlixelTemplate\XFlixelTemplate\XFlixelTemplate.csproj", "{390EC2F8-722B-42FB-8ED4-4273C94245B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFlixelTemplateContent", "..\..\XFlixelTemplate\XFlixelTemplate\XFlixelTemplateContent\XFlixelTemplateContent.contentproj", "{E3D7C5C9-FC6B-420C-9336-AB688A003887}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFlixelTemplateContent", "..\XFlixelTemplate\XFlixelTemplate\XFlixelTemplateContent\XFlixelTemplateContent.contentproj", "{E3D7C5C9-FC6B-420C-9336-AB688A003887}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperLemonadeFactory1989", "..\SuperLemonadeFactory1989\SuperLemonadeFactory1989\SuperLemonadeFactory1989.csproj", "{D4C7E59B-E879-4FF0-A600-22A1C86FD24D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperLemonadeFactory1989", "SuperLemonadeFactory1989\SuperLemonadeFactory1989\SuperLemonadeFactory1989.csproj", "{D4C7E59B-E879-4FF0-A600-22A1C86FD24D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperLemonadeFactory1989Content", "..\SuperLemonadeFactory1989\SuperLemonadeFactory1989Content\SuperLemonadeFactory1989Content.contentproj", "{A7953EC5-F42D-41DB-AEB1-26093CB52B71}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperLemonadeFactory1989Content", "SuperLemonadeFactory1989\SuperLemonadeFactory1989Content\SuperLemonadeFactory1989Content.contentproj", "{A7953EC5-F42D-41DB-AEB1-26093CB52B71}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
